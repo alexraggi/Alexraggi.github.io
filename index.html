@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexis Avendaño Raggi — Psicólogo, Escritor & Perito</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --azul: #1B3A5C; --azul-medio: #2a5298; --azul-claro: #e8eef6; --blanco: #ffffff;
+      --crema: #F5F2EC; --gris-linea: #d8e2ef; --gris-texto: #3a3a3a; --gris-suave: #888888;
+      --dorado: #C9A84C; --dorado-oscuro: #A8872E; --dorado-suave: #f5ecd4;
+    }
+    body { font-family: 'Jost', sans-serif; color: var(--azul); background: var(--blanco); -webkit-font-smoothing: antialiased; }
+    .site { max-width: 100%; overflow-x: hidden; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2.5rem; border-bottom: 1px solid var(--gris-linea); background: var(--blanco); position: sticky; top: 0; z-index: 10; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 500; color: var(--azul); letter-spacing: 0.03em; }
+    .nav-links { display: flex; gap: 2.2rem; align-items: center; }
+    .nav-links a { font-size: 11px; color: var(--azul); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; cursor: pointer; transition: color 0.2s ease; }
+    .nav-links a:hover { color: var(--dorado); }
+    .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 480px; }
+    .hero-photo { overflow: hidden; background: var(--azul-claro); position: relative; }
+    .hero-photo::after { content: ''; position: absolute; top: 0; right: 0; width: 3px; height: 100%; background: var(--dorado); }
+    .hero-photo img { width: 100%; height: 100%; min-height: 480px; object-fit: cover; object-position: center top; display: block; }
+    .hero-text { padding: 4rem 3.2rem; display: flex; flex-direction: column; justify-content: center; background: var(--crema); }
+    .eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dorado); font-weight: 500; margin-bottom: 1rem; }
+    .hero-name { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 400; line-height: 1.05; color: var(--azul); margin-bottom: 0.8rem; }
+    .hero-line { width: 50px; height: 2px; background: var(--dorado); margin: 1.2rem 0; }
+    .hero-slogan { font-size: 14px; color: var(--gris-texto); font-weight: 300; line-height: 1.85; font-style: italic; margin-bottom: 2rem; padding-left: 1rem; border-left: 2px solid var(--dorado); }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 2rem; }
+    .tag { font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; padding: 4px 14px; border: 1px solid var(--gris-linea); border-radius: 20px; color: var(--gris-texto); font-weight: 300; background: var(--blanco); }
+    .tag-special { background: var(--azul); color: var(--blanco); border-color: var(--azul); font-weight: 400; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-azul { background: var(--azul); color: var(--blanco); border: none; padding: 12px 28px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Jost', sans-serif; font-weight: 400; transition: background 0.2s; }
+    .btn-azul:hover { background: var(--azul-medio); }
+    .btn-dorado-outline { background: transparent; border: 1.5px solid var(--dorado); padding: 11px 22px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Jost', sans-serif; font-weight: 400; color: var(--dorado-oscuro); transition: background 0.2s; }
+    .btn-dorado-outline:hover { background: var(--dorado-suave); }
+    .divider-oro { height: 2px; background: var(--dorado); width: 100%; }
+    .section { padding: 4.5rem 2.5rem; border-bottom: 1px solid var(--gris-linea); background: var(--blanco); }
+    .section-alt { padding: 4.5rem 2.5rem; border-bottom: 1px solid var(--gris-linea); background: var(--crema); }
+    .section-eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dorado); font-weight: 500; margin-bottom: 0.5rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--azul); margin-bottom: 2.5rem; }
+    .book-card { display: grid; grid-template-columns: 210px 1fr; gap: 3.5rem; align-items: start; }
+    .book-cover-box { background: var(--azul); border-radius: 2px; aspect-ratio: 3/4; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .book-cover-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--dorado); }
+    .book-cover-box::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--dorado); }
+    .book-cover-txt { font-family: 'Cormorant Garamond', serif; color: var(--blanco); text-align: center; position: relative; z-index: 1; }
+    .bc-method { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 300; color: var(--dorado); margin-bottom: 4px; }
+    .bc-title { font-size: 30px; font-weight: 500; line-height: 1; color: var(--blanco); }
+    .bc-line { width: 28px; height: 1px; background: var(--dorado); opacity: 0.8; margin: 10px auto; }
+    .bc-sub { font-size: 8px; letter-spacing: 0.07em; opacity: 0.6; margin-top: 6px; line-height: 1.6; color: var(--blanco); }
+    .bc-author { font-size: 9px; letter-spacing: 0.1em; color: var(--dorado); font-weight: 300; opacity: 0.9; }
+    .book-title-main { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--azul); line-height: 1.2; margin-bottom: 0.3rem; }
+    .book-subtitle-main { font-size: 12px; color: var(--dorado-oscuro); margin-bottom: 1.3rem; font-style: italic; font-weight: 300; }
+    .book-desc { font-size: 13px; color: var(--gris-texto); line-height: 2; margin-bottom: 1.5rem; font-weight: 300; }
+    .book-prices { display: flex; gap: 3rem; margin-bottom: 1.8rem; padding: 1.2rem 0; border-top: 1px solid var(--gris-linea); border-bottom: 1px solid var(--gris-linea); }
+    .price-block { text-align: center; }
+    .price-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-suave); font-weight: 300; margin-bottom: 4px; }
+    .price-val { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--azul); }
+    .buy-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-comprar { background: var(--dorado); color: var(--blanco); border: none; padding: 11px 22px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 500; border-radius: 2px; transition: background 0.2s; }
+    .btn-comprar:hover { background: var(--dorado-oscuro); }
+    .btn-comprar-outline { background: transparent; color: var(--azul); border: 1.5px solid var(--azul); padding: 10px 20px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 400; border-radius: 2px; transition: background 0.2s; }
+    .btn-comprar-outline:hover { background: var(--azul-claro); }
+    .perito-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+    .perito-intro { font-size: 13px; color: var(--gris-texto); line-height: 2; font-weight: 300; margin-bottom: 1.5rem; }
+    .instituciones { display: flex; flex-direction: column; gap: 12px; margin-bottom: 2rem; }
+    .institucion-card { display: flex; align-items: center; gap: 16px; background: var(--blanco); border: 1px solid var(--gris-linea); border-left: 4px solid var(--dorado); padding: 1rem 1.2rem; border-radius: 0 4px 4px 0; }
+    .inst-icon { font-size: 24px; color: var(--dorado); flex-shrink: 0; }
+    .inst-nombre { font-size: 13px; font-weight: 500; color: var(--azul); margin-bottom: 2px; line-height: 1.3; }
+    .inst-desc { font-size: 11px; color: var(--gris-suave); font-weight: 300; line-height: 1.5; }
+    .perito-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .perito-card { background: var(--blanco); border: 1px solid var(--gris-linea); border-top: 3px solid var(--dorado); padding: 1.2rem; border-radius: 0 0 4px 4px; }
+    .perito-card-icon { font-size: 22px; color: var(--dorado); margin-bottom: 10px; }
+    .perito-card-title { font-size: 12px; font-weight: 500; margin-bottom: 5px; color: var(--azul); letter-spacing: 0.03em; }
+    .perito-card-desc { font-size: 11px; color: var(--gris-suave); line-height: 1.7; font-weight: 300; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { font-size: 13px; color: var(--gris-texto); line-height: 2; margin-bottom: 1rem; font-weight: 300; }
+    .exp-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--dorado-suave); border: 1px solid var(--dorado); border-radius: 2px; padding: 10px 18px; margin-bottom: 1.5rem; }
+    .exp-numero { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; color: var(--dorado-oscuro); line-height: 1; }
+    .exp-texto { font-size: 11px; color: var(--gris-texto); line-height: 1.4; font-weight: 300; letter-spacing: 0.02em; }
+    .specialties-list { display: flex; flex-direction: column; gap: 0; }
+    .spec-item { display: flex; align-items: center; gap: 14px; font-size: 13px; padding: 13px 18px; border-bottom: 1px solid var(--gris-linea); font-weight: 300; color: var(--gris-texto); border-left: 3px solid transparent; }
+    .spec-item:first-child { border-top: 1px solid var(--gris-linea); }
+    .spec-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--dorado); flex-shrink: 0; }
+    .contact-area { text-align: center; padding: 5rem 2.5rem; background: var(--azul); position: relative; overflow: hidden; }
+    .contact-area::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--dorado); }
+    .contact-area .section-eyebrow { color: var(--dorado); }
+    .contact-area .section-title { color: var(--blanco); margin-bottom: 0.8rem; }
+    .contact-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; font-weight: 300; }
+    .btn-dorado-solid { background: var(--dorado); color: var(--azul); border: none; padding: 14px 36px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 600; border-radius: 2px; transition: background 0.2s; }
+    .btn-dorado-solid:hover { background: var(--dorado-oscuro); }
+    footer { padding: 1.5rem 2.5rem; background: var(--azul); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--blanco); }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 300; }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo img { height: 350px; min-height: 350px; }
+      .hero-text { padding: 2.5rem 1.5rem; }
+      .hero-name { font-size: 38px; }
+      .book-card { grid-template-columns: 1fr; gap: 2rem; justify-items: center; text-align: center; }
+      .book-cover-box { width: 210px; }
+      .book-prices { justify-content: center; }
+      .buy-btns { justify-content: center; }
+      .perito-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .perito-cards { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="site">
+  <nav>
+    <div class="nav-logo">Alexis Avendaño Raggi</div>
+    <div class="nav-links">
+      <a onclick="document.getElementById('libros').scrollIntoView({behavior:'smooth'})">Libros</a>
+      <a onclick="document.getElementById('perito').scrollIntoView({behavior:'smooth'})">Peritaje</a>
+      <a onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">Sobre mí</a>
+      <a onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Contacto</a>
+    </div>
+  </nav>
+  <div class="divider-oro"></div>
+  <div class="hero">
+    <div class="hero-photo">
+      <img src="mi-foto.jpg" alt="Alexis Avendaño Raggi" onerror="this.parentNode.style.background='var(--azul-claro)';this.style.display='none'"/>
+    </div>
+    <div class="hero-text">
+      <p class="eyebrow">Psicólogo · Escritor · Conferencista</p>
+      <h1 class="hero-name">Alexis<br>Avendaño<br>Raggi</h1>
+      <div class="hero-line"></div>
+      <p class="hero-slogan">"La transformación real comienza desde adentro."</p>
+      <div class="hero-tags">
+        <span class="tag">Psicólogo Clínico</span>
+        <span class="tag">Neurociencia</span>
+        <span class="tag">Mindfulness</span>
+        <span class="tag">Conferencista</span>
+        <span class="tag tag-special">Perito Psicológico</span>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-azul" onclick="document.getElementById('libros').scrollIntoView({behavior:'smooth'})">Conocer mi libro</button>
+        <button class="btn-dorado-outline" onclick="document.getElementById('perito').scrollIntoView({behavior:'smooth'})">Peritaje</button>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="libros">
+    <p class="section-eyebrow">Publicaciones</p>
+    <h2 class="section-title">Mi libro</h2>
+    <div class="book-card">
+      <div class="book-cover-box">
+        <div class="book-cover-txt">
+          <p class="bc-method">El Método</p>
+          <p class="bc-title">S.E.N.T.I.R.</p>
+          <div class="bc-line"></div>
+          <p class="bc-sub">La ciencia y el arte<br>de volver a sentir la vida</p>
+          <div class="bc-line"></div>
+          <p class="bc-author">Alexis Avendaño Raggi</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="book-title-main">El Método S.E.N.T.I.R.</h3>
+        <p class="book-subtitle-main">La ciencia y el arte de volver a sentir la vida</p>
+        <p class="book-desc">Un camino integrador que une la neurociencia, la psicología clínica y el mindfulness en seis pasos transformadores: Sentir, Escuchar, Nutrir, Transformar, Integrar y Reconciliar. Una invitación a dejar de sobrevivir y volver a habitarte desde adentro, con la ternura y el rigor que el cambio real requiere.</p>
+        <div class="book-prices">
+          <div class="price-block"><p class="price-label">eBook Kindle</p><p class="price-val">$7,99 USD</p></div>
+          <div style="width:1px;background:var(--gris-linea)"></div>
+          <div class="price-block"><p class="price-label">Tapa blanda</p><p class="price-val">$14,99 USD</p></div>
+        </div>
+        <div class="buy-btns">
+          <button class="btn-comprar" onclick="window.open('https://www.amazon.com/dp/B0H1NJ26JL', '_blank')"><i class="ti ti-brand-amazon" aria-hidden="true"></i> eBook — Kindle</button>
+          <button class="btn-comprar-outline" onclick="window.open('https://www.amazon.com/dp/B0H1Z3JSQ5', '_blank')"><i class="ti ti-book" aria-hidden="true"></i> Libro físico</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-alt" id="perito">
+    <p class="section-eyebrow">Área legal y forense</p>
+    <h2 class="section-title">Peritaje psicológico</h2>
+    <div class="perito-layout">
+      <div>
+        <p class="perito-intro">Como Perito Psicológico acreditado, ofrezco evaluaciones técnicas e informes periciales para procesos judiciales con el más alto estándar profesional, al servicio de instituciones del sistema de justicia chileno.</p>
+        <div class="instituciones">
+          <div class="institucion-card">
+            <i class="ti ti-building-badge inst-icon" aria-hidden="true"></i>
+            <div class="inst-info">
+              <p class="inst-nombre">Defensoría Penal Pública de Chile</p>
+              <p class="inst-desc">Perito psicológico oficial — evaluaciones e informes para la defense penal pública a nivel nacional</p>
+            </div>
+          </div>
+          <div class="institucion-card">
+            <i class="ti ti-scale inst-icon" aria-hidden="true"></i>
+            <div class="inst-info">
+              <p class="inst-nombre">Corte de Apelaciones de Chile</p>
+              <p class="inst-desc">Perito psicológico acreditado ante diversas Cortes de Apelaciones a lo largo de Chile</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn-azul" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Solicitar peritaje</button>
+      </div>
+      <div class="perito-cards">
+        <div class="perito-card"><i class="ti ti-file-text perito-card-icon" aria-hidden="true"></i><p class="perito-card-title">Informes periciales</p><p class="perito-card-desc">Evaluación psicológica forense para procesos civiles y penales</p></div>
+        <div class="perito-card"><i class="ti ti-heart-broken perito-card-icon" aria-hidden="true"></i><p class="perito-card-title">Evaluación de daño</p><p class="perito-card-desc">Determinación del daño psicológico en víctimas y afectados</p></div>
+        <div class="perito-card"><i class="ti ti-users perito-card-icon" aria-hidden="true"></i><p class="perito-card-title">Custodia y familia</p><p class="perito-card-desc">Peritajes en casos de familia, menores y tuición</p></div>
+        <div class="perito-card"><i class="ti ti-gavel perito-card-icon" aria-hidden="true"></i><p class="perito-card-title">Testimonio experto</p><p class="perito-card-desc">Ratificación de informes y comparecencia ante tribunales</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="sobre">
+    <p class="section-eyebrow">Quién soy</p>
+    <h2 class="section-title">Sobre mí</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="exp-badge">
+          <span class="exp-numero">20</span>
+          <span class="exp-texto">años de experiencia<br>en psicología clínica</span>
+        </div>
+        <p>Soy Alexis Avendaño Raggi, Psicólogo Clínico con más de 20 años de experiencia, especialización en Neurociencia e instructor certificado de Mindfulness. A lo largo de dos décadas he acompañado a cientos de personas en procesos de transformación personal, combinando el rigor científico con una profunda comprensión del ser humano.</p>
+        <p>Como escritor y conferencista, llevo el conocimiento de la psicología y la neurociencia a un lenguaje accesible y profundamente humano. Y como Perito Psicológico acreditado ante la Defensoría Penal Pública y diversas Cortes de Apelaciones de Chile, pongo ese mismo rigor al servicio del sistema judicial.</p>
+        <p>Mi propósito es acompañar procesos de cambio real — ya sea en consulta, en un escenario, en un libro, o en un informe pericial.</p>
+      </div>
+      <div class="specialties-list">
+        <div class="spec-item"><span class="spec-dot"></span>Psicología Clínica</div>
+        <div class="spec-item"><span class="spec-dot"></span>Neurociencia aplicada</div>
+        <div class="spec-item"><span class="spec-dot"></span>Instructor de Mindfulness</div>
+        <div class="spec-item"><span class="spec-dot"></span>Perito Psicológico</div>
+        <div class="spec-item"><span class="spec-dot"></span>Escritor</div>
+        <div class="spec-item"><span class="spec-dot"></span>Conferencista</div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-area" id="contacto">
+    <p class="section-eyebrow">Contacto</p>
+    <h2 class="section-title">¿Hablamos?</h2>
+    <p class="contact-desc">Para conferencias, peritajes, consultas o colaboraciones — escríbeme directamente.</p>
+    <button class="btn-dorado-solid" onclick="window.location.href='mailto:tu-correo@dominio.com'">Enviar mensaje</button>
+  </div>
+  <footer>
+    <div class="footer-brand">Alexis Avendaño Raggi</div>
+    <div class="footer-copy">© 2026 · Todos los derechos reservados</div>
+  </footer>
+</div>
+</body>
+</html>

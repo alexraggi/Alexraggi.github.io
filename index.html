@@ -111,16 +111,21 @@
     .contact-area .section-title { color: var(--blanco); margin-bottom: 1rem; }
     .contact-desc { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 3rem; font-weight: 300; }
     .contact-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-    .btn-dorado-solid { background: var(--dorado); color: var(--azul); border: none; padding: 16px 42px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 600; border-radius: 2px; transition: background 0.2s; display: flex; align-items: center; gap: 8px; }
+    .btn-dorado-solid { background: var(--dorado); color: var(--azul); border: none; padding: 14px 28px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 600; border-radius: 2px; transition: background 0.2s; display: flex; align-items: center; gap: 8px; }
     .btn-dorado-solid:hover { background: var(--dorado-oscuro); }
-    .btn-blanco-outline { background: transparent; border: 1.5px solid var(--blanco); color: var(--blanco); padding: 16px 42px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 600; border-radius: 2px; transition: background 0.2s; display: flex; align-items: center; gap: 8px; }
+    .btn-blanco-outline { background: transparent; border: 1.5px solid var(--blanco); color: var(--blanco); padding: 14px 28px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 600; border-radius: 2px; transition: background 0.2s; display: flex; align-items: center; gap: 8px; }
     .btn-blanco-outline:hover { background: rgba(255,255,255,0.1); }
     
     footer { padding: 2rem 3.5rem; background: var(--azul); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
     .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--blanco); }
+    .footer-social { display: flex; gap: 15px; }
+    .footer-social a { color: rgba(255,255,255,0.6); font-size: 20px; text-decoration: none; transition: color 0.2s; }
+    .footer-social a:hover { color: var(--dorado); }
     .footer-copy { font-size: 14px; color: rgba(255,255,255,0.5); font-weight: 300; }
-    .visitor-counter { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.5); font-weight: 300; }
-    .visitor-counter img { height: 20px; opacity: 0.8; }
+    
+    /* Corrección y optimización del contador de visitas */
+    .visitor-counter { display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+    .visitor-counter img { height: 20px; display: block; }
 
     @media (max-width: 768px) {
       nav { padding: 1.5rem; flex-direction: column; gap: 1.5rem; text-align: center; }
@@ -196,7 +201,7 @@
         </div>
       </div>
       <div class="specialties-list">
-        <div class="spec-item"><span class="spec-dot"></span>Psicología Clínica</div>
+        <div class="spec-item"><span class="spec-dot"></span>Psicología Clínico</div>
         <div class="spec-item"><span class="spec-dot"></span>Neurociencia aplicada</div>
         <div class="spec-item"><span class="spec-dot"></span>Instructor de Mindfulness</div>
         <div class="spec-item"><span class="spec-dot"></span>Perito Psicológico</div>
@@ -286,17 +291,25 @@
   <div class="contact-area" id="contacto">
     <p class="section-eyebrow">Contacto</p>
     <h2 class="section-title">¿Hablamos?</h2>
-    <p class="contact-desc">Para conferencias, peritajes o colaboraciones, escríbeme a mi correo o envíame un mensaje por WhatsApp.</p>
+    <p class="contact-desc">Para conferencias, peritajes o colaboraciones, escríbeme a mi correo, envíame un mensaje por WhatsApp o encuéntrame en redes sociales.</p>
     <div class="contact-btns">
-      <button class="btn-dorado-solid" onclick="window.location.href='mailto:alexraggi@gmail.com'"><i class="ti ti-mail" aria-hidden="true"></i> Correo electrónico</button>
+      <button class="btn-dorado-solid" onclick="window.location.href='mailto:alexraggi@gmail.com'"><i class="ti ti-mail" aria-hidden="true"></i> Correo</button>
       <button class="btn-blanco-outline" onclick="window.open('https://wa.me/56955185474', '_blank')"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</button>
+      <button class="btn-blanco-outline" onclick="window.open('https://www.linkedin.com/in/alexis-avendaño-raggi-0a102321', '_blank')"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn</button>
+      <button class="btn-blanco-outline" onclick="window.open('https://www.facebook.com/alexis.raggi/', '_blank')"><i class="ti ti-brand-facebook" aria-hidden="true"></i> Facebook</button>
+      <button class="btn-blanco-outline" onclick="window.open('https://www.instagram.com/alexraggi/', '_blank')"><i class="ti ti-brand-instagram" aria-hidden="true"></i> Instagram</button>
     </div>
   </div>
 
   <footer>
     <div class="footer-brand">Alexis Avendaño Raggi</div>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/alexis-avendaño-raggi-0a102321" target="_blank" aria-label="LinkedIn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/alexis.raggi/" target="_blank" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/alexraggi/" target="_blank" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+    </div>
     <div class="visitor-counter">
-      Visitas: <img src="https://profile-counter.glitch.me/alexisraggiweb/count.svg" alt="Contador de visitas">
+      <img src="https://hits.seco.de/count.svg?url=https%3A%2F%2Falexraggi.github.io&count_bg=%23C9A84C&title_bg=%231B3A5C&title=Visitas&edge_flat=true" alt="Contador de visitas">
     </div>
     <div class="footer-copy">© 2026 · Todos los derechos reservados</div>
   </footer>

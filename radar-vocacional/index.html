@@ -149,7 +149,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     <h1>Estar perdido es el primer paso.</h1>
     <p class="lead">Enciende tu radar en 60 segundos y descubre qué carreras calzan contigo, cuánto cuestan, cuánto ganan sus titulados y dónde estudiarlas cerca de ti. Con datos oficiales, no con folletos.</p>
     <div class="cta">
-      <a class="btn gold" href="#radar">Encender mi radar · 60 s</a>
+      <a class="btn gold" href="#entrada">Encender mi radar · 60 s</a>
       <a class="btn ghost" href="#explorar">Explorar carreras</a>
     </div>
     <div id="welcome" class="welcome hidden"></div>
@@ -175,7 +175,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
 
   <section class="block grid2">
     <div class="card"><h3>Para la familia, en paralelo</h3><p class="muted">Los padres no ven las respuestas de su hijo o hija. Tienen su propio recorrido para acompañar sin imponer, y cada semana una conversación puente.</p><a href="#familia">Ver el recorrido para familias →</a></div>
-    <div class="card"><h3>Tus datos, protegidos</h3><p class="muted">No pedimos tu nombre. Lo que respondes se guarda con un código anónimo, nadie de tu colegio ni de tu familia puede leerlo, y nunca se vende ni se comparte con instituciones.</p></div>
+    <div class="card"><h3>Tus datos, protegidos</h3><p class="muted">No pedimos tu nombre. Si aceptas, tus respuestas se guardan asociadas a un código, no a tu identidad. Nadie de tu colegio ni de tu familia puede leerlas, solo se informan resultados de grupos de 10 o más estudiantes, y nunca se venden ni se comparten con instituciones.</p></div>
   </section>
 
   <section class="block"><div class="card" style="display:flex;gap:18px;flex-wrap:wrap">
@@ -183,6 +183,33 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     <p class="muted">Radar Vocacional es desarrollado por Armonía &amp; Bienestar Global SpA (A&amp;B SpA), empresa de consultoría y desarrollo humano de Curicó. Lo dirige Alexis Avendaño Raggi, psicólogo clínico y forense con más de 20 años de experiencia.</p></div>
     <div class="small muted" style="min-width:190px">RUT 78.090.123-3<br>Curicó, Región del Maule<br>alexraggi@gmail.com</div>
   </div></section>
+</div></main>
+
+<!-- ============ ENTRADA (consentimiento + punto de partida T0) ============ -->
+<main id="v-entrada" class="view hidden"><div class="narrow" style="padding-top:22px">
+  <div class="eyebrow">Antes de encender tu radar</div>
+  <div class="step on" id="e0">
+    <p class="q">Dos minutos para empezar bien</p>
+    <p class="hint">Radar Vocacional es orientación, no una evaluación ni un diagnóstico. No te pedimos tu nombre y puedes dejar de responder cuando quieras.</p>
+    <label class="field" for="nivel">¿En qué curso estás?</label>
+    <select id="nivel"><option value="">Elige una opción</option><option value="3medio">3° medio</option><option value="4medio">4° medio</option><option value="otro">Otro</option></select>
+    <label class="check"><input type="checkbox" id="edad14"> <span>Tengo 14 años o más.</span></label>
+    <label class="check"><input type="checkbox" id="acepto"> <span><b>Quiero usar Radar Vocacional.</b> Mis respuestas se usan para mostrarme mi radar y mis rutas.</span></label>
+    <label class="check"><input type="checkbox" id="aceptoEval"> <span><b>Opcional:</b> acepto que mis respuestas se guarden con un código, sin mi nombre, para mejorar Radar Vocacional. Solo se informan resultados de grupos de 10 o más estudiantes y puedo pedir que se borren con mi código.</span></label>
+    <p id="menor14" class="hint hidden" style="color:var(--alert)">Si tienes menos de 14 años, pídele a tu mamá, papá o apoderado que lea esta pantalla y marque las casillas contigo.</p>
+    <div id="codeBox" class="hidden">
+      <label class="field" for="miCodigo">¿Tu colegio te entregó una tarjeta con tu código? <span class="muted small">(si no, te creamos uno)</span></label>
+      <input id="miCodigo" type="text" maxlength="6" placeholder="Ej: K7M2QX" autocomplete="off" style="text-transform:uppercase;letter-spacing:.15em">
+      <p id="codeErr" class="hint hidden" style="color:var(--alert)">El código tiene 6 letras o números.</p>
+    </div>
+    <div class="nav"><a class="btn ghost" href="#inicio">Atrás</a><button class="btn primary" id="e0b" disabled>Seguir</button></div>
+  </div>
+  <div class="step" id="e1">
+    <p class="q">¿Qué tan claro tienes lo que harás después de 4° medio?</p>
+    <p class="hint">Con honestidad. Es tu punto de partida: lo volveremos a preguntar al final de las 4 semanas para ver cuánto avanzaste.</p>
+    <div class="slider"><div class="sv" id="clarV">5</div><input type="range" id="clar" min="0" max="10" value="5" aria-label="Claridad de 0 a 10"><div class="sl"><span>Niebla total</span><span>Lo tengo muy claro</span></div></div>
+    <div class="nav"><button class="btn ghost" id="e1back">Atrás</button><button class="btn gold" id="e1b">Encender mi radar</button></div>
+  </div>
 </div></main>
 
 <!-- ============ RADAR RÁPIDO ============ -->
@@ -206,39 +233,23 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
   <div class="nit"><div class="bar"><i id="nitA"></i></div><span id="nitAt">Nitidez 40%</span></div>
 
   <div class="step" data-s="0">
-    <p class="q">Antes de seguir</p>
-    <p class="hint">Desde aquí guardamos tus respuestas de forma anónima, para acompañarte las próximas semanas. No te pedimos tu nombre.</p>
-    <label class="field" for="nivel">¿En qué curso estás?</label>
-    <select id="nivel"><option value="">Elige una opción</option><option value="3medio">3° medio</option><option value="4medio">4° medio</option><option value="otro">Otro</option></select>
-    <label class="field" for="curso">Código de tu curso <span class="muted small">(si te lo dio tu colegio)</span></label>
-    <input id="curso" type="text" maxlength="20" placeholder="Ej: 3A">
-    <label class="check"><input type="checkbox" id="edad14"> <span>Tengo 14 años o más.</span></label>
-    <label class="check"><input type="checkbox" id="acepto"> <span>Entiendo que mis respuestas son anónimas, que se usan solo para acompañarme y mejorar Radar Vocacional, y que puedo dejar de responder cuando quiera.</span></label>
-    <p id="menor14" class="hint hidden" style="color:var(--alert)">Si tienes menos de 14 años, pídele a tu mamá, papá o apoderado que lea esta pantalla y marque las casillas contigo.</p>
-    <div class="nav"><a class="btn ghost" href="#revela">Atrás</a><button class="btn primary" id="a0" disabled>Seguir</button></div>
-  </div>
-
-  <div class="step" data-s="1">
-    <p class="q">¿Qué tan claro tienes lo que harás después de 4° medio?</p>
-    <p class="hint">Con honestidad. Nadie más va a ver este número.</p>
-    <div class="slider"><div class="sv" id="clarV">5</div><input type="range" id="clar" min="0" max="10" value="5" aria-label="Claridad de 0 a 10"><div class="sl"><span>Niebla total</span><span>Lo tengo muy claro</span></div></div>
-    <p class="q" style="font-size:1.12rem">¿Cuál frase se parece más a ti hoy?</p>
+    <p class="q">¿Cuál frase se parece más a ti hoy?</p>
     <div class="opts" id="estados"></div>
-    <div class="nav"><button class="btn ghost" data-back>Atrás</button><button class="btn primary" id="a1" disabled>Seguir</button></div>
+    <div class="nav"><a class="btn ghost" href="#revela">Atrás</a><button class="btn primary" id="a1" disabled>Seguir</button></div>
   </div>
 
-  <div class="step" data-s="2"><div id="factEstado"></div><div class="nav"><button class="btn ghost" data-back>Atrás</button><button class="btn primary" data-next>Seguir</button></div></div>
+  <div class="step" data-s="1"><div id="factEstado"></div><div class="nav"><button class="btn ghost" data-back>Atrás</button><button class="btn primary" data-next>Seguir</button></div></div>
 
-  <div class="step" data-s="3">
+  <div class="step" data-s="2">
     <p class="q">¿Qué es lo que más te frena para decidir?</p>
     <p class="hint">Marca todas las que sientas verdaderas.</p>
     <div class="chips" id="difs"></div>
     <div class="nav"><button class="btn ghost" data-back>Atrás</button><button class="btn primary" id="a3">Seguir</button></div>
   </div>
 
-  <div class="step" data-s="4"><div id="factDifs"></div><div class="nav"><button class="btn ghost" data-back>Atrás</button><button class="btn primary" data-next>Seguir</button></div></div>
+  <div class="step" data-s="3"><div id="factDifs"></div><div class="nav"><button class="btn ghost" data-back>Atrás</button><button class="btn primary" data-next>Seguir</button></div></div>
 
-  <div class="step" data-s="5">
+  <div class="step" data-s="4">
     <p class="q">Tres preguntas para pensar</p>
     <p class="hint">No buscan una carrera: buscan entender qué te mueve. Escribe lo primero que se te venga, aunque sea corto.</p>
     <label class="field" for="r1">¿En qué actividad se te pasa el tiempo volando? ¿Y en cuál miras el reloj a cada rato?</label>
@@ -289,7 +300,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
   <div class="slider" style="margin-top:4px"><div class="sv" id="pclarV">5</div><input type="range" id="pclar" min="0" max="10" value="5" aria-label="Preparación de 0 a 10"><div class="sl"><span>Nada</span><span>Totalmente</span></div></div>
   <label class="field" for="p1">¿Qué espera usted de esta decisión?</label><textarea id="p1" maxlength="600"></textarea>
   <label class="field" for="p2">¿Cuál es su mayor temor respecto de esta decisión?</label><textarea id="p2" maxlength="600"></textarea>
-  <label class="check"><input type="checkbox" id="pacepto"> <span>Acepto que estas respuestas se guarden de forma anónima para mejorar Radar Vocacional.</span></label>
+  <label class="check"><input type="checkbox" id="pacepto"> <span>Acepto que estas respuestas se guarden sin mi nombre, asociadas a un código, para mejorar Radar Vocacional. Solo se informan resultados de grupos de 10 o más personas.</span></label>
   <button class="btn primary block" id="pGuardar" disabled>Guardar y terminar la Semana 1</button>
   <p class="small muted" id="pState" style="margin-top:6px"></p>
 </div></main>
@@ -307,6 +318,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
 const SUPABASE_URL="https://kbvfqooclspbugfiehma.supabase.co";
 const SUPABASE_KEY="sb_publishable_SsVm__pDUG6PfxW-k0yzYQ_OBT1sqFW";
 const KEY="radar_vocacional_v2";
+const APP_V="mvp-3",INST_V="s1-v1";
 const CARRERAS_RESPALDO=[{"n":"Medicina","t":"U","c":"ISR","np":22,"emp":91,"ret":96,"dr":15.1,"ing":3500000,"ar":9980000,"df":14,"m":[{"i":"U. Autónoma De Chile","s":"Talca","ar":10621000,"paes":899,"p":[10,20,35,25,0,0,10]},{"i":"U. Católica del Maule","s":"Talca","ar":10453000,"paes":884,"p":[20,30,10,25,0,0,15]},{"i":"U. de Talca","s":"Talca","ar":10324000,"paes":864,"p":[20,30,10,25,0,0,15]}]},{"n":"Enfermería","t":"U","c":"SIC","np":43,"emp":79,"ret":89,"dr":12.1,"ing":1750000,"ar":5580000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6058000,"paes":680,"p":[10,40,15,20,0,0,15]},{"i":"U. de Talca","s":"Talca","ar":5983000,"paes":669,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5279000,"paes":667,"p":[10,20,35,25,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":5616000,"paes":632,"p":[10,10,35,35,0,10,10]}]},{"n":"Kinesiología","t":"U","c":"SIR","np":38,"emp":53,"ret":88,"dr":12.3,"ing":1350000,"ar":5550000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5983000,"paes":649,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5324000,"paes":648,"p":[10,20,30,30,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":6058000,"paes":644,"p":[10,40,15,20,0,0,15]},{"i":"U. Santo Tomás","s":"Talca","ar":5347000,"paes":630,"p":[10,10,35,35,0,10,10]}]},{"n":"Psicología","t":"U","c":"SIA","np":44,"emp":62,"ret":90,"dr":11.5,"ing":1150000,"ar":5110000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6222000,"paes":689,"p":[20,30,20,20,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":5822000,"paes":648,"p":[10,40,20,20,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5097000,"paes":647,"p":[10,30,40,10,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5822000,"paes":640,"p":[10,40,20,20,0,10,10]}]},{"n":"Odontología","t":"U","c":"IRS","np":20,"emp":65,"ret":90,"dr":14.9,"ing":1750000,"ar":9520000,"df":12,"m":[{"i":"U. de Talca","s":"Talca","ar":9384000,"paes":null,"p":[20,30,15,20,0,0,15]}]},{"n":"Química y Farmacia","t":"U","c":"ICS","np":11,"emp":99,"ret":91,"dr":14.1,"ing":2350000,"ar":5790000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":5372000,"paes":762,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5258000,"paes":705,"p":[10,25,25,30,0,10,10]},{"i":"U. de Talca","s":"Talca","ar":6990000,"paes":null,"p":[20,30,10,25,0,0,15]}]},{"n":"Nutrición y Dietética","t":"U","c":"ISE","np":27,"emp":46,"ret":81,"dr":12.3,"ing":1150000,"ar":5090000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5342000,"paes":610,"p":[20,30,10,20,0,0,20]},{"i":"U. Santo Tomás","s":"Talca","ar":4822000,"paes":594,"p":[10,10,35,35,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5196000,"paes":588,"p":[10,40,15,20,0,0,15]}]},{"n":"Obstetricia y Puericultura","t":"U","c":"SIR","np":15,"emp":73,"ret":93,"dr":12.4,"ing":1650000,"ar":5800000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5397000,"paes":702,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5793000,"paes":694,"p":[10,20,35,25,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5089000,"paes":645,"p":[10,40,15,20,0,0,15]}]},{"n":"Tecnología Médica","t":"U","c":"IRC","np":21,"emp":73,"ret":87,"dr":12.7,"ing":1750000,"ar":5910000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6032000,"paes":701,"p":[10,40,15,20,0,0,15]},{"i":"U. de Talca","s":"Talca","ar":5958000,"paes":697,"p":[20,30,10,20,0,0,20]}]},{"n":"Fonoaudiología","t":"U","c":"SIA","np":25,"emp":43,"ret":83,"dr":12.1,"ing":1050000,"ar":5500000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5983000,"paes":571,"p":[20,30,20,20,0,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":4940000,"paes":564,"p":[10,30,30,20,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":4840000,"paes":559,"p":[10,10,35,35,0,10,10]}]},{"n":"Terapia Ocupacional","t":"U","c":"SIR","np":18,"emp":50,"ret":90,"dr":11.6,"ing":1250000,"ar":5020000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5642000,"paes":619,"p":[20,30,15,25,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5089000,"paes":597,"p":[10,30,35,15,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5409000,"paes":587,"p":[10,40,20,20,0,10,10]}]},{"n":"Medicina Veterinaria","t":"U","c":"IRS","np":11,"emp":66,"ret":88,"dr":15,"ing":1350000,"ar":6430000,"df":10,"m":[{"i":"U. Santo Tomás","s":"Talca","ar":6495000,"paes":680,"p":[10,10,30,40,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":6209000,"paes":651,"p":[10,40,15,15,0,0,20]}]},{"n":"Derecho","t":"U","c":"EIS","np":31,"emp":69,"ret":85,"dr":16.3,"ing":1850000,"ar":5420000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6628000,"paes":698,"p":[20,30,25,10,0,15,0]},{"i":"U. Católica del Maule","s":"Talca","ar":5762000,"paes":646,"p":[10,40,25,10,0,15,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5334000,"paes":621,"p":[10,30,40,10,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":5430000,"paes":551,"p":[10,10,40,20,0,20,20]}]},{"n":"Trabajo Social","t":"U","c":"SEI","np":32,"emp":63,"ret":81,"dr":11.3,"ing":1050000,"ar":3680000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4436000,"paes":580,"p":[10,40,25,10,0,15,0]},{"i":"U. Católica del Maule","s":"Curicó","ar":4436000,"paes":562,"p":[10,40,25,10,0,15,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3772000,"paes":536,"p":[10,30,40,10,0,10,10]}]},{"n":"Periodismo","t":"U","c":"AES","np":24,"emp":65,"ret":87,"dr":11.6,"ing":1350000,"ar":5050000,"df":9,"m":[{"i":"U. Autónoma De Chile","s":"Talca","ar":5257000,"paes":573,"p":[10,30,40,10,0,10,10]}]},{"n":"Publicidad","t":"U","c":"EAS","np":10,"emp":72,"ret":91,"dr":9.6,"ing":1250000,"ar":5250000,"df":8,"m":[]},{"n":"Sociología","t":"U","c":"ISA","np":11,"emp":57,"ret":77,"dr":12.9,"ing":1350000,"ar":4870000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":5100000,"paes":null,"p":[10,40,15,25,0,10,0]}]},{"n":"Ciencias Políticas","t":"U","c":"IES","np":7,"emp":56,"ret":83,"dr":11.5,"ing":1550000,"ar":4740000,"df":10,"m":[]},{"n":"Arquitectura","t":"U","c":"AIR","np":22,"emp":59,"ret":85,"dr":15.1,"ing":1350000,"ar":5840000,"df":11,"m":[{"i":"U. de Talca","s":"Talca","ar":6845000,"paes":688,"p":[20,30,15,25,0,10,0]},{"i":"U. Católica del Maule","s":"Talca","ar":6183000,"paes":661,"p":[10,40,15,25,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5409000,"paes":620,"p":[10,25,25,30,0,10,10]}]},{"n":"Diseño","t":"U","c":"ARE","np":9,"emp":54,"ret":89,"dr":12.2,"ing":1450000,"ar":5710000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5887000,"paes":null,"p":[20,30,20,20,0,10,10]}]},{"n":"Diseño Gráfico","t":"IP","c":"ARE","np":5,"emp":40,"ret":70,"dr":10.2,"ing":950000,"ar":3110000,"df":8,"m":[{"i":"IP Inacap","s":"Curicó","ar":3288000,"paes":null,"p":null},{"i":"IP Santo Tomás","s":"Talca","ar":2944000,"paes":null,"p":null}]},{"n":"Comunicación Audiovisual y/o Multimedia","t":"U","c":"AER","np":4,"emp":48,"ret":84,"dr":11.3,"ing":1300000,"ar":4590000,"df":9,"m":[]},{"n":"Ingeniería Civil en Computación e Informática","t":"U","c":"ICR","np":21,"emp":88,"ret":85,"dr":14.2,"ing":2750000,"ar":5650000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6183000,"paes":727,"p":[10,40,10,25,5,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5193000,"paes":623,"p":[10,30,20,25,5,10,10]},{"i":"U. de Talca","s":"Curicó","ar":6222000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Ingeniería en Computación e Informática","t":"IP","c":"ICR","np":6,"emp":78,"ret":75,"dr":10.1,"ing":1550000,"ar":3260000,"df":8,"m":[{"i":"IP Inacap","s":"Talca","ar":3352000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":3352000,"paes":null,"p":null},{"i":"IP Santo Tomás","s":"Talca","ar":2954000,"paes":null,"p":null}]},{"n":"Técnico en Computación e Informática","t":"CFT","c":"RIC","np":5,"emp":52,"ret":69,"dr":6.2,"ing":1200000,"ar":2360000,"df":5,"m":[{"i":"CFT San Agustín","s":"Talca","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Cauquenes","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Linares","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Constitución","ar":2910000,"paes":null,"p":null}]},{"n":"Ingeniería Civil Industrial","t":"U","c":"EIC","np":34,"emp":85,"ret":88,"dr":14.4,"ing":2150000,"ar":5660000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6058000,"paes":725,"p":[10,40,10,25,5,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5193000,"paes":646,"p":[10,30,20,25,5,10,10]},{"i":"U. de Talca","s":"Talca","ar":6222000,"paes":null,"p":[20,30,10,20,10,0,10]},{"i":"U. de Talca","s":"Curicó","ar":6222000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Ingeniería Comercial","t":"U","c":"ECI","np":40,"emp":76,"ret":82,"dr":12.6,"ing":1750000,"ar":5170000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5820000,"paes":674,"p":[20,30,10,30,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":5327000,"paes":628,"p":[10,40,15,25,0,10,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5201000,"paes":584,"p":[10,30,20,30,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":4929000,"paes":569,"p":[10,10,30,40,0,10,10]}]},{"n":"Contador Auditor","t":"U","c":"CEI","np":25,"emp":84,"ret":84,"dr":11.6,"ing":1450000,"ar":4390000,"df":8,"m":[{"i":"U. de Talca","s":"Talca","ar":5293000,"paes":686,"p":[20,30,10,30,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":4794000,"paes":632,"p":[10,40,15,25,0,10,0]},{"i":"U. Católica del Maule","s":"Talca","ar":4794000,"paes":612,"p":[10,40,15,25,0,10,0]}]},{"n":"Técnico en Contabilidad General","t":"IP","c":"CEI","np":8,"emp":70,"ret":66,"dr":6.9,"ing":1150000,"ar":2410000,"df":5,"m":[{"i":"IP Inacap","s":"Talca","ar":2796000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2280000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2190000,"paes":null,"p":null}]},{"n":"Ingeniería Civil Eléctrica","t":"U","c":"RIC","np":10,"emp":92,"ret":83,"dr":15.5,"ing":2750000,"ar":6630000,"df":10.5,"m":[{"i":"U. de Talca","s":"Curicó","ar":6493000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Ingeniería en Electricidad","t":"IP","c":"RIC","np":6,"emp":87,"ret":76,"dr":10.9,"ing":1650000,"ar":2820000,"df":8,"m":[{"i":"IP Inacap","s":"Talca","ar":3312000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2590000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2320000,"paes":null,"p":null}]},{"n":"Técnico en Electricidad y Electricidad Industrial","t":"CFT","c":"RIC","np":5,"emp":77,"ret":68,"dr":6.3,"ing":1250000,"ar":2320000,"df":5,"m":[{"i":"CFT San Agustín","s":"Talca","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Linares","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Constitución","ar":2910000,"paes":null,"p":null},{"i":"CFT de la Región del Maule","s":"Linares","ar":2413000,"paes":null,"p":null}]},{"n":"Ingeniería Civil en Minas","t":"U","c":"RIE","np":13,"emp":80,"ret":81,"dr":15.3,"ing":3250000,"ar":6110000,"df":10,"m":[{"i":"U. de Talca","s":"Curicó","ar":6493000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Técnico en Minería","t":"CFT","c":"RCI","np":3,"emp":78,"ret":68,"dr":6.9,"ing":1650000,"ar":2390000,"df":5,"m":[]},{"n":"Ingeniería Civil Mecánica","t":"U","c":"RIC","np":12,"emp":84,"ret":77,"dr":16.1,"ing":2750000,"ar":6420000,"df":10,"m":[{"i":"U. de Talca","s":"Curicó","ar":6493000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Técnico en Mecánica Automotriz","t":"IP","c":"RCI","np":4,"emp":64,"ret":68,"dr":6.1,"ing":1050000,"ar":2960000,"df":4,"m":[{"i":"IP Inacap","s":"Talca","ar":3019000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":3019000,"paes":null,"p":null}]},{"n":"Construcción Civil","t":"U","c":"REC","np":7,"emp":80,"ret":82,"dr":12,"ing":1850000,"ar":3850000,"df":5,"m":[]},{"n":"Agronomía","t":"U","c":"IRE","np":12,"emp":64,"ret":81,"dr":14.3,"ing":1550000,"ar":5440000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6465000,"paes":624,"p":[20,30,10,30,0,0,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5848000,"paes":606,"p":[10,40,15,20,0,0,15]},{"i":"U. Santo Tomás","s":"Talca","ar":5633000,"paes":null,"p":[10,10,30,40,0,10,10]}]},{"n":"Técnico Agropecuario","t":"IP","c":"RIC","np":3,"emp":49,"ret":76,"dr":6.6,"ing":950000,"ar":2950000,"df":4,"m":[{"i":"IP Inacap","s":"Talca","ar":2952000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":2952000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2400000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2220000,"paes":null,"p":null}]},{"n":"Ingeniería Forestal","t":"U","c":"RIE","np":2,"emp":82,"ret":73,"dr":12.8,"ing":1650000,"ar":6920000,"df":10,"m":[]},{"n":"Geología","t":"U","c":"IRE","np":9,"emp":69,"ret":83,"dr":16.8,"ing":2750000,"ar":5770000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":5664000,"paes":678,"p":[10,40,10,25,0,0,15]}]},{"n":"Bioquímica","t":"U","c":"IRC","np":7,"emp":63,"ret":82,"dr":14.8,"ing":1450000,"ar":6470000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6825000,"paes":710,"p":[20,30,10,25,0,0,15]}]},{"n":"Pedagogía en Educación Básica","t":"U","c":"SAC","np":27,"emp":90,"ret":89,"dr":10.6,"ing":1150000,"ar":4120000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4442000,"paes":616,"p":[10,40,20,20,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":4442000,"paes":613,"p":[10,40,20,20,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3894000,"paes":576,"p":[10,30,25,25,0,10,10]},{"i":"U. de Talca","s":"Linares","ar":4559000,"paes":568,"p":[20,30,30,10,0,10,10]}]},{"n":"Pedagogía en Matemáticas y Computación","t":"U","c":"SIC","np":12,"emp":91,"ret":76,"dr":11.7,"ing":1350000,"ar":4030000,"df":10,"m":[{"i":"U. de Talca","s":"Linares","ar":4559000,"paes":null,"p":[20,30,10,25,5,0,10]},{"i":"U. Católica del Maule","s":"Talca","ar":4356000,"paes":null,"p":[10,40,10,25,5,0,10]}]},{"n":"Pedagogía en Educación Física","t":"U","c":"SRE","np":26,"emp":57,"ret":86,"dr":11.1,"ing":1050000,"ar":4240000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4356000,"paes":611,"p":[10,40,20,20,0,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3803000,"paes":588,"p":[10,30,35,15,0,10,10]}]},{"n":"Pedagogía en Historia, Geografía y Ciencias Sociales","t":"U","c":"SAI","np":14,"emp":74,"ret":84,"dr":11.5,"ing":1100000,"ar":3980000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4278000,"paes":632,"p":[10,40,20,10,0,20,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3894000,"paes":null,"p":[10,30,40,10,0,10,10]}]},{"n":"Pedagogía en Educación de Párvulos","t":"U","c":"SAC","np":30,"emp":69,"ret":87,"dr":10.1,"ing":1050000,"ar":3960000,"df":9,"m":[{"i":"U. Católica del Maule","s":"Curicó","ar":4278000,"paes":562,"p":[10,40,20,20,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":4278000,"paes":553,"p":[10,40,20,20,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3926000,"paes":551,"p":[10,30,35,15,0,10,10]}]},{"n":"Pedagogía en Idiomas","t":"U","c":"SAE","np":26,"emp":63,"ret":86,"dr":11.7,"ing":1050000,"ar":4280000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4377000,"paes":639,"p":[10,40,25,15,0,10,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3897000,"paes":579,"p":[10,30,40,10,0,10,10]},{"i":"U. de Talca","s":"Linares","ar":4559000,"paes":null,"p":[20,30,30,10,0,10,0]}]},{"n":"Técnico en Enfermería","t":"IP","c":"SRC","np":9,"emp":65,"ret":70,"dr":5.9,"ing":850000,"ar":2870000,"df":5,"m":[{"i":"IP Inacap","s":"Talca","ar":2948000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2860000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2900000,"paes":null,"p":null}]},{"n":"Técnico en Gastronomía y Cocina","t":"IP","c":"RAE","np":3,"emp":45,"ret":75,"dr":6,"ing":750000,"ar":3910000,"df":4,"m":[{"i":"IP Inacap","s":"Talca","ar":3911000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":3911000,"paes":null,"p":null}]},{"n":"Ingeniería en Prevención de Riesgos","t":"IP","c":"RCE","np":7,"emp":79,"ret":62,"dr":11.2,"ing":1250000,"ar":2460000,"df":8,"m":[{"i":"IP Aiep","s":"Curicó","ar":2560000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2280000,"paes":null,"p":null}]},{"n":"Técnico en Logística","t":"IP","c":"CRE","np":5,"emp":78,"ret":68,"dr":5.8,"ing":1150000,"ar":2580000,"df":5,"m":[{"i":"IP Inacap","s":"Talca","ar":2916000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2410000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2120000,"paes":null,"p":null}]},{"n":"Animación Digital","t":"IP","c":"AIR","np":3,"emp":31,"ret":68,"dr":9.9,"ing":950000,"ar":3880000,"df":8,"m":[]},{"n":"Ingeniería en Marketing","t":"IP","c":"EAC","np":1,"emp":60,"ret":80,"dr":9.4,"ing":1250000,"ar":3260000,"df":8,"m":[]},{"n":"Administración Pública","t":"U","c":"ECS","np":15,"emp":70,"ret":85,"dr":11.3,"ing":1450000,"ar":4550000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5198000,"paes":642,"p":[20,30,20,20,0,10,0]},{"i":"U. Católica del Maule","s":"Curicó","ar":4854000,"paes":585,"p":[10,40,20,20,0,10,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":4927000,"paes":550,"p":[10,30,30,20,0,10,10]}]},{"n":"Actuación y Teatro","t":"U","c":"AES","np":4,"emp":25,"ret":86,"dr":11.5,"ing":null,"ar":5360000,"df":9,"m":[]},{"n":"Música, Canto o Danza","t":"U","c":"ASE","np":5,"emp":48,"ret":88,"dr":12.9,"ing":null,"ar":5290000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5887000,"paes":649,"p":[10,10,10,10,0,10,0]}]},{"n":"Ingeniería en Recursos Humanos","t":"IP","c":"ESC","np":3,"emp":81,"ret":78,"dr":9.7,"ing":1250000,"ar":2730000,"df":8,"m":[]},{"n":"Técnico en Deporte, Recreación y Preparación Física","t":"IP","c":"SRE","np":4,"emp":43,"ret":74,"dr":6.5,"ing":850000,"ar":2460000,"df":4,"m":[{"i":"IP Aiep","s":"Curicó","ar":2480000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2520000,"paes":null,"p":null}]},{"n":"Técnico Veterinario","t":"IP","c":"RSI","np":1,"emp":43,"ret":83,"dr":6.3,"ing":750000,"ar":3060000,"df":5,"m":[]},{"n":"Ingeniería en Sonido","t":"IP","c":"RAI","np":2,"emp":45,"ret":73,"dr":10,"ing":1000000,"ar":3190000,"df":8,"m":[]},{"n":"Técnico en Instrumentación, Automatización y Control Industrial","t":"CFT","c":"RIC","np":5,"emp":78,"ret":57,"dr":7,"ing":1450000,"ar":2480000,"df":5,"m":[{"i":"CFT San Agustín","s":"Linares","ar":2910000,"paes":null,"p":null}]},{"n":"Técnico en Laboratorio Clínico","t":"IP","c":"IRC","np":3,"emp":51,"ret":79,"dr":5.6,"ing":850000,"ar":2820000,"df":5,"m":[]},{"n":"Ingeniería en Comercio Exterior","t":"IP","c":"ECI","np":3,"emp":82,"ret":75,"dr":10,"ing":1300000,"ar":2630000,"df":8,"m":[]}];
 let CARRERAS=CARRERAS_RESPALDO, CATALOGO="respaldo";
 const REGIONES=["Arica y Parinacota","Tarapacá","Antofagasta","Atacama","Coquimbo","Valparaíso","Metropolitana","Lib. Gral. B. O'Higgins","Maule","Ñuble","Biobío","La Araucanía","Los Ríos","Los Lagos","Aysén","Magallanes"];
@@ -341,7 +353,19 @@ const TIPO={U:"Universidad",IP:"Instituto Profesional",CFT:"CFT"};
 function load(){try{return JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){return null}}
 function store(v){try{localStorage.setItem(KEY,JSON.stringify(v))}catch(e){}}
 function codigo(){const a="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";let s="";for(let i=0;i<6;i++)s+=a[Math.floor(Math.random()*a.length)];return s}
-async function guardar(row){try{const r=await fetch(SUPABASE_URL+"/rest/v1/respuestas",{method:"POST",headers:{"apikey":SUPABASE_KEY,"Content-Type":"application/json","Prefer":"return=minimal"},body:JSON.stringify(row)});return r.ok}catch(e){return false}}
+/* ---- Atlas: única puerta de ingreso (funciones del servidor, sin acceso a tablas) ---- */
+async function rpc(fn,args){try{const r=await fetch(SUPABASE_URL+"/rest/v1/rpc/"+fn,{method:"POST",headers:{apikey:SUPABASE_KEY,"Content-Type":"application/json"},body:JSON.stringify(args)});if(!r.ok)return null;return await r.json()}catch(e){return null}}
+const CURSO_URL=(new URLSearchParams(location.search).get("curso")||"").trim().toUpperCase().slice(0,20)||null;
+let SES=null;
+async function sesion(cod){const prev=load()||{};if(!prev.eval)return null;
+ if(prev.ses&&prev.sesT&&Date.now()-prev.sesT<36e5*36){SES=prev.ses;return SES}
+ const r=await rpc("atlas_iniciar",{p_codigo:cod||prev.codigo,p_curso:prev.curso||CURSO_URL,p_app_version:APP_V,p_instrument_version:INST_V});
+ if(r&&r.session_id){SES=r.session_id;store({...(load()||{}),ses:SES,sesT:Date.now()})}return SES}
+const T0=Date.now();let lastStep=null,lastT=Date.now();
+async function ev(evento,props,step){const prev=load()||{};if(!prev.eval)return;const s=SES||await sesion();if(!s)return;
+ rpc("atlas_evento",{p_session:s,p_evento:evento,p_props:props||null,p_step:step||null,p_duration_ms:step?Date.now()-lastT:null,p_ts_cliente:new Date().toISOString()})}
+async function guardar(datos){const prev=load()||{};if(!prev.eval)return "local";const s=SES||await sesion();if(!s)return false;
+ const r=await rpc("atlas_respuesta",{p_session:s,p_datos:{...datos,consentimiento:true,version:APP_V}});return r&&r.ok?r:false}
 
 /* ---- puntajes y afinidad ---- */
 function perfil(){const p={R:0,I:0,A:0,S:0,E:0,C:0},c={R:0,I:0,A:0,S:0,E:0,C:0};ACTS.forEach((a,i)=>{if(S.acts[i]!=null){p[a[0]]+=S.acts[i];c[a[0]]++}});Object.keys(p).forEach(k=>p[k]=c[k]?Math.round(p[k]/(2*c[k])*100):0);return p}
@@ -362,18 +386,22 @@ function routeCard(c,opts={}){return `<button class="route" data-car="${esc(c.n)
  <div class="meta"><span>Empleabilidad <b>${c.emp!=null?c.emp+"%":"sin datos aún"}</b></span><span>Ingreso 4° año <b>${mill(c.ing)}</b></span><span>Duración real <b>${c.dr!=null?dec(c.dr)+" sem.":"s/i"}</b></span><span>Arancel <b>${mill(c.ar)}/año</b></span></div></button>`}
 
 /* ---- rutas ---- */
-const VIEWS=["inicio","radar","revela","afinar","perfil","explorar","familia"];
+const VIEWS=["inicio","entrada","radar","revela","afinar","perfil","explorar","familia"];
 function route(){let h=(location.hash||"#inicio").slice(1).split("?")[0];if(!VIEWS.includes(h))h="inicio";
+ const pv=load()||{};if(["radar","revela","afinar"].includes(h)&&!pv.consent)h="entrada";
+ if(h==="entrada"&&pv.consent&&pv.t0!=null)h="radar";
  if(h==="revela"&&Object.keys(S.acts).length<ACTS.length)h="radar";
  if(h==="afinar"&&Object.keys(S.acts).length<ACTS.length)h="radar";
  VIEWS.forEach(v=>$("v-"+v).classList.toggle("hidden",v!==h));
  document.querySelectorAll("[data-nav]").forEach(a=>a.classList.toggle("on",a.dataset.nav===h));
+ if(h!==lastStep){ev("step_viewed",null,h);lastStep=h;lastT=Date.now()}
+ if(h==="entrada")renderEntrada();
  if(h==="radar")renderSwipe(); if(h==="revela")renderRevela(); if(h==="explorar")renderExplorar(); if(h==="afinar")showStep(S.step||0);
  window.scrollTo(0,0)}
 window.addEventListener("hashchange",route);
 
 /* ---- radar rápido ---- */
-function renderSwipe(){const n=Object.keys(S.acts).length;if(n>=ACTS.length){location.hash="#revela";return}
+function renderSwipe(){const n=Object.keys(S.acts).length;if(n>=ACTS.length){const pv=load()||{};if(!pv.riasecSent){store({...pv,riasecSent:true});ev("riasec_completed",{perfil:perfil(),ms:Date.now()-T0})}location.hash="#revela";return}
  const i=ACTS.findIndex((a,ix)=>S.acts[ix]==null);const a=ACTS[i];
  $("swipeBox").innerHTML=`<div class="swipe"><div><div class="k">${n+1} de ${ACTS.length}</div><div class="a">${a[1]}</div></div>
  <div class="tri3" data-i="${i}"><button data-v="2"><span>👍</span>Me atrae</button><button data-v="1"><span>😐</span>Me da lo mismo</button><button data-v="0"><span>👎</span>No me atrae</button></div></div>`;
@@ -391,30 +419,38 @@ function renderRevela(){const p=perfil();const rk=ranking(p);const top3=rk.slice
  ${corta?`<p class="small muted" style="margin:14px 0 6px">Y una ruta más corta que calza contigo:</p>${routeCard(corta,{short:true})}`:""}
  ${fact}
  <div class="rc dark"><div class="eyebrow">Nitidez 40%</div><h3>Tu radar todavía está borroso</h3><p>Con 12 respuestas solo vemos tus gustos. Para ver qué te mueve de verdad necesitamos 4 minutos más: tu punto de partida, qué te frena y tres preguntas para pensar.</p><a class="btn gold block" href="#afinar">Afinar mi radar → 90%</a></div>
- <a class="btn ghost block" href="#explorar" style="margin-top:4px">Explorar las 64 carreras</a>`}
+ <a class="btn ghost block" href="#explorar" style="margin-top:4px">Explorar las ${CARRERAS.length} carreras</a>`}
 
 /* ---- afinar ---- */
-const TOTAL=6;
+const TOTAL=5;
 function showStep(n){S.step=n;document.querySelectorAll("#v-afinar .step").forEach(s=>s.classList.toggle("on",+s.dataset.s===n));
- const nit=40+[0,0,10,15,20,25][n];$("nitA").style.width=nit+"%";$("nitAt").textContent="Nitidez "+nit+"%";window.scrollTo(0,0)}
+ const nit=40+[5,15,20,25,30][n];$("nitA").style.width=nit+"%";$("nitAt").textContent="Nitidez "+nit+"%";window.scrollTo(0,0)}
 document.querySelectorAll("#v-afinar [data-next]").forEach(b=>b.onclick=()=>showStep(S.step+1));
 document.querySelectorAll("#v-afinar [data-back]").forEach(b=>b.onclick=()=>showStep(S.step-1));
-const c0=new URLSearchParams(location.search).get("curso");if(c0)$("curso").value=c0.slice(0,20);
-function chk0(){$("a0").disabled=!($("acepto").checked&&$("nivel").value&&$("edad14").checked);$("menor14").classList.toggle("hidden",$("edad14").checked||!$("acepto").checked)}
-["acepto","edad14","nivel"].forEach(id=>$(id).addEventListener("change",chk0));
-$("a0").onclick=()=>showStep(1);
+/* ---- entrada: consentimiento y punto de partida (T0) ---- */
+function renderEntrada(){const pv=load()||{};const on=pv.consent?"e1":"e0";["e0","e1"].forEach(id=>$(id).classList.toggle("on",id===on))}
+function chk0(){$("e0b").disabled=!($("acepto").checked&&$("nivel").value&&$("edad14").checked);$("menor14").classList.toggle("hidden",$("edad14").checked||!$("acepto").checked);$("codeBox").classList.toggle("hidden",!$("aceptoEval").checked)}
+["acepto","aceptoEval","edad14","nivel"].forEach(id=>$(id).addEventListener("change",chk0));
+$("e0b").onclick=async()=>{const typed=$("miCodigo").value.trim().toUpperCase();const ev2=$("aceptoEval").checked;
+ if(ev2&&typed&&!/^[A-Z0-9]{6}$/.test(typed)){$("codeErr").classList.remove("hidden");return}$("codeErr").classList.add("hidden");
+ const pv=load()||{};const cod=(ev2&&typed)||pv.codigo||codigo();
+ store({...pv,codigo:cod,consent:true,eval:ev2,nivel:$("nivel").value,curso:CURSO_URL,ses:null,sesT:null});
+ if(ev2){await sesion(cod);ev("session_started",{nivel:$("nivel").value,codigo_tarjeta:!!typed});ev("consent_accepted",{servicio:true,evaluacion:true})}
+ $("e0").classList.remove("on");$("e1").classList.add("on");window.scrollTo(0,0)};
+$("e1back").onclick=()=>{$("e1").classList.remove("on");$("e0").classList.add("on")};
 $("clar").oninput=e=>{S.clar=+e.target.value;$("clarV").textContent=S.clar};
+$("e1b").onclick=()=>{const pv=load()||{};store({...pv,t0:S.clar});ev("clarity_pre",{v:S.clar});if(location.hash==="#radar")route();else location.hash="#radar"};
 $("estados").innerHTML=ESTADOS.map(o=>`<button class="opt" data-id="${o.id}"><span class="e">${o.e}</span><span>${o.t}</span></button>`).join("");
 $("estados").onclick=e=>{const b=e.target.closest(".opt");if(!b)return;S.estado=b.dataset.id;[...$("estados").children].forEach(x=>x.classList.toggle("sel",x===b));$("a1").disabled=false};
 function factHTML(f){return `<div class="fact" style="margin-top:0"><b class="t">Dato que nadie te cuenta</b><p class="q" style="font-size:1.2rem;margin:4px 0 8px">${f[0]}</p>${f[1]}<span class="src">${f[2]}</span></div>`}
-$("a1").onclick=()=>{$("factEstado").innerHTML=factHTML(FACT_ESTADO[S.estado]);showStep(2)};
+$("a1").onclick=()=>{$("factEstado").innerHTML=factHTML(FACT_ESTADO[S.estado]);showStep(1)};
 $("difs").innerHTML=DIFS.map((d,i)=>`<button class="chip" data-i="${i}">${d}</button>`).join("");
 $("difs").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;const i=+b.dataset.i;S.difs.has(i)?S.difs.delete(i):S.difs.add(i);b.classList.toggle("sel")};
-$("a3").onclick=()=>{const ids=[...S.difs].filter(i=>FACT_DIF[i]).slice(0,2);const fs=ids.length?ids.map(i=>FACT_DIF[i]):[FACT_DIF[1]];$("factDifs").innerHTML=fs.map(factHTML).join("");showStep(4)};
+$("a3").onclick=()=>{const ids=[...S.difs].filter(i=>FACT_DIF[i]).slice(0,2);const fs=ids.length?ids.map(i=>FACT_DIF[i]):[FACT_DIF[1]];$("factDifs").innerHTML=fs.map(factHTML).join("");showStep(3)};
 $("a5").onclick=finalizar;
 
 async function finalizar(){const p=perfil();const rk=ranking(p);const refl={r1:$("r1").value.trim(),r3:$("r3").value.trim(),r4:$("r4").value.trim()};
- const alerta=ALERTA.test(norm(Object.values(refl).join(" ")));const prev=load()||{};const cod=prev.codigo||codigo();const est=ESTADO_TXT[S.estado];
+ const alerta=ALERTA.test(norm(Object.values(refl).join(" ")));const prev=load()||{};const cod=prev.codigo||codigo();if(prev.t0!=null)S.clar=prev.t0;const est=ESTADO_TXT[S.estado];
  const top5=rk.slice(0,5);const corta=rk.find(c=>c.t!=="U"&&!top5.includes(c));
  const frases=[["Se te pasa el tiempo volando en",refl.r1],["Te molesta",refl.r3],["Tus cercanos te buscan para",refl.r4]].filter(f=>f[1]);
  const fam=location.origin+location.pathname+"#familia";
@@ -427,11 +463,11 @@ async function finalizar(){const p=perfil();const rk=ranking(p);const refl={r1:$
  ${corta?`<p class="small muted" style="margin:14px 0 6px">Ruta corta (técnica o profesional) que también calza contigo:</p>${routeCard(corta,{short:true})}`:""}
  <div class="rc goldc"><h3>Tu radar de la semana</h3><p>Durante 7 días, anota <b>3 trabajos o personas</b> que veas en tu día (en la calle, en redes, en tu familia) y que te despierten aunque sea un poco de curiosidad.</p><p style="margin:0"><b>Pregunta para la próxima vez:</b> ¿qué tienen en común esas 3 cosas?</p></div>
  <div class="rc"><h3>Conversación puente con tu familia</h3><p>Tu familia tiene su propio recorrido, sin acceso a tus respuestas. Envíales el enlace y conversen: <em>"¿Qué espera cada uno de nosotros de esta decisión?"</em></p><a class="btn primary block" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar a mi familia por WhatsApp</a></div>
- <div class="rc"><h3>Tu código: <span class="code">${cod}</span></h3><p class="small muted" style="margin:0">Sácale una captura. Con él, Radar recordará lo que respondiste cuando vuelvas para la Semana 2.</p><p class="small muted" id="saveState" style="margin:6px 0 0">Guardando de forma anónima…</p></div>`;
+ <div class="rc"><h3>Tu código: <span class="code">${cod}</span></h3><p class="small muted" style="margin:0">Sácale una captura. Con él, Radar recordará lo que respondiste cuando vuelvas para la Semana 2.</p><p class="small muted" id="saveState" style="margin:6px 0 0">${prev.eval?"Guardando con tu código…":"Tus respuestas quedan solo en este dispositivo."}</p></div>`;
  location.hash="#perfil";
- store({codigo:cod,acts:S.acts,clar:S.clar,estado:S.estado,refl,fecha:new Date().toISOString(),completo:true});
- const ok=await guardar({rol:"estudiante",semana:1,codigo:cod,curso_codigo:$("curso").value.trim()||null,nivel:$("nivel").value||null,edad_14_o_mas:$("edad14").checked,consentimiento:true,claridad:S.clar,estado:S.estado,dificultades:[...S.difs].map(i=>DIFS[i]),intereses:p,reflexiones:refl,alerta,version:"mvp-2"});
- const st=$("saveState");if(st)st.textContent=ok?"✓ Respuestas guardadas de forma anónima.":"Tus respuestas quedaron guardadas en este dispositivo (sin conexión al servidor)."}
+ store({...prev,codigo:cod,acts:S.acts,clar:S.clar,estado:S.estado,refl,fecha:new Date().toISOString(),completo:true});
+ const ok=await guardar({rol:"estudiante",semana:1,momento:"T0",nivel:prev.nivel||null,edad_14_o_mas:true,claridad:S.clar,estado:S.estado,dificultades:[...S.difs].map(i=>DIFS[i]),intereses:p,reflexiones:refl});
+ const st=$("saveState");if(!st||ok==="local")return;st.textContent=ok?"✓ Respuestas guardadas con tu código, sin tu nombre.":"Tus respuestas quedaron guardadas en este dispositivo (sin conexión al servidor)."}
 
 function saveLocal(){const prev=load()||{};store({...prev,acts:S.acts})}
 
@@ -466,7 +502,7 @@ function renderProgs(){const c=SH.c;const box=$("instBox");if(!box)return;
 function updSim(){(SH.vis||[]).forEach((m,ix)=>{const el=$("pd"+ix);if(!el)return;if(!m.p){el.className="hidden";return}const v=ponderado(m.p,S.sim);
   if(v==null){const[nem,rk,l,m1,m2,h,c2]=m.p;const miss=[["nem","NEM"],["rank","Ranking"],["len","Lenguaje"],["m1","Matemática 1"]].filter(([k])=>!(+S.sim[k]>0)).map(x=>x[1]);if(m2&&!(+S.sim.m2>0))miss.push("Matemática 2");if((h||c2)&&!((h&&+S.sim.his>0)||(c2&&+S.sim.cie>0)))miss.push(h&&c2?"Historia o Ciencias":h?"Historia":"Ciencias");el.className="pond";el.textContent="Para calcular aquí falta: "+miss.join(", ")+".";return}
   if(m.paes){const d=v-Math.round(m.paes);el.className="pond "+(d>=0?"ok":"no");el.textContent=`Tu ponderado: ${v}. ${d>=0?`Estás ${d} ${d===1?"punto":"puntos"} sobre el`:`Te ${-d===1?"falta 1 punto":`faltan ${-d} puntos`} para llegar al`} promedio de quienes entraron en 2025 (${Math.round(m.paes)}).`}else{el.className="pond";el.textContent=`Tu ponderado: ${v}.`}})}
-async function openCarrera(id){const[n,t]=id.split("|");const c=CARRERAS.find(x=>x.n===n&&x.t===t);if(!c)return;SH={c,progs:[],region:getRegion(),vis:[]};
+async function openCarrera(id){const[n,t]=id.split("|");const c=CARRERAS.find(x=>x.n===n&&x.t===t);if(!c)return;SH={c,progs:[],region:getRegion(),vis:[],simSent:false};ev("career_opened",{n:c.n,t:c.t,desde:lastStep});
  const p=Object.keys(S.acts).length>=ACTS.length?perfil():null;const af=p&&c.c?afinidad(p,c.c):null;
  const perfilTxt=c.c?c.c.split("").map(k=>DSHORT[k]).join(", "):"categoría amplia, sin perfil asignado";
  $("sheetBox").innerHTML=`<button class="x" aria-label="Cerrar" data-close>×</button>
@@ -484,7 +520,7 @@ async function openCarrera(id){const[n,t]=id.split("|");const c=CARRERAS.find(x=
  <p class="small muted" style="margin-top:14px">Fuente: elaboración propia a partir de www.mifuturo.cl (2025–2026). Verifica si la institución está adscrita a Gratuidad en gratuidad.cl.</p>`;
  $("sheet").classList.remove("hidden");document.body.style.overflow="hidden";
  $("regSel").onchange=e=>{SH.region=e.target.value;if(e.target.value!=="todas")setRegion(e.target.value);renderProgs()};
- $("sheetBox").querySelectorAll(".sim input").forEach(inp=>inp.addEventListener("input",e=>{S.sim[e.target.dataset.k]=e.target.value;const prev=load()||{};store({...prev,sim:S.sim});updSim()}));
+ $("sheetBox").querySelectorAll(".sim input").forEach(inp=>inp.addEventListener("input",e=>{if(!SH.simSent){SH.simSent=true;ev("simulator_used",{n:c.n,t:c.t})}S.sim[e.target.dataset.k]=e.target.value;const prev=load()||{};store({...prev,sim:S.sim});updSim()}));
  if(c.m){SH.progs=c.m.map(m=>({...m,re:"Maule"}));SH.region="Maule";renderProgs();return}
  try{const rows=await sb(`programas?generica=eq.${encodeURIComponent(c.n)}&tipo=eq.${c.t}&select=institucion,sede,region,jornada,nombre,arancel,paes_promedio,acreditacion,p_nem,p_ranking,p_lenguaje,p_m1,p_m2,p_historia,p_ciencias&order=paes_promedio.desc.nullslast&limit=1000`);
   if(SH.c!==c)return;
@@ -498,10 +534,12 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
 /* ---- familia ---- */
 $("pclar").oninput=e=>$("pclarV").textContent=e.target.value;
 $("pacepto").onchange=e=>$("pGuardar").disabled=!e.target.checked;
-$("pGuardar").onclick=async()=>{$("pGuardar").disabled=true;$("pState").textContent="Guardando…";const ok=await guardar({rol:"apoderado",semana:1,consentimiento:true,claridad:+$("pclar").value,reflexiones:{p1:$("p1").value.trim(),p2:$("p2").value.trim()},alerta:false,version:"mvp-2"});$("pState").textContent=ok?"✓ Gracias. Recuerde la conversación puente de esta semana.":"No pudimos conectarnos al servidor, pero la lectura y la conversación puente siguen siendo lo más importante."};
+$("pGuardar").onclick=async()=>{$("pGuardar").disabled=true;$("pState").textContent="Guardando…";
+ const s=await rpc("atlas_iniciar",{p_codigo:codigo(),p_curso:CURSO_URL,p_app_version:APP_V,p_instrument_version:INST_V});
+ const r=s&&s.session_id?await rpc("atlas_respuesta",{p_session:s.session_id,p_datos:{rol:"apoderado",semana:1,momento:"T0",consentimiento:true,claridad:+$("pclar").value,reflexiones:{p1:$("p1").value.trim(),p2:$("p2").value.trim()},version:APP_V}}):null;const ok=r&&r.ok;$("pState").textContent=ok?"✓ Gracias. Recuerde la conversación puente de esta semana.":"No pudimos conectarnos al servidor, pero la lectura y la conversación puente siguen siendo lo más importante."};
 
 /* ---- inicio y memoria ---- */
-(function init(){const prev=load();if(prev){if(prev.acts)S.acts=prev.acts;if(prev.sim)S.sim=prev.sim;
+(function init(){const prev=load();if(prev){if(prev.acts)S.acts=prev.acts;if(prev.sim)S.sim=prev.sim;if(prev.t0!=null){S.clar=prev.t0;$("clar").value=prev.t0;$("clarV").textContent=prev.t0}
  if(prev.completo){const f=prev.refl&&(prev.refl.r3||prev.refl.r1);$("welcome").innerHTML=`<h3>Hola de nuevo · código ${esc(prev.codigo)}</h3><p style="margin:0 0 6px">La última vez marcaste tu claridad en <b>${prev.clar}/10</b>${f?" y escribiste:":"."}</p>${f?`<q>${esc(f.slice(0,160))}${f.length>160?"…":""}</q>`:""}<p class="small" style="margin:10px 0 0">¿Sigues pensando lo mismo? <a href="#explorar" style="color:#e2c879">Revisa tus rutas</a> mientras preparamos la Semana 2.</p>`;$("welcome").classList.remove("hidden")}
  else if(Object.keys(S.acts).length){$("welcome").innerHTML=`<h3>Tu radar está a medio camino</h3><p style="margin:0">Respondiste ${Object.keys(S.acts).length} de ${ACTS.length}. <a href="#radar" style="color:#e2c879">Continúa donde quedaste</a>.</p>`;$("welcome").classList.remove("hidden")}}
  route();cargarCatalogo()})();

@@ -62,6 +62,24 @@ section.block{padding:26px 0}
 .swipe .k{font-size:.78rem;color:var(--muted);font-weight:700}
 .swipe .a{font-family:"Fraunces",serif;font-size:1.45rem;color:var(--navy);line-height:1.25;margin:10px 0 18px}
 .tri3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.bq{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 18px;animation:pop .3s ease}
+.bq .k{font-size:.78rem;color:var(--muted);font-weight:700}
+.bq .it{font-family:"Fraunces",serif;font-size:1.3rem;color:var(--navy);line-height:1.28;margin:8px 0 16px}
+.bopts{display:grid;gap:8px}
+.bopts button{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:12px 14px;font:600 .95rem "Plus Jakarta Sans",sans-serif;color:var(--ink);cursor:pointer}
+.bopts button:hover,.bopts button.sel{border-color:var(--navy);background:#eef3f8}
+.bopts button .ic{font-size:1.35rem;line-height:1}
+.bopts button .lv{display:inline-flex;gap:2px}.bopts button .lv i{width:7px;height:16px;border-radius:2px;background:#e4ded0}.bopts button .lv i.on{background:var(--navy)}
+.bopts button.pnr{border-style:dashed;color:var(--muted);font-weight:500}
+.bfoot{display:flex;justify-content:space-between;gap:10px;margin-top:12px;flex-wrap:wrap}
+.lnk{background:none;border:0;padding:4px 0;font:600 .82rem "Plus Jakarta Sans",sans-serif;color:var(--muted);cursor:pointer;text-decoration:underline}
+.nemsg{margin-top:10px;background:var(--goldsoft);border-radius:12px;padding:10px 12px;font-size:.88rem}
+.pausa{text-align:center}.pausa svg{width:170px;height:170px}
+.vord{display:grid;gap:8px;margin:12px 0}
+.vord button{display:flex;gap:12px;align-items:flex-start;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:12px 14px;font:500 .93rem "Plus Jakarta Sans",sans-serif;color:var(--ink);cursor:pointer}
+.vord button .nb{flex:0 0 26px;height:26px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;color:var(--muted)}
+.vord button.on{border-color:var(--navy);background:#eef3f8}.vord button.on .nb{background:var(--navy);border-color:var(--navy);color:#fff}
+.enprueba{font-size:.74rem;color:var(--muted);margin-top:6px}
 .tri3 button{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:12px 6px;font:700 .86rem "Plus Jakarta Sans",sans-serif;color:var(--ink);cursor:pointer}
 .tri3 button span{display:block;font-size:1.5rem;margin-bottom:2px}
 .tri3 button:hover{border-color:var(--navy)}
@@ -147,9 +165,9 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
   <section class="hero">
     <div class="eyebrow">Piloto 2026 · Región del Maule</div>
     <h1>Estar perdido es el primer paso.</h1>
-    <p class="lead">Enciende tu radar en 60 segundos y descubre qué carreras calzan contigo, cuánto cuestan, cuánto ganan sus titulados y dónde estudiarlas cerca de ti. Con datos oficiales, no con folletos.</p>
+    <p class="lead">Enciende tu radar en 5 minutos y descubre qué carreras calzan contigo, cuánto cuestan, cuánto ganan sus titulados y dónde estudiarlas cerca de ti. Con datos oficiales, no con folletos.</p>
     <div class="cta">
-      <a class="btn gold" href="#entrada">Encender mi radar · 60 s</a>
+      <a class="btn gold" href="#entrada">Encender mi radar · 5 min</a>
       <a class="btn ghost" href="#explorar">Explorar carreras</a>
     </div>
     <p class="small" style="margin:12px 0 0"><a href="#retomar">¿Ya empezaste en otro celular? Retoma con tu código →</a></p>
@@ -160,7 +178,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
   <div class="stats">
     <div class="stat"><div class="v">Casi 1 de 4</div><div class="l">estudiantes no sigue en su institución al segundo año</div><div class="s">SIES: retención 1er año 77,9% (cohorte 2025)</div></div>
     <div class="stat"><div class="v">13 sem.</div><div class="l">dura en la práctica una carrera profesional que en el papel dura 10</div><div class="s">Subsecretaría de Educación Superior, 2025</div></div>
-    <div class="stat"><div class="v">60%</div><div class="l">de los hogares puede acceder a Gratuidad, pero solo en instituciones adscritas</div><div class="s">FUAS 2027 · cierra el 22 de octubre de 2026</div></div>
+    <div class="stat"><div class="v">60%</div><div class="l">de los hogares puede acceder a Gratuidad, pero solo en instituciones adscritas</div><div class="s">Subsecretaría de Educación Superior, 2026</div></div>
   </div>
 
   <section class="block">
@@ -191,12 +209,13 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
   <div class="eyebrow">Antes de encender tu radar</div>
   <div class="step on" id="e0">
     <p class="q">Dos minutos para empezar bien</p>
-    <p class="hint">Radar Vocacional es orientación, no una evaluación ni un diagnóstico. No te pedimos tu nombre y puedes dejar de responder cuando quieras.</p>
+    <p class="hint">Radar Vocacional es orientación, no una evaluación ni un diagnóstico. No te pedimos tu nombre y puedes dejar de responder cuando quieras. Marca solo lo que tú y tu apoderado autorizaron.</p>
     <label class="field" for="nivel">¿En qué curso estás?</label>
     <select id="nivel"><option value="">Elige una opción</option><option value="3medio">3° medio</option><option value="4medio">4° medio</option><option value="otro">Otro</option></select>
     <label class="check"><input type="checkbox" id="edad14"> <span>Tengo 14 años o más.</span></label>
-    <label class="check"><input type="checkbox" id="acepto"> <span><b>Quiero usar Radar Vocacional.</b> Mis respuestas se usan para mostrarme mi radar y mis rutas.</span></label>
-    <label class="check"><input type="checkbox" id="aceptoEval"> <span><b>Opcional:</b> acepto que mis respuestas se guarden con un código, sin mi nombre, para mejorar Radar Vocacional. Solo se informan resultados de grupos de 10 o más estudiantes y puedo pedir que se borren con mi código.</span></label>
+    <label class="check"><input type="checkbox" id="acepto"> <span><b>(a) Quiero usar Radar Vocacional.</b> Incluye NORTEA, un cuestionario nuevo que está en prueba: solo me devuelve frases para pensar y no cambia las carreras que me muestran.</span></label>
+    <label class="check"><input type="checkbox" id="aceptoSens"> <span><b>(b) Opcional:</b> acepto preguntas sobre mi familia y mi situación económica (llegan en la Semana 3). En todas podré marcar «Prefiero no responder».</span></label>
+    <label class="check"><input type="checkbox" id="aceptoEval"> <span><b>(c) Opcional: ayudar a investigar.</b> Mis respuestas se guardan con mi código, sin mi nombre, y se estudian junto a las de muchos otros. Así también puedo retomar mi ruta desde otro celular. Si no la marco, todo queda solo en este celular.</span></label>
     <p id="menor14" class="hint hidden" style="color:var(--alert)">Si tienes menos de 14 años, pídele a tu mamá, papá o apoderado que lea esta pantalla y marque las casillas contigo.</p>
     <div id="codeBox" class="hidden">
       <label class="field" for="miCodigo">¿Tu colegio te entregó una tarjeta con tu código? <span class="muted small">(si no, te creamos uno)</span></label>
@@ -209,7 +228,12 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     <p class="q">¿Qué tan claro tienes lo que harás después de 4° medio?</p>
     <p class="hint">Con honestidad. Es tu punto de partida: lo volveremos a preguntar al final de las 4 semanas para ver cuánto avanzaste.</p>
     <div class="slider"><div class="sv" id="clarV">5</div><input type="range" id="clar" min="0" max="10" value="5" aria-label="Claridad de 0 a 10"><div class="sl"><span>Niebla total</span><span>Lo tengo muy claro</span></div></div>
-    <div class="nav"><button class="btn ghost" id="e1back">Atrás</button><button class="btn gold" id="e1b">Encender mi radar</button></div>
+    <div class="nav"><button class="btn ghost" id="e1back">Atrás</button><button class="btn primary" id="e1b">Seguir</button></div>
+  </div>
+  <div class="step" id="e2">
+    <p class="q">Lo que hiciste para explorar</p>
+    <p class="hint">En las últimas 2 semanas, ¿cuántas veces hiciste esto? Cuenta solo lo que hiciste de verdad, por la ruta o por tu cuenta. Si no te acuerdas exacto, aproxima. · 10 frases · 1 min</p>
+    <div id="expBox"></div>
   </div>
 </div></main>
 
@@ -234,8 +258,12 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
   <div class="nit"><div class="bar"><i id="nitA"></i></div><span id="nitAt">Nitidez 40%</span></div>
 
   <div class="step" data-s="0">
-    <p class="q">¿Cuál frase se parece más a ti hoy?</p>
-    <div class="opts" id="estados"></div>
+    <p class="q">¿Dónde estás hoy?</p>
+    <p class="hint">Mueve cada barra según cómo estás hoy. No hay respuesta correcta.</p>
+    <label class="field" for="idExp">¿Cuánto has averiguado o probado distintas opciones de estudio o trabajo?</label>
+    <div class="slider"><div class="sv" id="idExpV">–</div><input type="range" id="idExp" min="0" max="10" value="5" aria-label="Exploración de 0 a 10"><div class="sl"><span>Casi nada</span><span>Muchísimo</span></div></div>
+    <label class="field" for="idCom">¿Qué tan comprometido o comprometida te sientes con una opción?</label>
+    <div class="slider"><div class="sv" id="idComV">–</div><input type="range" id="idCom" min="0" max="10" value="5" aria-label="Compromiso de 0 a 10"><div class="sl"><span>Con ninguna</span><span>Totalmente con una</span></div></div>
     <div class="nav"><a class="btn ghost" href="#revela">Atrás</a><button class="btn primary" id="a1" disabled>Seguir</button></div>
   </div>
 
@@ -292,7 +320,17 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     <div class="nav"><a class="btn ghost" href="#inicio">Salir</a><button class="btn primary" id="w0b">Seguir</button></div>
   </div>
 
-  <div class="step" data-w="1">
+  <div class="step" data-w="1"><div id="senBox"></div></div>
+
+  <div class="step" data-w="2">
+    <div id="senFb"></div>
+    <p class="q">Lo que más te importa en un trabajo</p>
+    <p class="hint">Toca las 6 tarjetas en orden: primero la que más te importa. Todas son buenas; la idea es ver qué pesa más para ti hoy.</p>
+    <div class="vord" id="vord"></div>
+    <div class="nav"><button class="btn ghost" id="vReset">Empezar de nuevo</button><button class="btn primary" id="vOk" disabled>Seguir</button></div>
+  </div>
+
+  <div class="step" data-w="3">
     <p class="q">Elige 2 rutas para explorar de verdad</p>
     <p class="hint">Estas son las que más calzan con tu radar. Elige las dos que más curiosidad te den. No es una decisión: es lo que vas a investigar esta semana.</p>
     <div class="opts" id="w2rutas"></div>
@@ -300,7 +338,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     <div class="nav"><button class="btn ghost" data-wback>Atrás</button><button class="btn primary" id="w1b" disabled>Seguir</button></div>
   </div>
 
-  <div class="step" data-w="2">
+  <div class="step" data-w="4">
     <p class="q">Tu misión: conversa con alguien que trabaje en eso</p>
     <p class="hint">Quince minutos con una persona real te enseñan más que horas de folletos. Puede ser un familiar, un vecino, un exalumno del colegio o alguien que encuentres en redes.</p>
     <div id="w2mision"></div>
@@ -319,7 +357,10 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     <div class="nav"><button class="btn ghost" data-wback>Atrás</button><button class="btn primary" id="w2b" disabled>Seguir</button></div>
   </div>
 
-  <div class="step" data-w="3">
+  <div class="step" data-w="5"><div id="autBox"></div></div>
+
+  <div class="step" data-w="6">
+    <div id="autFb"></div>
     <p class="q">¿Qué tan claro tienes hoy lo que harás después de 4° medio?</p>
     <p class="hint">Es normal que suba, que baje o que se mantenga. Explorar a veces abre más preguntas, y eso también es avanzar.</p>
     <div class="slider"><div class="sv" id="clar2V">5</div><input type="range" id="clar2" min="0" max="10" value="5" aria-label="Claridad de 0 a 10"><div class="sl"><span>Niebla total</span><span>Lo tengo muy claro</span></div></div>
@@ -328,7 +369,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     <div class="nav"><button class="btn ghost" data-wback>Atrás</button><button class="btn gold" id="w3b">Terminar la Semana 2</button></div>
   </div>
 
-  <div class="step" data-w="4"><div id="w2fin"></div></div>
+  <div class="step" data-w="7"><div id="w2fin"></div></div>
 </div></main>
 
 <!-- ============ PERFIL ============ -->
@@ -360,7 +401,6 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
   <div class="read"><h3>Lo que pasa a esta edad</h3><p>No saber qué estudiar a los 17 años es normal. En psicología se distingue entre el joven que <strong>no ha explorado</strong> y el que <strong>está explorando</strong>. Lo preocupante no es la duda: es decidir sin haber explorado, eligiendo solo por lo que otros esperan, por la plata o para irse lejos de casa.</p></div>
   <div class="read"><h3>Tres trampas frecuentes</h3><ul><li><strong>Decidir por él o ella.</strong> La carrera elegida para cumplirle a otro es la que más se abandona.</li><li><strong>Hablar solo de plata.</strong> Importa, pero sin sentido personal no sostiene cinco años de estudio.</li><li><strong>Dejar el tema para enero.</strong> Con los puntajes encima se decide con apuro y sin información.</li></ul></div>
   <div class="read"><h3>Tres datos prácticos que conviene saber</h3><ul>
-    <li><strong>FUAS:</strong> es el formulario para postular a Gratuidad, becas y créditos. Para estudiar en 2027 se llena hasta el <strong>22 de octubre de 2026</strong>.</li>
     <li><strong>Gratuidad:</strong> cubre al 60% de los hogares de menores ingresos, pero <strong>solo en instituciones adscritas</strong>. Si su hijo la obtiene y se matricula en una institución no adscrita, no la puede usar.</li>
     <li><strong>Duración real:</strong> una carrera profesional de 10 semestres dura en promedio 13. Conviene presupuestar más tiempo del que dice la malla.</li></ul></div>
   <div class="read" style="background:var(--goldsoft);border-color:#e8d9a8"><h3>Conversación puente de esta semana</h3><p class="quote" style="font-size:1.12rem">"¿Qué espera cada uno de nosotros de esta decisión?"</p><p class="small muted" style="margin:0">Elijan un momento tranquilo. Usted también responde la pregunta.</p></div>
@@ -393,7 +433,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
 const SUPABASE_URL="https://kbvfqooclspbugfiehma.supabase.co";
 const SUPABASE_KEY="sb_publishable_SsVm__pDUG6PfxW-k0yzYQ_OBT1sqFW";
 const KEY="radar_vocacional_v2";
-const APP_V="mvp-4",INST_V="r1-v1";
+const APP_V="mvp-5",INST_V="r2-v1";
 const CARRERAS_RESPALDO=[{"n":"Medicina","t":"U","c":"ISR","np":22,"emp":91,"ret":96,"dr":15.1,"ing":3500000,"ar":9980000,"df":14,"m":[{"i":"U. Autónoma De Chile","s":"Talca","ar":10621000,"paes":899,"p":[10,20,35,25,0,0,10]},{"i":"U. Católica del Maule","s":"Talca","ar":10453000,"paes":884,"p":[20,30,10,25,0,0,15]},{"i":"U. de Talca","s":"Talca","ar":10324000,"paes":864,"p":[20,30,10,25,0,0,15]}]},{"n":"Enfermería","t":"U","c":"SIC","np":43,"emp":79,"ret":89,"dr":12.1,"ing":1750000,"ar":5580000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6058000,"paes":680,"p":[10,40,15,20,0,0,15]},{"i":"U. de Talca","s":"Talca","ar":5983000,"paes":669,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5279000,"paes":667,"p":[10,20,35,25,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":5616000,"paes":632,"p":[10,10,35,35,0,10,10]}]},{"n":"Kinesiología","t":"U","c":"SIR","np":38,"emp":53,"ret":88,"dr":12.3,"ing":1350000,"ar":5550000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5983000,"paes":649,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5324000,"paes":648,"p":[10,20,30,30,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":6058000,"paes":644,"p":[10,40,15,20,0,0,15]},{"i":"U. Santo Tomás","s":"Talca","ar":5347000,"paes":630,"p":[10,10,35,35,0,10,10]}]},{"n":"Psicología","t":"U","c":"SIA","np":44,"emp":62,"ret":90,"dr":11.5,"ing":1150000,"ar":5110000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6222000,"paes":689,"p":[20,30,20,20,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":5822000,"paes":648,"p":[10,40,20,20,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5097000,"paes":647,"p":[10,30,40,10,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5822000,"paes":640,"p":[10,40,20,20,0,10,10]}]},{"n":"Odontología","t":"U","c":"IRS","np":20,"emp":65,"ret":90,"dr":14.9,"ing":1750000,"ar":9520000,"df":12,"m":[{"i":"U. de Talca","s":"Talca","ar":9384000,"paes":null,"p":[20,30,15,20,0,0,15]}]},{"n":"Química y Farmacia","t":"U","c":"ICS","np":11,"emp":99,"ret":91,"dr":14.1,"ing":2350000,"ar":5790000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":5372000,"paes":762,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5258000,"paes":705,"p":[10,25,25,30,0,10,10]},{"i":"U. de Talca","s":"Talca","ar":6990000,"paes":null,"p":[20,30,10,25,0,0,15]}]},{"n":"Nutrición y Dietética","t":"U","c":"ISE","np":27,"emp":46,"ret":81,"dr":12.3,"ing":1150000,"ar":5090000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5342000,"paes":610,"p":[20,30,10,20,0,0,20]},{"i":"U. Santo Tomás","s":"Talca","ar":4822000,"paes":594,"p":[10,10,35,35,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5196000,"paes":588,"p":[10,40,15,20,0,0,15]}]},{"n":"Obstetricia y Puericultura","t":"U","c":"SIR","np":15,"emp":73,"ret":93,"dr":12.4,"ing":1650000,"ar":5800000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5397000,"paes":702,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5793000,"paes":694,"p":[10,20,35,25,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5089000,"paes":645,"p":[10,40,15,20,0,0,15]}]},{"n":"Tecnología Médica","t":"U","c":"IRC","np":21,"emp":73,"ret":87,"dr":12.7,"ing":1750000,"ar":5910000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6032000,"paes":701,"p":[10,40,15,20,0,0,15]},{"i":"U. de Talca","s":"Talca","ar":5958000,"paes":697,"p":[20,30,10,20,0,0,20]}]},{"n":"Fonoaudiología","t":"U","c":"SIA","np":25,"emp":43,"ret":83,"dr":12.1,"ing":1050000,"ar":5500000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5983000,"paes":571,"p":[20,30,20,20,0,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":4940000,"paes":564,"p":[10,30,30,20,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":4840000,"paes":559,"p":[10,10,35,35,0,10,10]}]},{"n":"Terapia Ocupacional","t":"U","c":"SIR","np":18,"emp":50,"ret":90,"dr":11.6,"ing":1250000,"ar":5020000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5642000,"paes":619,"p":[20,30,15,25,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5089000,"paes":597,"p":[10,30,35,15,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5409000,"paes":587,"p":[10,40,20,20,0,10,10]}]},{"n":"Medicina Veterinaria","t":"U","c":"IRS","np":11,"emp":66,"ret":88,"dr":15,"ing":1350000,"ar":6430000,"df":10,"m":[{"i":"U. Santo Tomás","s":"Talca","ar":6495000,"paes":680,"p":[10,10,30,40,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":6209000,"paes":651,"p":[10,40,15,15,0,0,20]}]},{"n":"Derecho","t":"U","c":"EIS","np":31,"emp":69,"ret":85,"dr":16.3,"ing":1850000,"ar":5420000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6628000,"paes":698,"p":[20,30,25,10,0,15,0]},{"i":"U. Católica del Maule","s":"Talca","ar":5762000,"paes":646,"p":[10,40,25,10,0,15,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5334000,"paes":621,"p":[10,30,40,10,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":5430000,"paes":551,"p":[10,10,40,20,0,20,20]}]},{"n":"Trabajo Social","t":"U","c":"SEI","np":32,"emp":63,"ret":81,"dr":11.3,"ing":1050000,"ar":3680000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4436000,"paes":580,"p":[10,40,25,10,0,15,0]},{"i":"U. Católica del Maule","s":"Curicó","ar":4436000,"paes":562,"p":[10,40,25,10,0,15,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3772000,"paes":536,"p":[10,30,40,10,0,10,10]}]},{"n":"Periodismo","t":"U","c":"AES","np":24,"emp":65,"ret":87,"dr":11.6,"ing":1350000,"ar":5050000,"df":9,"m":[{"i":"U. Autónoma De Chile","s":"Talca","ar":5257000,"paes":573,"p":[10,30,40,10,0,10,10]}]},{"n":"Publicidad","t":"U","c":"EAS","np":10,"emp":72,"ret":91,"dr":9.6,"ing":1250000,"ar":5250000,"df":8,"m":[]},{"n":"Sociología","t":"U","c":"ISA","np":11,"emp":57,"ret":77,"dr":12.9,"ing":1350000,"ar":4870000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":5100000,"paes":null,"p":[10,40,15,25,0,10,0]}]},{"n":"Ciencias Políticas","t":"U","c":"IES","np":7,"emp":56,"ret":83,"dr":11.5,"ing":1550000,"ar":4740000,"df":10,"m":[]},{"n":"Arquitectura","t":"U","c":"AIR","np":22,"emp":59,"ret":85,"dr":15.1,"ing":1350000,"ar":5840000,"df":11,"m":[{"i":"U. de Talca","s":"Talca","ar":6845000,"paes":688,"p":[20,30,15,25,0,10,0]},{"i":"U. Católica del Maule","s":"Talca","ar":6183000,"paes":661,"p":[10,40,15,25,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5409000,"paes":620,"p":[10,25,25,30,0,10,10]}]},{"n":"Diseño","t":"U","c":"ARE","np":9,"emp":54,"ret":89,"dr":12.2,"ing":1450000,"ar":5710000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5887000,"paes":null,"p":[20,30,20,20,0,10,10]}]},{"n":"Diseño Gráfico","t":"IP","c":"ARE","np":5,"emp":40,"ret":70,"dr":10.2,"ing":950000,"ar":3110000,"df":8,"m":[{"i":"IP Inacap","s":"Curicó","ar":3288000,"paes":null,"p":null},{"i":"IP Santo Tomás","s":"Talca","ar":2944000,"paes":null,"p":null}]},{"n":"Comunicación Audiovisual y/o Multimedia","t":"U","c":"AER","np":4,"emp":48,"ret":84,"dr":11.3,"ing":1300000,"ar":4590000,"df":9,"m":[]},{"n":"Ingeniería Civil en Computación e Informática","t":"U","c":"ICR","np":21,"emp":88,"ret":85,"dr":14.2,"ing":2750000,"ar":5650000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6183000,"paes":727,"p":[10,40,10,25,5,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5193000,"paes":623,"p":[10,30,20,25,5,10,10]},{"i":"U. de Talca","s":"Curicó","ar":6222000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Ingeniería en Computación e Informática","t":"IP","c":"ICR","np":6,"emp":78,"ret":75,"dr":10.1,"ing":1550000,"ar":3260000,"df":8,"m":[{"i":"IP Inacap","s":"Talca","ar":3352000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":3352000,"paes":null,"p":null},{"i":"IP Santo Tomás","s":"Talca","ar":2954000,"paes":null,"p":null}]},{"n":"Técnico en Computación e Informática","t":"CFT","c":"RIC","np":5,"emp":52,"ret":69,"dr":6.2,"ing":1200000,"ar":2360000,"df":5,"m":[{"i":"CFT San Agustín","s":"Talca","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Cauquenes","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Linares","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Constitución","ar":2910000,"paes":null,"p":null}]},{"n":"Ingeniería Civil Industrial","t":"U","c":"EIC","np":34,"emp":85,"ret":88,"dr":14.4,"ing":2150000,"ar":5660000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6058000,"paes":725,"p":[10,40,10,25,5,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5193000,"paes":646,"p":[10,30,20,25,5,10,10]},{"i":"U. de Talca","s":"Talca","ar":6222000,"paes":null,"p":[20,30,10,20,10,0,10]},{"i":"U. de Talca","s":"Curicó","ar":6222000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Ingeniería Comercial","t":"U","c":"ECI","np":40,"emp":76,"ret":82,"dr":12.6,"ing":1750000,"ar":5170000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5820000,"paes":674,"p":[20,30,10,30,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":5327000,"paes":628,"p":[10,40,15,25,0,10,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5201000,"paes":584,"p":[10,30,20,30,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":4929000,"paes":569,"p":[10,10,30,40,0,10,10]}]},{"n":"Contador Auditor","t":"U","c":"CEI","np":25,"emp":84,"ret":84,"dr":11.6,"ing":1450000,"ar":4390000,"df":8,"m":[{"i":"U. de Talca","s":"Talca","ar":5293000,"paes":686,"p":[20,30,10,30,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":4794000,"paes":632,"p":[10,40,15,25,0,10,0]},{"i":"U. Católica del Maule","s":"Talca","ar":4794000,"paes":612,"p":[10,40,15,25,0,10,0]}]},{"n":"Técnico en Contabilidad General","t":"IP","c":"CEI","np":8,"emp":70,"ret":66,"dr":6.9,"ing":1150000,"ar":2410000,"df":5,"m":[{"i":"IP Inacap","s":"Talca","ar":2796000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2280000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2190000,"paes":null,"p":null}]},{"n":"Ingeniería Civil Eléctrica","t":"U","c":"RIC","np":10,"emp":92,"ret":83,"dr":15.5,"ing":2750000,"ar":6630000,"df":10.5,"m":[{"i":"U. de Talca","s":"Curicó","ar":6493000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Ingeniería en Electricidad","t":"IP","c":"RIC","np":6,"emp":87,"ret":76,"dr":10.9,"ing":1650000,"ar":2820000,"df":8,"m":[{"i":"IP Inacap","s":"Talca","ar":3312000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2590000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2320000,"paes":null,"p":null}]},{"n":"Técnico en Electricidad y Electricidad Industrial","t":"CFT","c":"RIC","np":5,"emp":77,"ret":68,"dr":6.3,"ing":1250000,"ar":2320000,"df":5,"m":[{"i":"CFT San Agustín","s":"Talca","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Linares","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Constitución","ar":2910000,"paes":null,"p":null},{"i":"CFT de la Región del Maule","s":"Linares","ar":2413000,"paes":null,"p":null}]},{"n":"Ingeniería Civil en Minas","t":"U","c":"RIE","np":13,"emp":80,"ret":81,"dr":15.3,"ing":3250000,"ar":6110000,"df":10,"m":[{"i":"U. de Talca","s":"Curicó","ar":6493000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Técnico en Minería","t":"CFT","c":"RCI","np":3,"emp":78,"ret":68,"dr":6.9,"ing":1650000,"ar":2390000,"df":5,"m":[]},{"n":"Ingeniería Civil Mecánica","t":"U","c":"RIC","np":12,"emp":84,"ret":77,"dr":16.1,"ing":2750000,"ar":6420000,"df":10,"m":[{"i":"U. de Talca","s":"Curicó","ar":6493000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Técnico en Mecánica Automotriz","t":"IP","c":"RCI","np":4,"emp":64,"ret":68,"dr":6.1,"ing":1050000,"ar":2960000,"df":4,"m":[{"i":"IP Inacap","s":"Talca","ar":3019000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":3019000,"paes":null,"p":null}]},{"n":"Construcción Civil","t":"U","c":"REC","np":7,"emp":80,"ret":82,"dr":12,"ing":1850000,"ar":3850000,"df":5,"m":[]},{"n":"Agronomía","t":"U","c":"IRE","np":12,"emp":64,"ret":81,"dr":14.3,"ing":1550000,"ar":5440000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6465000,"paes":624,"p":[20,30,10,30,0,0,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5848000,"paes":606,"p":[10,40,15,20,0,0,15]},{"i":"U. Santo Tomás","s":"Talca","ar":5633000,"paes":null,"p":[10,10,30,40,0,10,10]}]},{"n":"Técnico Agropecuario","t":"IP","c":"RIC","np":3,"emp":49,"ret":76,"dr":6.6,"ing":950000,"ar":2950000,"df":4,"m":[{"i":"IP Inacap","s":"Talca","ar":2952000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":2952000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2400000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2220000,"paes":null,"p":null}]},{"n":"Ingeniería Forestal","t":"U","c":"RIE","np":2,"emp":82,"ret":73,"dr":12.8,"ing":1650000,"ar":6920000,"df":10,"m":[]},{"n":"Geología","t":"U","c":"IRE","np":9,"emp":69,"ret":83,"dr":16.8,"ing":2750000,"ar":5770000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":5664000,"paes":678,"p":[10,40,10,25,0,0,15]}]},{"n":"Bioquímica","t":"U","c":"IRC","np":7,"emp":63,"ret":82,"dr":14.8,"ing":1450000,"ar":6470000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6825000,"paes":710,"p":[20,30,10,25,0,0,15]}]},{"n":"Pedagogía en Educación Básica","t":"U","c":"SAC","np":27,"emp":90,"ret":89,"dr":10.6,"ing":1150000,"ar":4120000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4442000,"paes":616,"p":[10,40,20,20,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":4442000,"paes":613,"p":[10,40,20,20,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3894000,"paes":576,"p":[10,30,25,25,0,10,10]},{"i":"U. de Talca","s":"Linares","ar":4559000,"paes":568,"p":[20,30,30,10,0,10,10]}]},{"n":"Pedagogía en Matemáticas y Computación","t":"U","c":"SIC","np":12,"emp":91,"ret":76,"dr":11.7,"ing":1350000,"ar":4030000,"df":10,"m":[{"i":"U. de Talca","s":"Linares","ar":4559000,"paes":null,"p":[20,30,10,25,5,0,10]},{"i":"U. Católica del Maule","s":"Talca","ar":4356000,"paes":null,"p":[10,40,10,25,5,0,10]}]},{"n":"Pedagogía en Educación Física","t":"U","c":"SRE","np":26,"emp":57,"ret":86,"dr":11.1,"ing":1050000,"ar":4240000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4356000,"paes":611,"p":[10,40,20,20,0,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3803000,"paes":588,"p":[10,30,35,15,0,10,10]}]},{"n":"Pedagogía en Historia, Geografía y Ciencias Sociales","t":"U","c":"SAI","np":14,"emp":74,"ret":84,"dr":11.5,"ing":1100000,"ar":3980000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4278000,"paes":632,"p":[10,40,20,10,0,20,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3894000,"paes":null,"p":[10,30,40,10,0,10,10]}]},{"n":"Pedagogía en Educación de Párvulos","t":"U","c":"SAC","np":30,"emp":69,"ret":87,"dr":10.1,"ing":1050000,"ar":3960000,"df":9,"m":[{"i":"U. Católica del Maule","s":"Curicó","ar":4278000,"paes":562,"p":[10,40,20,20,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":4278000,"paes":553,"p":[10,40,20,20,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3926000,"paes":551,"p":[10,30,35,15,0,10,10]}]},{"n":"Pedagogía en Idiomas","t":"U","c":"SAE","np":26,"emp":63,"ret":86,"dr":11.7,"ing":1050000,"ar":4280000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4377000,"paes":639,"p":[10,40,25,15,0,10,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3897000,"paes":579,"p":[10,30,40,10,0,10,10]},{"i":"U. de Talca","s":"Linares","ar":4559000,"paes":null,"p":[20,30,30,10,0,10,0]}]},{"n":"Técnico en Enfermería","t":"IP","c":"SRC","np":9,"emp":65,"ret":70,"dr":5.9,"ing":850000,"ar":2870000,"df":5,"m":[{"i":"IP Inacap","s":"Talca","ar":2948000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2860000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2900000,"paes":null,"p":null}]},{"n":"Técnico en Gastronomía y Cocina","t":"IP","c":"RAE","np":3,"emp":45,"ret":75,"dr":6,"ing":750000,"ar":3910000,"df":4,"m":[{"i":"IP Inacap","s":"Talca","ar":3911000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":3911000,"paes":null,"p":null}]},{"n":"Ingeniería en Prevención de Riesgos","t":"IP","c":"RCE","np":7,"emp":79,"ret":62,"dr":11.2,"ing":1250000,"ar":2460000,"df":8,"m":[{"i":"IP Aiep","s":"Curicó","ar":2560000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2280000,"paes":null,"p":null}]},{"n":"Técnico en Logística","t":"IP","c":"CRE","np":5,"emp":78,"ret":68,"dr":5.8,"ing":1150000,"ar":2580000,"df":5,"m":[{"i":"IP Inacap","s":"Talca","ar":2916000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2410000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2120000,"paes":null,"p":null}]},{"n":"Animación Digital","t":"IP","c":"AIR","np":3,"emp":31,"ret":68,"dr":9.9,"ing":950000,"ar":3880000,"df":8,"m":[]},{"n":"Ingeniería en Marketing","t":"IP","c":"EAC","np":1,"emp":60,"ret":80,"dr":9.4,"ing":1250000,"ar":3260000,"df":8,"m":[]},{"n":"Administración Pública","t":"U","c":"ECS","np":15,"emp":70,"ret":85,"dr":11.3,"ing":1450000,"ar":4550000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5198000,"paes":642,"p":[20,30,20,20,0,10,0]},{"i":"U. Católica del Maule","s":"Curicó","ar":4854000,"paes":585,"p":[10,40,20,20,0,10,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":4927000,"paes":550,"p":[10,30,30,20,0,10,10]}]},{"n":"Actuación y Teatro","t":"U","c":"AES","np":4,"emp":25,"ret":86,"dr":11.5,"ing":null,"ar":5360000,"df":9,"m":[]},{"n":"Música, Canto o Danza","t":"U","c":"ASE","np":5,"emp":48,"ret":88,"dr":12.9,"ing":null,"ar":5290000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5887000,"paes":649,"p":[10,10,10,10,0,10,0]}]},{"n":"Ingeniería en Recursos Humanos","t":"IP","c":"ESC","np":3,"emp":81,"ret":78,"dr":9.7,"ing":1250000,"ar":2730000,"df":8,"m":[]},{"n":"Técnico en Deporte, Recreación y Preparación Física","t":"IP","c":"SRE","np":4,"emp":43,"ret":74,"dr":6.5,"ing":850000,"ar":2460000,"df":4,"m":[{"i":"IP Aiep","s":"Curicó","ar":2480000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2520000,"paes":null,"p":null}]},{"n":"Técnico Veterinario","t":"IP","c":"RSI","np":1,"emp":43,"ret":83,"dr":6.3,"ing":750000,"ar":3060000,"df":5,"m":[]},{"n":"Ingeniería en Sonido","t":"IP","c":"RAI","np":2,"emp":45,"ret":73,"dr":10,"ing":1000000,"ar":3190000,"df":8,"m":[]},{"n":"Técnico en Instrumentación, Automatización y Control Industrial","t":"CFT","c":"RIC","np":5,"emp":78,"ret":57,"dr":7,"ing":1450000,"ar":2480000,"df":5,"m":[{"i":"CFT San Agustín","s":"Linares","ar":2910000,"paes":null,"p":null}]},{"n":"Técnico en Laboratorio Clínico","t":"IP","c":"IRC","np":3,"emp":51,"ret":79,"dr":5.6,"ing":850000,"ar":2820000,"df":5,"m":[]},{"n":"Ingeniería en Comercio Exterior","t":"IP","c":"ECI","np":3,"emp":82,"ret":75,"dr":10,"ing":1300000,"ar":2630000,"df":8,"m":[]}];
 let CARRERAS=CARRERAS_RESPALDO, CATALOGO="respaldo";
 const REGIONES=["Arica y Parinacota","Tarapacá","Antofagasta","Atacama","Coquimbo","Valparaíso","Metropolitana","Lib. Gral. B. O'Higgins","Maule","Ñuble","Biobío","La Araucanía","Los Ríos","Los Lagos","Aysén","Magallanes"];
@@ -403,14 +443,25 @@ async function cargarCatalogo(){try{const rows=await sb("carreras_genericas?sele
 
 const DIMS={R:"Operaciones y terreno",I:"Investigación y lógica",A:"Creación y comunicación",S:"Personas y cuidado",E:"Negocios y liderazgo",C:"Organización y datos"};
 const DSHORT={R:"Terreno",I:"Investigación",A:"Creación",S:"Personas",E:"Negocios",C:"Organización"};
-const ACTS=[["R","Armar, reparar o construir algo con tus manos"],["I","Investigar por qué pasa algo hasta entenderlo de verdad"],["A","Crear algo original: un diseño, un video, música o un texto"],["S","Explicarle algo a alguien hasta que lo entienda"],["E","Convencer a un grupo de hacer algo o liderar un proyecto"],["C","Ordenar información o planillas para que todo cuadre"],["R","Trabajar al aire libre o en movimiento, no sentado todo el día"],["I","Resolver un problema difícil paso a paso"],["A","Expresar una idea de una forma distinta a la de los demás"],["S","Acompañar a alguien que lo está pasando mal"],["E","Armar un negocio o emprendimiento propio"],["C","Seguir un plan con detalles, fechas y procesos claros"]];
+const ACTS=[["R", "Construir muebles de cocina", "IP_R1"], ["I", "Desarrollar un nuevo medicamento", "IP_I1"], ["A", "Escribir libros u obras de teatro", "IP_A1"], ["S", "Ayudar a personas con problemas personales o emocionales", "IP_S1"], ["E", "Dirigir un área dentro de una empresa grande", "IP_E1"], ["C", "Instalar programas en los computadores de una red grande", "IP_C1"], ["R", "Reparar electrodomésticos", "IP_R2"], ["I", "Investigar formas de reducir la contaminación del agua", "IP_I2"], ["A", "Componer música o hacer arreglos musicales", "IP_A2"], ["S", "Orientar a personas sobre su futuro laboral", "IP_S2"], ["E", "Crear tu propio negocio", "IP_E2"], ["C", "Hacer cálculos con calculadora o planilla", "IP_C2"], ["R", "Armar piezas o componentes electrónicos", "IP_R3"], ["I", "Hacer experimentos químicos", "IP_I3"], ["A", "Crear efectos especiales para películas", "IP_A3"], ["S", "Hacer terapia de rehabilitación con pacientes", "IP_S3"], ["E", "Negociar contratos comerciales", "IP_E3"], ["C", "Llevar el registro de despachos y recepciones de mercadería", "IP_C3"], ["R", "Manejar un camión para repartir encomiendas a oficinas y casas", "IP_R4"], ["I", "Analizar muestras de sangre con un microscopio", "IP_I4"], ["A", "Pintar escenografías para obras de teatro", "IP_A4"], ["S", "Hacer voluntariado en una fundación u ONG", "IP_S4"], ["E", "Lanzar al mercado una nueva línea de ropa", "IP_E4"], ["C", "Hacer inventario de insumos con un lector o dispositivo portátil", "IP_C4"], ["R", "Revisar la calidad de piezas antes de despacharlas", "IP_R5"], ["I", "Crear una forma de predecir mejor el clima", "IP_I5"], ["A", "Escribir guiones para películas o series", "IP_A5"], ["S", "Hacer clases en un liceo o colegio", "IP_S5"], ["E", "Vender productos en una tienda del retail", "IP_E5"], ["C", "Timbrar, ordenar y repartir la correspondencia de una organización", "IP_C5"]];
 const ESTADOS=[{id:"difusion",e:"🌫️",t:"No tengo idea y la verdad no lo he pensado mucho."},{id:"moratoria",e:"🧭",t:"Estoy explorando varias opciones, pero no me decido."},{id:"hipoteca",e:"📌",t:"Ya sé qué voy a estudiar, aunque no lo he explorado mucho (o es lo que esperan de mí)."},{id:"logro",e:"🎯",t:"Ya decidí, después de averiguar y pensarlo harto."}];
+const IP_ANCLAS=[["😣","No me gustaría nada"],["🙁","No me gustaría"],["😐","No estoy seguro o segura"],["🙂","Me gustaría"],["😍","Me gustaría mucho"]];
+const DESC_ANCLAS=["No me describe para nada","Me describe poco","Más o menos","Me describe bastante","Me describe muy bien"];
+const EXP_ANCLAS=["0 veces","1 vez","2 veces","3 o 4 veces","5 o más veces"];
+const EXP_ITEMS=[["EXP01","Busqué información sobre una carrera, un CFT, un instituto o una universidad (en internet, en redes o en mifuturo.cl)."],["EXP02","Revisé qué puntaje pide alguna carrera o cuánto pesa cada prueba (ponderaciones)."],["EXP03","Busqué información sobre Gratuidad, becas o créditos."],["EXP04","Conversé con alguien que estudia o trabaja en algo que me interesa (en persona, por mensaje o por videollamada)."],["EXP05","Le pregunté sobre mis opciones a un profe, al orientador u otro adulto de confianza."],["EXP06","Me puse a ver un video, una charla o un podcast sobre cómo es estudiar o trabajar en algo que me interesa."],["EXP07","Fui a una feria, visita, clase abierta o taller de alguna carrera (presencial u online)."],["EXP08","Probé hacer algo relacionado con lo que me interesa (un curso, un taller, un proyecto o un voluntariado)."],["EXP09","Me puse a pensar qué habilidades o gustos míos me servirían en distintas carreras."],["EXP10","Hice una lista o comparé lo que me gusta y lo que no de cada opción."]];
+const SEN_ITEMS=[["SEN01","Quiero estudiar o trabajar en algo que sirva para ayudar a otras personas."],["SEN02","Me importa que mi trabajo, el día de mañana, le aporte algo a mi comuna o a mi región."],["SEN03","Para mí, ayudar a otros con mi trabajo no es lo principal.",1],["SEN04","Quiero estudiar o trabajar en algo que tenga que ver con cómo soy yo."],["SEN05","Me gustaría un trabajo donde pueda ser yo mismo o yo misma."],["SEN06","Tengo claro para qué quiero estudiar o trabajar."],["SEN07","Sé qué quiero aportar con mi trabajo (a otros, a mi familia o a algo que me importe)."],["SEN08","Todavía no sé qué hace que un trabajo valga la pena para mí.",1],["SEN09","Estoy tratando de descubrir para qué quiero estudiar o trabajar."],["SEN10","Me pongo a pensar qué vida quiero tener cuando sea adulto o adulta y trabaje."]];
+const AUT_ITEMS=[["AUT01","Si pienso en una opción que me atrae, puedo explicar con mis palabras por qué."],["AUT02","Sé qué cosas de una carrera me entusiasman y cuáles no tanto."],["AUT03","Si me preguntan por qué prefiero una opción, me cuesta responder.",1],["AUT04","Las opciones en que estoy pensando las elegí por razones mías."],["AUT05","Me doy cuenta cuando una opción me tienta solo porque está de moda o porque la eligen mis amigos."],["AUT06","Mis opciones dependen más de lo que piensan otros que de lo que yo quiero.",1],["AUT07","Cada cierto tiempo reviso si mis razones para elegir siguen teniendo sentido."],["AUT08","Sé qué información me falta para decidir (por ejemplo, puntajes, costos o cómo es el trabajo)."],["AUT09","Cuando cambio de opinión sobre qué estudiar o hacer, entiendo qué me hizo cambiar."],["AUT10","Le doy vueltas y vueltas a qué voy a hacer, sin avanzar.",1]];
+const VALORES=[["VAL_LOG","Logro","Usar lo que mejor sé hacer y ver resultados concretos de mi trabajo."],["VAL_IND","Independencia","Trabajar a mi manera, tomar mis propias decisiones y tener iniciativa."],["VAL_REC","Reconocimiento","Poder avanzar, liderar y que valoren lo que hago."],["VAL_REL","Relaciones","Ayudar a otros y trabajar con compañeros en buen ambiente."],["VAL_APO","Apoyo","Tener jefaturas que me respalden y me formen."],["VAL_CON","Condiciones","Estabilidad, buen sueldo y condiciones de trabajo seguras."]];
+const ID_TXT={difusion:"Estás al comienzo del camino. Esta ruta es justo para explorar.",moratoria:"Has explorado harto. Ahora toca ordenar lo que encontraste.",hipoteca:"Tienes una opción en mente. Vale la pena ponerla a prueba con información real y con una alternativa.",logro:"Has explorado y tienes una opción. Vamos a afinarla y a armar el plan."};
+const SEN_FB=["Hoy el «para qué» de tu futuro está bastante abierto. Es lo más común a tu edad: muchas personas lo descubren haciendo cosas, no solo pensando. Una pregunta para esta semana: ¿en qué momento sentiste que algo que hiciste valió la pena?","Tienes algunas pistas de lo que te importa en un trabajo. Intenta ponerles nombre: si tu futuro trabajo pudiera darte, o permitirte dar, una sola cosa, ¿cuál sería?","Hay algo que buscas con bastante claridad. Úsalo como brújula al mirar carreras: ¿esta opción me acerca a eso? Suele haber varios caminos para llegar al mismo «para qué»."];
+const AUT_FB=["Hoy te cuesta poner en palabras por qué te atrae lo que te atrae. Es una habilidad que se entrena. Prueba esto: elige una opción y completa tres veces la frase «me atrae porque…».","Reconoces varias de tus razones. Un paso más: separa las que son tuyas de las que vienen de afuera (amigos, redes, lo que «se espera»). Las dos pueden pesar; lo importante es saber cuál es cuál.","Tienes bastante claro por qué piensas lo que piensas. Sigue revisándolo: las buenas decisiones se actualizan cuando aparece información nueva."];
+const AUT_RUM="Si sientes que le das vueltas sin avanzar, un paso pequeño y concreto suele servir más que otra vuelta de pensamiento. ¿Cuál podría ser el tuyo esta semana?";
 const ESTADO_TXT={difusion:{n:"En la niebla",d:"Reconocer que no sabes es el primer paso real, y acabas de darlo. La niebla no se disipa pensando más fuerte: se disipa explorando."},moratoria:{n:"Explorando",d:"Estás en el mejor lugar para decidir bien: tienes preguntas abiertas y opciones sobre la mesa. El riesgo es quedarse dando vueltas; por eso trabajaremos con misiones concretas."},hipoteca:{n:"Con una decisión por revisar",d:"Tener una opción es bueno. Vale la pena comprobar que sea tuya: que la hayas explorado y que no sea solo lo que otros esperan."},logro:{n:"Con rumbo",d:"Exploraste y decidiste: eso es valioso. Ahora toca aterrizar tu decisión con datos y armar tu plan B."}};
 const FACT_ESTADO={difusion:["Estar en la niebla es lo más común","La mayoría de los estudiantes de 3° y 4° medio no tiene claro qué estudiar. Lo que marca la diferencia no es saber desde chico, sino explorar antes de matricularse: casi 1 de cada 4 estudiantes no sigue en su institución al segundo año.","SIES: retención de primer año 77,9%, cohorte 2025"],moratoria:["Explorar es la mejor señal","Quienes exploran antes de decidir eligen con más información. Un buen comienzo: compara la duración real de las carreras que te interesan. Por ejemplo, Ingeniería Civil en Computación dura 14 semestres en la práctica.","mifuturo.cl 2025–2026, duración real promedio"],hipoteca:["Revisar no es dudar de ti","Muchos abandonos vienen de carreras elegidas por lo que otros esperaban. Comprobar que la decisión es tuya ahora es mucho más barato que cambiarse en segundo año.","SIES: retención de primer año 77,9%, cohorte 2025"],logro:["Ahora, el plan B","Incluso con rumbo claro, conviene tener alternativas: la misma área puede estudiarse en universidad, instituto o CFT, con distinta duración y costo. En el explorador puedes compararlas.","mifuturo.cl 2025–2026"]};
-const DIFS=["No sé bien qué me gusta","No conozco las opciones que existen","No entiendo cómo funciona postular (PAES, FUAS, puntajes)","Mi familia espera otra cosa","Me da miedo equivocarme","No sé si me alcanza el puntaje","No sé si podremos pagarlo","Me interesan demasiadas cosas","Siento presión por decidir rápido"];
+const DIFS=["No sé bien qué me gusta","No conozco las opciones que existen","No entiendo cómo funciona postular (PAES, puntajes, becas)","Mi familia espera otra cosa","Me da miedo equivocarme","No sé si me alcanza el puntaje","No sé si podremos pagarlo","Me interesan demasiadas cosas","Siento presión por decidir rápido"];
 const FACT_DIF={
- 2:["Cómo funciona postular, en 3 fechas","PAES: 30 de noviembre al 2 de diciembre de 2026. Resultados: 4 de enero. Postulación: 4 al 7 de enero de 2027. El FUAS (Gratuidad, becas y créditos) se llena antes: para 2027 cierra el 22 de octubre de 2026.","Mineduc y DEMRE, calendario Admisión 2027"],
- 6:["La Gratuidad tiene letra chica","Cubre al 60% de los hogares de menores ingresos, pero solo si estudias en una institución adscrita. Si te la ganas y te matriculas en una que no lo está, no la puedes usar. Antes de matricularte, revisa la institución en gratuidad.cl.","Subsecretaría de Educación Superior, FUAS 2027"],
+ 2:["Cómo funciona postular, en 3 fechas","PAES: 30 de noviembre al 2 de diciembre de 2026. Resultados: 4 de enero. Postulación: 4 al 7 de enero de 2027. Antes de postular, revisa en cada institución si está adscrita a Gratuidad y qué becas ofrece.","DEMRE, calendario Admisión 2027"],
+ 6:["La Gratuidad tiene letra chica","Cubre al 60% de los hogares de menores ingresos, pero solo si estudias en una institución adscrita. Si te la ganas y te matriculas en una que no lo está, no la puedes usar. Antes de matricularte, revisa la institución en gratuidad.cl.","Subsecretaría de Educación Superior"],
  5:["El puntaje no es solo la PAES","Cada carrera pondera distinto tu NEM, tu ranking y cada prueba. En varias universidades del Maule el ranking pesa 30% o 40%: tus notas de enseñanza media cuentan mucho. En el explorador puedes calcular tu puntaje ponderado.","mifuturo.cl 2025–2026, ponderaciones"],
  4:["Equivocarse tiene arreglo, pero sale caro","Casi 1 de cada 4 estudiantes no sigue en su institución al segundo año. Explorar ahora, antes de matricularte, es la forma más barata de reducir ese riesgo.","SIES: retención de primer año 77,9%, cohorte 2025"],
  1:["Hay más caminos de los que crees","Un técnico en electricidad de un CFT estudia 5 semestres y tiene 77% de empleabilidad al primer año. No todo pasa por una carrera universitaria de 5 años.","mifuturo.cl 2025–2026"]
@@ -443,7 +494,11 @@ async function guardar(datos){const prev=load()||{};if(!prev.eval)return "local"
  const r=await rpc("atlas_respuesta",{p_session:s,p_datos:{...datos,consentimiento:true,version:APP_V}});return r&&r.ok?r:false}
 
 /* ---- puntajes y afinidad ---- */
-function perfil(){const p={R:0,I:0,A:0,S:0,E:0,C:0},c={R:0,I:0,A:0,S:0,E:0,C:0};ACTS.forEach((a,i)=>{if(S.acts[i]!=null){p[a[0]]+=S.acts[i];c[a[0]]++}});Object.keys(p).forEach(k=>p[k]=c[k]?Math.round(p[k]/(2*c[k])*100):0);return p}
+function perfil(){if(S.perfilFijo&&Object.keys(S.acts).length<ACTS.length)return {...S.perfilFijo};const p={R:0,I:0,A:0,S:0,E:0,C:0},c={R:0,I:0,A:0,S:0,E:0,C:0};ACTS.forEach((a,i)=>{const v=S.acts[i];if(v!=null){p[a[0]]+=+v;c[a[0]]++}});Object.keys(p).forEach(k=>p[k]=c[k]?Math.round(p[k]/(4*c[k])*100):0);return p}
+function ipDone(){return !!(load()||{}).ipDone||Object.keys(S.acts).length>=ACTS.length}
+function esPlano(p){const v=Object.values(p);return Math.max(...v)-Math.min(...v)<15}
+function mediaEsc(ans,items){let t=0,n=0;items.forEach(([id,_t,inv])=>{const v=ans[id];if(v!=null){t+=inv?6-v:v;n++}});return n?t/n:null}
+function rango3(m){return m==null?1:m<2.5?0:m<3.7?1:2}
 function afinidad(p,code){if(!code)return null;const w={R:0,I:0,A:0,S:0,E:0,C:0};[3,2,1].forEach((v,i)=>{if(code[i])w[code[i]]=v});let d=0,a=0,b=0;for(const k in w){d+=p[k]*w[k];a+=p[k]*p[k];b+=w[k]*w[k]}return a?Math.round(d/Math.sqrt(a*b)*100):0}
 function ranking(p){return CARRERAS.filter(c=>c.c).map(c=>({...c,af:afinidad(p,c.c)})).sort((x,y)=>y.af-x.af||((y.emp??0)-(x.emp??0)))}
 
@@ -464,10 +519,10 @@ function routeCard(c,opts={}){return `<button class="route" data-car="${esc(c.n)
 const VIEWS=["inicio","entrada","retomar","radar","revela","afinar","perfil","semana2","explorar","familia"];
 function route(){let h=(location.hash||"#inicio").slice(1).split("?")[0];if(!VIEWS.includes(h))h="inicio";
  const pv=load()||{};if(["radar","revela","afinar"].includes(h)&&!pv.consent)h="entrada";
- if(h==="entrada"&&pv.consent&&pv.t0!=null)h="radar";
+ if(["radar","revela","afinar"].includes(h)&&pv.consent&&!pv.expDone)h="entrada";
+ if(h==="entrada"&&pv.consent&&pv.t0!=null&&pv.expDone)h="radar";
  if(h==="semana2"&&!pv.completo)h="retomar";
- if(h==="revela"&&Object.keys(S.acts).length<ACTS.length)h="radar";
- if(h==="afinar"&&Object.keys(S.acts).length<ACTS.length)h="radar";
+ if((h==="revela"||h==="afinar")&&!ipDone())h="radar";
  VIEWS.forEach(v=>$("v-"+v).classList.toggle("hidden",v!==h));
  document.querySelectorAll("[data-nav]").forEach(a=>a.classList.toggle("on",a.dataset.nav===h));
  if(h!==lastStep){ev("step_viewed",null,h);lastStep=h;lastT=Date.now()}
@@ -478,20 +533,41 @@ function route(){let h=(location.hash||"#inicio").slice(1).split("?")[0];if(!VIE
 window.addEventListener("hashchange",route);
 
 /* ---- radar rápido ---- */
-function renderSwipe(){const n=Object.keys(S.acts).length;if(n>=ACTS.length){const pv=load()||{};if(!pv.riasecSent){store({...pv,riasecSent:true});ev("riasec_completed",{perfil:perfil(),ms:Date.now()-T0})}location.hash="#revela";return}
- const i=ACTS.findIndex((a,ix)=>S.acts[ix]==null);const a=ACTS[i];
- $("swipeBox").innerHTML=`<div class="swipe"><div><div class="k">${n+1} de ${ACTS.length}</div><div class="a">${a[1]}</div></div>
- <div class="tri3" data-i="${i}"><button data-v="2"><span>👍</span>Me atrae</button><button data-v="1"><span>😐</span>Me da lo mismo</button><button data-v="0"><span>👎</span>No me atrae</button></div></div>`;
- const pct=Math.round(n/ACTS.length*40);$("nitQ").style.width=pct+"%";$("nitQt").textContent="Nitidez "+pct+"%";
- $("liveRadar").innerHTML=radarSVG(perfil(),"s");
- if(n>=4){const p=perfil();const top=Object.entries(p).sort((a,b)=>b[1]-a[1])[0];$("liveTxt").innerHTML=`Por ahora destaca <b>${DIMS[top[0]]}</b>. Sigue: con cada respuesta el radar se enfoca.`}}
-$("swipeBox").addEventListener("click",e=>{const b=e.target.closest("button[data-v]");if(!b)return;S.acts[b.parentElement.dataset.i]=+b.dataset.v;saveLocal();renderSwipe()});
+/* ---- motor de bloques de ítems (una tarjeta por ítem, «No entendí», «Prefiero no responder») ---- */
+const BLK={};let NE=new Set();
+function bloque(box,cfg){const st=BLK[cfg.key]||(BLK[cfg.key]={ans:{...(cfg.ans||{})}});
+ const items=cfg.items;let i=items.findIndex(it=>!(it.id in st.ans));if(i<0)i=items.length;st.i=i;
+ function draw(){if(st.i>=items.length){cfg.onDone&&cfg.onDone(st.ans);return}
+  if(cfg.pauseAt&&cfg.pauseAt.includes(st.i)&&!st["p"+st.i]){box.innerHTML=cfg.pauseHTML(st.i);box.querySelector("[data-cont]").onclick=()=>{st["p"+st.i]=1;draw()};return}
+  const it=items[st.i];const yaNE=NE.has(it.code||it.id);
+  box.innerHTML=`<div class="bq"><div class="k">${st.i+1} de ${items.length}</div><p class="it">${esc(it.t)}</p><div class="bopts">${cfg.anclas.map((a,ix)=>{const v=cfg.valores?cfg.valores[ix]:ix;const sel=st.ans[it.id]===v?" sel":"";
+   return `<button data-v="${v}" class="${sel}">${cfg.icon?`<span class="ic">${a[0]}</span><span>${a[1]}</span>`:cfg.barras?`<span class="lv">${[0,1,2,3,4].map(k=>`<i class="${k<=ix?"on":""}"></i>`).join("")}</span><span>${a}</span>`:`<span>${a}</span>`}</button>`}).join("")}${cfg.pnr?`<button data-v="pnr" class="pnr">Prefiero no responder</button>`:""}</div>
+   <div class="bfoot"><button class="lnk" data-back ${st.i===0?"hidden":""}>← Anterior</button><button class="lnk" data-ne>${yaNE?"Marcaste que no se entendió":"No entendí esta pregunta"}</button></div>
+   <div class="nemsg ${yaNE?"":"hidden"}">Gracias: nos sirve para mejorar esta pregunta. Responde como mejor puedas o <button class="lnk" data-skip>sáltala</button>.</div>${cfg.enprueba?`<div class="enprueba">NORTEA · cuestionario en prueba</div>`:""}</div>`;
+  box.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>{const v=b.dataset.v==="pnr"?null:+b.dataset.v;st.ans[it.id]=v;cfg.onAnswer&&cfg.onAnswer(it,v,st);st.i++;draw()});
+  box.querySelector("[data-back]").onclick=()=>{st.i=Math.max(0,st.i-1);draw()};
+  box.querySelector("[data-ne]").onclick=()=>{NE.add(it.code||it.id);guardarNE();draw()};
+  const sk=box.querySelector("[data-skip]");if(sk)sk.onclick=()=>{st.ans[it.id]=null;cfg.onAnswer&&cfg.onAnswer(it,null,st);st.i++;draw()};
+  cfg.onDraw&&cfg.onDraw(st)}
+ draw();return st}
+function guardarNE(){const pv=load()||{};store({...pv,ne:[...NE]})}
+const IP_ITEMS=ACTS.map((a,i)=>({id:String(i),code:a[2],t:a[1]}));
+function renderSwipe(){
+ if(ipDone()){const pv=load()||{};if(!pv.riasecSent){store({...pv,riasecSent:true});ev("riasec_completed",{perfil:perfil(),ms:Date.now()-T0})}location.hash="#revela";return}
+ bloque($("swipeBox"),{key:"ip",items:IP_ITEMS,anclas:IP_ANCLAS,icon:true,ans:S.acts,pauseAt:[10,20],
+  pauseHTML:k=>`<div class="bq pausa"><div class="k">${k} de ${ACTS.length}</div>${radarSVG(perfil())}<p style="margin:6px 0 14px">Tu radar va tomando forma. ${k===10?"Faltan 20 actividades para verlo nítido.":"Faltan las últimas 10."}</p><button class="btn primary block" data-cont>Seguir</button></div>`,
+  onAnswer:(it,v)=>{if(v==null)delete S.acts[it.id];else S.acts[it.id]=v;saveLocal()},
+  onDraw:st=>{const k=Object.keys(S.acts).length;const pct=Math.round(k/ACTS.length*40);$("nitQ").style.width=pct+"%";$("nitQt").textContent="Nitidez "+pct+"%";$("liveRadar").innerHTML=radarSVG(perfil(),"s")},
+  onDone:ans=>{S.acts={};Object.entries(ans).forEach(([k,v])=>{if(v!=null)S.acts[k]=v});
+   const faltan=ACTS.length-Object.keys(S.acts).length;const vals=Object.values(S.acts);const aq=vals.length>=28&&vals.filter(v=>v===vals[0]).length>=28;
+   const pv=load()||{};store({...pv,acts:S.acts,ipFaltan:faltan,aquiesc:aq,riasecSent:true,ipDone:true});ev("riasec_completed",{perfil:perfil(),ms:Date.now()-T0,faltan,aquiesc:aq});location.hash="#revela"}});
+ $("liveTxt").textContent="Tu radar se dibuja con cada respuesta. Piensa en si te gustaría hacer la actividad, no en si sabes hacerla o cuánto pagan."}
 
-function renderRevela(){const p=perfil();const rk=ranking(p);const top3=rk.slice(0,3);const corta=rk.find(c=>c.t!=="U"&&!top3.includes(c));
- const td=Object.entries(p).sort((a,b)=>b[1]-a[1]);const plano=td[0][1]-td[5][1]<25;
+function renderRevela(){const p=perfil();const plano=esPlano(p);const rk=plano?[]:ranking(p);const top3=rk.slice(0,3);const corta=rk.find(c=>c.t!=="U"&&!top3.includes(c));
+ const td=Object.entries(p).sort((a,b)=>b[1]-a[1]);
  const best=top3[0];const fact=best&&best.dr&&best.df?`<div class="fact"><b class="t">Dato que nadie te cuenta</b>${esc(best.n)} dura ${String(best.df).replace(".",",")} semestres en el papel, pero sus titulados demoran en promedio <b>${String(best.dr).replace(".",",")} semestres</b>. Planifica con el tiempo real, no con el de la malla.<span class="src">mifuturo.cl 2025–2026</span></div>`:"";
  $("revelaBox").innerHTML=`<div class="rc radar">${radarSVG(p)}<p style="text-align:center;margin:6px 0 0">${plano?"Tus intereses están bastante parejos: la exploración será clave para descubrir qué te mueve más.":`Lo que más te atrae hoy: <b>${DIMS[td[0][0]]}</b> y <b>${DIMS[td[1][0]]}</b>.`}</p></div>
- <h3>3 rutas para empezar a explorar</h3><p class="small muted">Toca una para ver datos, dónde estudiarla en el Maule y calcular tu puntaje.</p>
+ ${plano?`<div class="rc"><h3>Tu radar está parejo</h3><p style="margin:0">Hoy te atraen varias cosas por igual, así que no te vamos a mostrar un ranking: sería adivinar. Explora por áreas en el buscador de carreras, y en las próximas semanas tu radar se irá definiendo.</p></div>`:`<h3>3 rutas para empezar a explorar</h3><p class="small muted">Toca una para ver datos, dónde estudiarla en el Maule y calcular tu puntaje.</p>`}
  ${top3.map(c=>routeCard(c)).join("")}
  ${corta?`<p class="small muted" style="margin:14px 0 6px">Y una ruta más corta que calza contigo:</p>${routeCard(corta,{short:true})}`:""}
  ${fact}
@@ -505,22 +581,31 @@ function showStep(n){S.step=n;document.querySelectorAll("#v-afinar .step").forEa
 document.querySelectorAll("#v-afinar [data-next]").forEach(b=>b.onclick=()=>showStep(S.step+1));
 document.querySelectorAll("#v-afinar [data-back]").forEach(b=>b.onclick=()=>showStep(S.step-1));
 /* ---- entrada: consentimiento y punto de partida (T0) ---- */
-function renderEntrada(){const pv=load()||{};const on=pv.consent?"e1":"e0";["e0","e1"].forEach(id=>$(id).classList.toggle("on",id===on))}
+function renderEntrada(){const pv=load()||{};const on=!pv.consent?"e0":pv.t0==null?"e1":"e2";["e0","e1","e2"].forEach(id=>$(id).classList.toggle("on",id===on));if(on==="e2")runExp()}
+function runExp(){const pv=load()||{};bloque($("expBox"),{key:"exp",items:EXP_ITEMS.map(([id,t])=>({id,t})),anclas:EXP_ANCLAS,valores:[0,1,2,3,4],enprueba:true,ans:pv.exp||{},
+ onAnswer:(it,v,st)=>{const p2=load()||{};store({...p2,exp:{...st.ans}})},
+ onDone:ans=>{const n=Object.values(ans).filter(v=>v>0).length;const p2=load()||{};store({...p2,exp:ans,expDone:true});ev("step_viewed",{bloque:"EXP",amplitud:n},"exp");
+  const t=n<=1?"En estas semanas exploraste poco, y es lo más común al empezar. Una acción pequeña cuenta: buscar una carrera en mifuturo.cl o mandarle un mensaje a alguien que la estudie.":n<=3?"Ya empezaste a moverte. Prueba sumar una forma de explorar que todavía no hayas usado: conversar con alguien o probar algo en la práctica.":"Has explorado de varias formas. Ahora vale la pena ordenar lo que encontraste: ¿qué te confirmó algo y qué te sorprendió?";
+  $("expBox").innerHTML=`<div class="rc dark"><div class="eyebrow">Tu mapa de exploración</div><h3>Usaste ${n} de 10 formas de explorar</h3><p style="margin:0">${t}</p><p class="small" style="margin:10px 0 0;opacity:.85">La que más rinde y casi nadie usa: conversar con alguien que lo vive.</p></div><button class="btn gold block" id="goRadar">Encender mi radar</button>`;
+  $("goRadar").onclick=()=>{if(location.hash==="#radar")route();else location.hash="#radar"}}})}
 function chk0(){$("e0b").disabled=!($("acepto").checked&&$("nivel").value&&$("edad14").checked);$("menor14").classList.toggle("hidden",$("edad14").checked||!$("acepto").checked);$("codeBox").classList.toggle("hidden",!$("aceptoEval").checked)}
-["acepto","aceptoEval","edad14","nivel"].forEach(id=>$(id).addEventListener("change",chk0));
+["acepto","aceptoSens","aceptoEval","edad14","nivel"].forEach(id=>$(id).addEventListener("change",chk0));
 $("e0b").onclick=async()=>{const typed=$("miCodigo").value.trim().toUpperCase();const ev2=$("aceptoEval").checked;
  if(ev2&&typed&&!/^[A-Z0-9]{6}$/.test(typed)){$("codeErr").classList.remove("hidden");return}$("codeErr").classList.add("hidden");
  const pv=load()||{};const cod=(ev2&&typed)||pv.codigo||codigo();
- store({...pv,codigo:cod,consent:true,eval:ev2,nivel:$("nivel").value,curso:CURSO_URL,ses:null,sesT:null});
- if(ev2){await sesion(cod);ev("consent_accepted",{servicio:true,evaluacion:true,nivel:$("nivel").value,codigo_tarjeta:!!typed})}
+ store({...pv,codigo:cod,consent:true,eval:ev2,sens:$("aceptoSens").checked,nivel:$("nivel").value,curso:CURSO_URL,ses:null,sesT:null});
+ if(ev2){await sesion(cod);ev("consent_accepted",{servicio:true,sensibles:$("aceptoSens").checked,investigacion:true,nivel:$("nivel").value,codigo_tarjeta:!!typed})}
  $("e0").classList.remove("on");$("e1").classList.add("on");window.scrollTo(0,0)};
 $("e1back").onclick=()=>{$("e1").classList.remove("on");$("e0").classList.add("on")};
 $("clar").oninput=e=>{S.clar=+e.target.value;$("clarV").textContent=S.clar};
-$("e1b").onclick=()=>{const pv=load()||{};store({...pv,t0:S.clar});ev("clarity_pre",{v:S.clar});if(location.hash==="#radar")route();else location.hash="#radar"};
-$("estados").innerHTML=ESTADOS.map(o=>`<button class="opt" data-id="${o.id}"><span class="e">${o.e}</span><span>${o.t}</span></button>`).join("");
-$("estados").onclick=e=>{const b=e.target.closest(".opt");if(!b)return;S.estado=b.dataset.id;[...$("estados").children].forEach(x=>x.classList.toggle("sel",x===b));$("a1").disabled=false};
+$("e1b").onclick=()=>{const pv=load()||{};store({...pv,t0:S.clar});ev("clarity_pre",{v:S.clar});$("e1").classList.remove("on");$("e2").classList.add("on");window.scrollTo(0,0);runExp()};
+const ID={exp:null,com:null};function chkId(){$("a1").disabled=ID.exp==null||ID.com==null}
+$("idExp").oninput=e=>{ID.exp=+e.target.value;$("idExpV").textContent=ID.exp;chkId()};
+$("idCom").oninput=e=>{ID.com=+e.target.value;$("idComV").textContent=ID.com;chkId()};
+
 function factHTML(f){return `<div class="fact" style="margin-top:0"><b class="t">Dato que nadie te cuenta</b><p class="q" style="font-size:1.2rem;margin:4px 0 8px">${f[0]}</p>${f[1]}<span class="src">${f[2]}</span></div>`}
-$("a1").onclick=()=>{$("factEstado").innerHTML=factHTML(FACT_ESTADO[S.estado]);showStep(1)};
+$("a1").onclick=()=>{S.estado=ID.exp>=5?(ID.com>=5?"logro":"moratoria"):(ID.com>=5?"hipoteca":"difusion");S.ident={exp:ID.exp,com:ID.com};
+ $("factEstado").innerHTML=`<div class="rc dark"><p style="margin:0">${ID_TXT[S.estado]}</p></div>`+factHTML(FACT_ESTADO[S.estado]);showStep(1)};
 $("difs").innerHTML=DIFS.map((d,i)=>`<button class="chip" data-i="${i}">${d}</button>`).join("");
 $("difs").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;const i=+b.dataset.i;S.difs.has(i)?S.difs.delete(i):S.difs.add(i);b.classList.toggle("sel")};
 $("a3").onclick=()=>{const ids=[...S.difs].filter(i=>FACT_DIF[i]).slice(0,2);const fs=ids.length?ids.map(i=>FACT_DIF[i]):[FACT_DIF[1]];$("factDifs").innerHTML=fs.map(factHTML).join("");showStep(3)};
@@ -533,7 +618,7 @@ async function finalizar(){const p=perfil();const rk=ranking(p);const refl={r1:$
  const fam=location.origin+location.pathname+"#familia";
  const msg=encodeURIComponent(`Hola, estoy usando Radar Vocacional para pensar qué estudiar. Hay una parte para la familia, ¿la puedes leer? Son 5 minutos: ${fam}\nLa pregunta de esta semana es: ¿Qué espera cada uno de nosotros de esta decisión?`);
  $("perfilBox").innerHTML=`${alerta?`<div class="support"><h3>Gracias por contarlo</h3><p>Algo de lo que escribiste nos hace pensar que podrías estar pasando por un momento difícil. No tienes que pasarlo solo o sola: habla con alguien de confianza en tu casa o en tu colegio.</p><p style="margin:0">Puedes llamar gratis las 24 horas al <strong>*4141</strong> o a Salud Responde <strong>600 360 7777</strong>.</p></div>`:""}
- <div class="rc dark"><div class="eyebrow">Tu punto de partida</div><h3>${est.n}</h3><p style="margin:0">${est.d}</p><p class="small" style="margin:10px 0 0;opacity:.8">Claridad de hoy: ${S.clar}/10. La volveremos a medir al final de las 4 semanas.</p></div>
+ <div class="rc dark"><div class="eyebrow">Tu punto de partida</div><p style="margin:0">${ID_TXT[S.estado]||""}</p><p class="small" style="margin:10px 0 0;opacity:.8">Claridad de hoy: ${S.clar}/10. La volveremos a medir al final de las 4 semanas.</p></div>
  ${frases.length?`<div class="rc"><h3>Lo que dijiste</h3><p class="small muted">Léelo como si lo hubiera escrito otra persona. ¿Qué tienen en común estas respuestas?</p>${frases.map(f=>`<p class="quote">${f[0]}: "${esc(f[1].slice(0,180))}${f[1].length>180?"…":""}"</p>`).join("")}</div>`:""}
  <div class="rc radar"><h3>Tu radar de intereses</h3>${radarSVG(p)}</div>
  <h3>Tus 5 rutas más afines</h3>${top5.map(c=>routeCard(c)).join("")}
@@ -543,15 +628,15 @@ async function finalizar(){const p=perfil();const rk=ranking(p);const refl={r1:$
  <a class="btn gold block" href="#semana2" style="margin-bottom:14px">Comenzar la Semana 2 · Explorar</a>
  <div class="rc"><h3>Tu código: <span class="code">${cod}</span></h3><p class="small muted" style="margin:0">Sácale una captura. Con él, Radar recordará lo que respondiste cuando vuelvas para la Semana 2.</p><p class="small muted" id="saveState" style="margin:6px 0 0">${prev.eval?"Guardando con tu código…":"Tus respuestas quedan solo en este dispositivo."}</p></div>`;
  location.hash="#perfil";
- store({...prev,codigo:cod,acts:S.acts,clar:S.clar,estado:S.estado,refl,fecha:new Date().toISOString(),completo:true});
- const ok=await guardar({rol:"estudiante",semana:1,momento:"T0",nivel:prev.nivel||null,edad_14_o_mas:true,claridad:S.clar,estado:S.estado,dificultades:[...S.difs].map(i=>DIFS[i]),intereses:p,reflexiones:refl});
+ store({...prev,codigo:cod,acts:S.acts,clar:S.clar,estado:S.estado,ident:S.ident,refl,fecha:new Date().toISOString(),completo:true});
+ const ok=await guardar({rol:"estudiante",semana:1,momento:"T0",nivel:prev.nivel||null,edad_14_o_mas:true,claridad:S.clar,estado:S.estado,dificultades:[...S.difs].map(i=>DIFS[i]),intereses:p,reflexiones:refl,datos:{ip:Object.fromEntries(ACTS.map((a,i)=>[a[2],S.acts[i]??null])),exp:prev.exp||null,ident:S.ident||null,ne:[...NE],plano:esPlano(p),aquiesc:!!prev.aquiesc}});
  const st=$("saveState");if(!st||ok==="local")return;st.textContent=ok?"✓ Respuestas guardadas con tu código, sin tu nombre.":"Tus respuestas quedaron guardadas en este dispositivo (sin conexión al servidor)."}
 
 function saveLocal(){const prev=load()||{};store({...prev,acts:S.acts})}
 
 /* ---- retomar con código ---- */
 function actsDesdePerfil(p){const a={};const por={R:[],I:[],A:[],S:[],E:[],C:[]};ACTS.forEach((x,i)=>por[x[0]].push(i));
- for(const k in por){const sum=Math.max(0,Math.min(4,Math.round((p&&p[k]||0)/25)));const v1=Math.min(2,sum);a[por[k][0]]=v1;a[por[k][1]]=sum-v1}return a}
+ for(const k in por){let sum=Math.max(0,Math.min(20,Math.round((p&&p[k]||0)/100*20)));por[k].forEach(i=>{const v=Math.min(4,sum);a[i]=v;sum-=v})}return a}
 $("retBtn").onclick=async()=>{const c=$("retCod").value.trim().toUpperCase();const m=$("retMsg");
  if(!/^[A-Z0-9]{6}$/.test(c)){m.textContent="El código tiene 6 letras o números.";return}
  $("retBtn").disabled=true;m.textContent="Buscando tu recorrido…";
@@ -560,7 +645,7 @@ $("retBtn").onclick=async()=>{const c=$("retCod").value.trim().toUpperCase();con
  if(!r){m.textContent="No pudimos conectarnos. Revisa tu internet e inténtalo de nuevo.";return}
  if(!r.encontrado){m.textContent="No encontramos ese código. Revisa que esté bien escrito. Si en la Semana 1 no marcaste la casilla opcional, tu recorrido quedó solo en el otro celular.";return}
  S.acts=actsDesdePerfil(r.intereses);S.estado=r.estado;S.clar=r.claridad_t0??5;
- const pv=load()||{};store({...pv,codigo:c,consent:true,eval:true,t0:r.claridad_t0,acts:S.acts,estado:r.estado,clar:r.claridad_t0,completo:true,riasecSent:true,nivel:r.nivel||pv.nivel,s2:r.semana2||null,s2hecha:(r.semanas||[]).includes(2),ses:null,sesT:null,curso:pv.curso||CURSO_URL});
+ const pv=load()||{};store({...pv,codigo:c,consent:true,eval:true,t0:r.claridad_t0,acts:S.acts,estado:r.estado,clar:r.claridad_t0,completo:true,riasecSent:true,expDone:true,ipDone:true,sens:pv.sens||false,nivel:r.nivel||pv.nivel,s2:r.semana2||null,s2hecha:(r.semanas||[]).includes(2),ses:null,sesT:null,curso:pv.curso||CURSO_URL});
  await sesion(c);ev("progress_restored",{semanas:r.semanas});
  m.textContent="";if(location.hash==="#semana2")route();else location.hash="#semana2"};
 
@@ -568,9 +653,9 @@ $("retBtn").onclick=async()=>{const c=$("retCod").value.trim().toUpperCase();con
 const W2={step:0,rutas:[],cuando:null};
 const CUANDO=[["finde","🗓️","Este fin de semana"],["semana","🏫","Un día de semana, después de clases"],["nose","🤷","Todavía no sé a quién preguntarle"]];
 function showW(n){W2.step=n;document.querySelectorAll("#v-semana2 .step").forEach(s=>s.classList.toggle("on",+s.dataset.w===n));
- const pct=[25,50,75,100,100][n];$("nit2").style.width=pct+"%";$("nit2t").textContent=n<4?`Paso ${n+1} de 4`:"Semana 2 completa";window.scrollTo(0,0)}
+ const pct=Math.round(Math.min(n+1,7)/7*100);$("nit2").style.width=pct+"%";$("nit2t").textContent=n<7?`Paso ${n+1} de 7`:"Semana 2 completa";window.scrollTo(0,0)}
 document.querySelectorAll("#v-semana2 [data-wback]").forEach(b=>b.onclick=()=>showW(W2.step-1));
-function renderSemana2(){const pv=load()||{};if(pv.s2hecha){renderW2Fin(pv);showW(4);return}
+function renderSemana2(){const pv=load()||{};if(pv.s2hecha){renderW2Fin(pv);showW(7);return}
  const p=perfil();const td=Object.entries(p).sort((a,b)=>b[1]-a[1]);
  $("w2hola").innerHTML=`<div class="rc dark" style="display:flex;gap:14px;align-items:center"><div style="width:96px;flex:0 0 96px">${radarSVG(p,"s")}</div><div><div class="eyebrow">Hola de nuevo${pv.codigo?" · "+esc(pv.codigo):""}</div><p style="margin:4px 0 0">Tu radar apunta a <b>${DIMS[td[0][0]]}</b> y <b>${DIMS[td[1][0]]}</b>. Tu claridad de partida fue <b>${pv.t0??"–"}/10</b>. Esta semana toca salir a mirar el mundo real.</p></div></div>`;
  const rk=ranking(p).slice(0,8);
@@ -579,27 +664,37 @@ function renderSemana2(){const pv=load()||{};if(pv.s2hecha){renderW2Fin(pv);show
  $("w2cuando").innerHTML=CUANDO.map(c=>`<button class="opt" data-c="${c[0]}"><span class="e">${c[1]}</span><span>${c[2]}</span></button>`).join("");
  if(!W2.started){W2.started=true;ev("week_started",{semana:2})}
  showW(W2.step||0)}
-$("w0b").onclick=()=>showW(1);
+$("w0b").onclick=()=>{showW(1);runSen()};
+function runSen(){bloque($("senBox"),{key:"sen",items:SEN_ITEMS.map(([id,t])=>({id,t})),anclas:DESC_ANCLAS,valores:[1,2,3,4,5],barras:true,enprueba:true,
+ onDone:ans=>{W2.sen=ans;const m=mediaEsc(ans,SEN_ITEMS.filter(x=>!["SEN09","SEN10"].includes(x[0])));
+  $("senFb").innerHTML=`<div class="rc dark"><div class="eyebrow">Tu «para qué», hoy</div><p style="margin:0">${SEN_FB[rango3(m)]}</p></div>`;showW(2);renderVal()}})}
+let VORD=[];function renderVal(){$("vord").innerHTML=VALORES.map(([id,n,d])=>{const k=VORD.indexOf(id);return `<button data-val="${id}" class="${k>=0?"on":""}"><span class="nb">${k>=0?k+1:""}</span><span><b>${n}:</b> ${d}</span></button>`}).join("");$("vOk").disabled=VORD.length<VALORES.length}
+$("vord").onclick=e=>{const b=e.target.closest("[data-val]");if(!b)return;const id=b.dataset.val;if(!VORD.includes(id))VORD.push(id);renderVal()};
+$("vReset").onclick=()=>{VORD=[];renderVal()};
+$("vOk").onclick=()=>{W2.valores=[...VORD];showW(3)};
 $("w2rutas").onclick=e=>{const b=e.target.closest(".opt");if(!b)return;const r=b.dataset.r;
  if(W2.rutas.includes(r)){W2.rutas=W2.rutas.filter(x=>x!==r);b.classList.remove("sel")}else if(W2.rutas.length<2){W2.rutas.push(r);b.classList.add("sel")}
  $("w1b").disabled=W2.rutas.length<1};
-$("w1b").onclick=()=>{ev("mission_chosen",{rutas:W2.rutas});
+$("w1b").onclick=()=>{ev("mission_chosen",{rutas:W2.rutas});W2._m=1;
  const nivel=(load()||{}).nivel==="3medio"?"3° medio":"4° medio";
  $("w2mision").innerHTML=W2.rutas.map(r=>{const n=r.split("|")[0];const msg=encodeURIComponent(`Hola, estoy en ${nivel} y estoy explorando qué estudiar. Me interesa ${n} y me encantaría hacerte 5 preguntas sobre tu trabajo. Son 15 minutos, cuando puedas. ¿Te tinca?`);
   return `<div class="rc goldc"><div class="eyebrow">Misión</div><h3 style="margin:4px 0 6px">${esc(n)}</h3><p class="small" style="margin:0 0 10px">Busca a alguien que trabaje en esto o lo esté estudiando. Si no conoces a nadie, pregúntale a tu familia: esta semana su recorrido les pide ayudarte.</p><a class="btn primary block" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Escribir el mensaje por WhatsApp</a><button class="btn ghost block" data-car="${esc(r)}" style="margin-top:8px">Ver datos y dónde estudiarla</button></div>`}).join("");
- showW(2)};
+ showW(4)};
 $("w2cuando").onclick=e=>{const b=e.target.closest(".opt");if(!b)return;W2.cuando=b.dataset.c;[...$("w2cuando").children].forEach(x=>x.classList.toggle("sel",x===b));
  $("w2ayuda").innerHTML=W2.cuando==="nose"?`<div class="fact" style="margin-top:0"><b class="t">Plan B</b>Pídele a tu familia que te ayude a encontrar a alguien. Si no aparece nadie, busca en YouTube "un día como" + la carrera, y revisa la malla en la página de una institución. Anota qué te llamó la atención.</div>`:"";
  $("w2b").disabled=false};
-$("w2b").onclick=()=>{const pv=load()||{};const v=pv.t0??5;$("clar2").value=v;$("clar2V").textContent=v;W2.clar=v;showW(3)};
+$("w2b").onclick=()=>{showW(5);bloque($("autBox"),{key:"aut",items:AUT_ITEMS.map(([id,t])=>({id,t})),anclas:DESC_ANCLAS,valores:[1,2,3,4,5],barras:true,enprueba:true,
+ onDone:ans=>{W2.aut=ans;const m=mediaEsc(ans,AUT_ITEMS.filter(x=>x[0]!=="AUT10"));
+  $("autFb").innerHTML=`<div class="rc dark"><div class="eyebrow">Cómo vas pensando tu decisión</div><p style="margin:0">${AUT_FB[rango3(m)]}</p>${(ans.AUT10||0)>=4?`<p style="margin:10px 0 0">${AUT_RUM}</p>`:""}</div>`;
+  const pv=load()||{};const v=pv.t0??5;$("clar2").value=v;$("clar2V").textContent=v;W2.clar=v;showW(6)}})};
 $("clar2").oninput=e=>{W2.clar=+e.target.value;$("clar2V").textContent=W2.clar};
 $("w3b").onclick=async()=>{const pv=load()||{};const obs=["o1","o2","o3"].map(id=>$(id).value.trim()).filter(Boolean);
  const refl={s2_obs:obs.join(" · "),s2_comun:$("oComun").value.trim(),s2_desc:$("w2desc").value.trim()};
  const alerta=ALERTA.test(norm(Object.values(refl).join(" ")));const clar=W2.clar??pv.t0??5;
- const s2={rutas:W2.rutas,cuando:W2.cuando,n_obs:obs.length,clar};
+ const s2={rutas:W2.rutas,cuando:W2.cuando,n_obs:obs.length,clar,valores:W2.valores||null,sen:W2.sen||null,aut:W2.aut||null,ne:[...NE]};
  store({...pv,s2,s2hecha:true,s2refl:refl,s2alerta:alerta});
  ev("week_completed",{semana:2,n_obs:obs.length,cuando:W2.cuando});
- renderW2Fin(load());showW(4);
+ renderW2Fin(load());showW(7);
  const ok=await guardar({rol:"estudiante",semana:2,momento:"S2",claridad:clar,reflexiones:refl,datos:s2});
  const st=$("w2save");if(st&&ok!=="local")st.textContent=ok?"✓ Guardado con tu código, sin tu nombre.":"Quedó guardado en este dispositivo (sin conexión al servidor)."};
 function renderW2Fin(pv){const s2=pv.s2||{};const refl=pv.s2refl||{};const d=(s2.clar??0)-(pv.t0??0);
@@ -608,6 +703,7 @@ function renderW2Fin(pv){const s2=pv.s2||{};const refl=pv.s2refl||{};const d=(s2
  $("w2fin").innerHTML=`${pv.s2alerta?`<div class="support"><h3>Gracias por contarlo</h3><p>Algo de lo que escribiste nos hace pensar que podrías estar pasando por un momento difícil. Habla con alguien de confianza en tu casa o en tu colegio.</p><p style="margin:0">Puedes llamar gratis las 24 horas al <strong>*4141</strong> o a Salud Responde <strong>600 360 7777</strong>.</p></div>`:""}
  <div class="rc dark"><div class="eyebrow">Semana 2 completa</div><h3>Saliste a explorar</h3><p style="margin:0">Claridad de partida: <b>${pv.t0??"–"}/10</b> · hoy: <b>${s2.clar??"–"}/10</b>. ${d>0?"Subió: lo que exploraste te está ordenando.":d<0?"Bajó un poco: explorar abre preguntas, y eso es parte del camino.":"Se mantuvo: la próxima semana contrastaremos con datos duros."}</p></div>
  ${refl.s2_comun?`<div class="rc"><h3>Lo que tienen en común</h3><p class="quote">"${esc(refl.s2_comun.slice(0,200))}"</p><p class="small muted" style="margin:0">Guárdalo: es una pista de lo que te mueve.</p></div>`:""}
+ ${(s2.valores||[]).length?`<div class="rc goldc"><h3>Lo que más te importa hoy</h3><p style="margin:0">Cuando compares carreras, fíjate si en ese trabajo hay <b>${VALORES.find(v=>v[0]===s2.valores[0])[1].toLowerCase()}</b> y <b>${VALORES.find(v=>v[0]===s2.valores[1])[1].toLowerCase()}</b>. Es tu foto de hoy: los valores cambian con la experiencia.</p></div>`:""}
  <h3>Tus rutas en exploración</h3>${(s2.rutas||[]).map(r=>{const[n,t]=r.split("|");const c=CARRERAS.find(x=>x.n===n&&x.t===t);return c?routeCard({...c,af:afinidad(perfil(),c.c)}):""}).join("")}
  <div class="rc goldc"><h3>Antes de la Semana 3</h3><p style="margin:0">Cumple tu misión ${s2.cuando==="finde"?"este fin de semana":s2.cuando==="semana"?"un día después de clases":"con ayuda de tu familia"} y anota en tu celular la respuesta que más te sorprendió. En la Semana 3 la vamos a contrastar con puntajes, costos y duración real.</p></div>
  <div class="rc"><h3>Pídele ayuda a tu familia</h3><p>Su recorrido de esta semana les pide abrirte puertas con gente que conocen.</p><a class="btn primary block" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar a mi familia por WhatsApp</a></div>
@@ -615,7 +711,7 @@ function renderW2Fin(pv){const s2=pv.s2||{};const refl=pv.s2refl||{};const d=(s2
  <a class="btn ghost block" href="#explorar">Seguir explorando carreras</a>`}
 
 /* ---- explorador ---- */
-function renderExplorar(){const has=Object.keys(S.acts).length>=ACTS.length;const p=has?perfil():null;
+function renderExplorar(){const has=ipDone();const p=has?perfil():null;
  $("exHint").textContent=has?"Ordenadas según tu radar.":"Enciende tu radar para ordenarlas según tus intereses.";
  if(!has&&$("fo").value==="af")$("fo").value="emp";
  const q=norm($("q").value),ft=$("ft").value,fo=$("fo").value;
@@ -646,7 +742,7 @@ function updSim(){(SH.vis||[]).forEach((m,ix)=>{const el=$("pd"+ix);if(!el)retur
   if(v==null){const[nem,rk,l,m1,m2,h,c2]=m.p;const miss=[["nem","NEM"],["rank","Ranking"],["len","Lenguaje"],["m1","Matemática 1"]].filter(([k])=>!(+S.sim[k]>0)).map(x=>x[1]);if(m2&&!(+S.sim.m2>0))miss.push("Matemática 2");if((h||c2)&&!((h&&+S.sim.his>0)||(c2&&+S.sim.cie>0)))miss.push(h&&c2?"Historia o Ciencias":h?"Historia":"Ciencias");el.className="pond";el.textContent="Para calcular aquí falta: "+miss.join(", ")+".";return}
   if(m.paes){const d=v-Math.round(m.paes);el.className="pond "+(d>=0?"ok":"no");el.textContent=`Tu ponderado: ${v}. ${d>=0?`Estás ${d} ${d===1?"punto":"puntos"} sobre el`:`Te ${-d===1?"falta 1 punto":`faltan ${-d} puntos`} para llegar al`} promedio de quienes entraron en 2025 (${Math.round(m.paes)}).`}else{el.className="pond";el.textContent=`Tu ponderado: ${v}.`}})}
 async function openCarrera(id){const[n,t]=id.split("|");const c=CARRERAS.find(x=>x.n===n&&x.t===t);if(!c)return;SH={c,progs:[],region:getRegion(),vis:[],simSent:false};ev("career_opened",{n:c.n,t:c.t,desde:lastStep});
- const p=Object.keys(S.acts).length>=ACTS.length?perfil():null;const af=p&&c.c?afinidad(p,c.c):null;
+ const p=ipDone()?perfil():null;const af=p&&c.c?afinidad(p,c.c):null;
  const perfilTxt=c.c?c.c.split("").map(k=>DSHORT[k]).join(", "):"categoría amplia, sin perfil asignado";
  $("sheetBox").innerHTML=`<button class="x" aria-label="Cerrar" data-close>×</button>
  <div class="eyebrow">${TIPO[c.t]}</div><h2 style="margin-right:30px">${esc(c.n)}</h2>
@@ -682,7 +778,7 @@ $("pGuardar").onclick=async()=>{$("pGuardar").disabled=true;$("pState").textCont
  const r=s&&s.session_id?await rpc("atlas_respuesta",{p_session:s.session_id,p_datos:{rol:"apoderado",semana:1,momento:"T0",consentimiento:true,claridad:+$("pclar").value,reflexiones:{p1:$("p1").value.trim(),p2:$("p2").value.trim()},version:APP_V}}):null;const ok=r&&r.ok;$("pState").textContent=ok?"✓ Gracias. Recuerde la conversación puente de esta semana.":"No pudimos conectarnos al servidor, pero la lectura y la conversación puente siguen siendo lo más importante."};
 
 /* ---- inicio y memoria ---- */
-(function init(){const prev=load();if(prev){if(prev.acts)S.acts=prev.acts;if(prev.sim)S.sim=prev.sim;if(prev.t0!=null){S.clar=prev.t0;$("clar").value=prev.t0;$("clarV").textContent=prev.t0}
+(function init(){const prev=load();if(prev){if(prev.ne)NE=new Set(prev.ne);if(prev.acts)S.acts=prev.acts;if(prev.sim)S.sim=prev.sim;if(prev.t0!=null){S.clar=prev.t0;$("clar").value=prev.t0;$("clarV").textContent=prev.t0}
  if(prev.completo){const f=prev.refl&&(prev.refl.r3||prev.refl.r1);$("welcome").innerHTML=`<h3>Hola de nuevo · código ${esc(prev.codigo)}</h3><p style="margin:0 0 6px">La última vez marcaste tu claridad en <b>${prev.clar}/10</b>${f?" y escribiste:":"."}</p>${f?`<q>${esc(f.slice(0,160))}${f.length>160?"…":""}</q>`:""}<p class="small" style="margin:10px 0 0">${prev.s2hecha?`Ya completaste la Semana 2. <a href="#semana2" style="color:#e2c879">Ver tu resumen</a>.`:`<a href="#semana2" class="btn gold" style="margin-top:6px">Comenzar la Semana 2 · Explorar</a>`}</p>`;$("welcome").classList.remove("hidden")}
  else if(Object.keys(S.acts).length){$("welcome").innerHTML=`<h3>Tu radar está a medio camino</h3><p style="margin:0">Respondiste ${Object.keys(S.acts).length} de ${ACTS.length}. <a href="#radar" style="color:#e2c879">Continúa donde quedaste</a>.</p>`;$("welcome").classList.remove("hidden")}}
  route();cargarCatalogo()})();

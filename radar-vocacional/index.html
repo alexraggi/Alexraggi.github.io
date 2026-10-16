@@ -149,6 +149,109 @@ input[type=range]{width:100%;accent-color:var(--navy)}
 .x{float:right;background:none;border:0;font-size:1.6rem;line-height:1;color:var(--muted);cursor:pointer}
 footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font-size:.82rem;color:var(--muted)}
 .read{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:12px}.read ul{margin:.3em 0 .2em 1.1em;padding:0}
+/* ===== mvp-6: accesibilidad, táctil y componentes de Semanas 3-4 ===== */
+html{overflow-x:hidden}body{overflow-x:hidden}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn{min-height:48px;text-align:center;line-height:1.25}
+.btn.gold:hover{background:#d4b45c}.btn.ghost:hover{background:#eef3f8}
+.lnk{min-height:44px;display:inline-flex;align-items:center}
+.chip{min-height:44px}.topnav a{min-height:44px;display:inline-flex;align-items:center}
+.bopts button,.opt,.tri3 button,.vord button{min-height:48px}
+.check{min-height:44px}.check input{flex:0 0 20px}
+.nav{flex-wrap:wrap;align-items:center;margin-top:18px}.nav .btn{flex:1 1 auto;min-width:120px}.nav .btn.ghost{flex:0 1 auto}
+input[type=date]{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:11px 14px;font:400 1rem "Plus Jakarta Sans",sans-serif;background:#fff;color:var(--ink);min-height:48px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.whead{margin:6px 0 16px}.whead h2{margin-bottom:.35em}.lead2{font-size:1.04rem;color:var(--muted);margin:0}
+.wtop{display:flex;align-items:center;justify-content:space-between;gap:4px 10px;margin-bottom:2px;flex-wrap:wrap}.wtop .eyebrow{white-space:nowrap}
+.wtop .eyebrow{margin:0}.wtop .part{font-size:.76rem;font-weight:700;color:var(--muted);white-space:nowrap}
+.pasos{list-style:none;counter-reset:p;padding:0;margin:4px 0 22px;display:grid;gap:8px}
+.pasos li{counter-increment:p;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-weight:600;color:var(--navy)}
+.pasos li::before{content:counter(p);flex:0 0 28px;height:28px;border-radius:50%;background:var(--goldsoft);color:#7a5d12;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.pasos li .t{margin-left:auto;font-size:.8rem;color:var(--muted);font-weight:600;white-space:nowrap}
+.fl{display:block;font-weight:700;color:var(--ink);margin:18px 0 8px;font-size:.98rem}
+.fl .op{font-weight:500;color:var(--muted);font-size:.85rem}
+.chips.tight{margin:6px 0 4px}
+.opts.tight{margin:6px 0 4px;gap:8px}.opts.tight .opt{padding:11px 14px}
+.cnt{font-size:.74rem;color:var(--muted);text-align:right;margin-top:4px}
+/* ruta */
+.ruta{padding:18px 18px 16px}
+.ruta ol{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:0;margin:8px 0 14px;position:relative}
+.ruta ol::before{content:"";position:absolute;left:12.5%;right:12.5%;top:17px;height:2px;background:var(--line);z-index:0}
+.ruta li{text-align:center;font-size:.74rem;color:var(--muted);position:relative;z-index:1;line-height:1.25}
+.ruta li b{display:block;color:var(--ink);font-size:.78rem;margin-top:2px}
+.ruta .dot{width:36px;height:36px;border-radius:50%;margin:0 auto 4px;border:2px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;color:#9aa3ad;font-size:.9rem}
+.ruta li.done .dot{background:var(--ok);border-color:var(--ok);color:#fff}
+.ruta li.now .dot{background:var(--gold);border-color:var(--gold);color:#1d1606;box-shadow:0 0 0 4px var(--goldsoft)}
+.ruta li.now b{color:var(--navy)}
+.ruta .rsum{font-size:.84rem;color:var(--muted);margin:0 0 12px;text-align:center}
+/* tarjetas de datos */
+.tgrid{display:grid;gap:10px;margin:12px 0}
+@media(min-width:620px){.tgrid{grid-template-columns:1fr 1fr}}
+.tcard{border-radius:16px;padding:16px;text-align:left;font:inherit}
+.tcard.back{background:var(--navy);color:#fff;border:0;cursor:pointer;min-height:88px;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.tcard.back b{font-family:"Fraunces",serif;font-weight:600;font-size:1.08rem;line-height:1.25}
+.tcard.back span{font-size:.78rem;color:#e2c879;font-weight:700}
+.tcard.back[disabled]{opacity:.45;cursor:not-allowed}
+.tcard.open{background:#fffaf0;border:1px solid #ecdcae;border-left:4px solid var(--gold)}
+.tcard.open b.h{display:block;font-family:"Fraunces",serif;color:var(--navy);font-size:1.08rem;font-weight:600;margin-bottom:6px;line-height:1.25}
+.tcard.open p{margin:0;font-size:.93rem}.tcard.open .src{display:block;font-size:.72rem;color:#9aa3ad;margin-top:8px}
+details.disc{background:#fff;border:1px solid var(--line);border-radius:var(--r);margin:12px 0}
+details.disc>summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:700;color:var(--navy);min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+details.disc>summary::-webkit-details-marker{display:none}
+details.disc>summary::after{content:"+";font-size:1.4rem;color:var(--gold);line-height:1}
+details.disc[open]>summary::after{content:"–"}
+details.disc>.in{padding:0 18px 16px}
+/* contrastar */
+.pick{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:11px 14px;font:600 .94rem "Plus Jakarta Sans",sans-serif;color:var(--ink);cursor:pointer;min-height:48px;margin-bottom:8px}
+.pick:hover{border-color:var(--navy)}.pick.sel{border-color:var(--navy);background:#eef3f8}
+.pick .ck{flex:0 0 24px;height:24px;border-radius:7px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff}
+.pick.sel .ck{background:var(--navy);border-color:var(--navy)}
+.pick[disabled]{opacity:.5;cursor:not-allowed}
+.grp{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#9a7a26;margin:18px 0 8px}
+.selbar{position:sticky;top:60px;z-index:5;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line);margin-bottom:6px}
+.selbar .chips{margin:6px 0 0}
+.ocard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:16px;box-shadow:0 1px 0 rgba(27,58,92,.04)}
+.ocard>header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:4px}
+.ocard>header h3{margin:0;font-size:1.15rem}
+.ocard .num{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.kv .nt{grid-column:1/-1;background:transparent;border:0;padding:0 2px;font-size:.78rem;color:var(--muted)}
+.cmpw{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:6px 12px 10px;margin:12px 0 16px}
+table.cmp{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.88rem}
+table.cmp th{font-family:"Fraunces",serif;font-weight:600;color:var(--navy);text-align:left;padding:10px 6px 8px;vertical-align:bottom;font-size:.92rem;line-height:1.2;overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+table.cmp td{padding:2px 6px 10px;vertical-align:top;overflow-wrap:break-word;hyphens:auto;border-bottom:1px solid #f0ebdf}
+table.cmp tr.lb td{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--muted);padding:10px 6px 2px;border:0}
+table.cmp td.v{font-weight:800;color:var(--navy)}
+table.cmp td.tx{font-size:.84rem;color:var(--ink)}
+/* antes / después */
+.ad{display:grid;gap:12px;margin:10px 0 4px}
+.ad .row{display:grid;grid-template-columns:84px 1fr 44px;gap:10px;align-items:center;font-size:.86rem}
+.ad .row .b{height:14px;background:rgba(255,255,255,.14);border-radius:99px;overflow:hidden}
+.ad .row .b i{display:block;height:100%;border-radius:99px;background:#9fb3c8}
+.ad .row.hoy .b i{background:linear-gradient(90deg,var(--gold),#e2c879)}
+.ad .row .n{font-family:"Fraunces",serif;font-size:1.15rem;text-align:right;color:#fff}
+.big2{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.big2 .v{font-family:"Fraunces",serif;font-size:2.2rem;color:var(--navy);line-height:1}
+/* plan */
+.plan{background:var(--navy);color:#e9eef4;border-radius:var(--r);padding:20px;margin:14px 0}
+.plan h3{color:#fff}.plan .eyebrow{color:#e2c879}
+.plan ol{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.plan li{background:rgba(255,255,255,.07);border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start}
+.plan li label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;width:100%;min-height:44px}
+.plan li input{width:22px;height:22px;flex:0 0 22px;accent-color:var(--gold);margin-top:1px}
+.plan li.ok .tx{text-decoration:line-through;opacity:.7}
+.plan .f{font-size:.78rem;color:#c9d4e0;display:block}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.pcard .h{font-weight:800;color:var(--navy);margin-bottom:4px}
+.pcard .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:400px){.pcard .two{grid-template-columns:1fr}}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:#ece6d6;border-radius:999px;padding:5px;margin:14px 0 18px}
+.tabs button{border:0;background:transparent;border-radius:999px;min-height:44px;font:700 .84rem "Plus Jakarta Sans",sans-serif;color:var(--navy);cursor:pointer;padding:6px 4px}
+.tabs button[aria-selected=true]{background:#fff;box-shadow:0 1px 3px rgba(27,58,92,.18)}
+.tabs button .ok{color:var(--ok)}
+.empty{text-align:center;padding:22px 16px;border:1.5px dashed var(--line);border-radius:var(--r);color:var(--muted);font-size:.92rem;background:rgba(255,255,255,.5)}
+.wkbtn{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.week .pill.lock{background:#eee9dc;color:var(--muted)}
+.esp{text-align:center;padding:10px 0}.esp svg{width:120px;height:120px;margin:0 auto 6px;display:block}
+.esp .fecha{display:inline-block;background:var(--goldsoft);color:#7a5d12;font-weight:800;border-radius:999px;padding:6px 14px;margin:4px 0 14px}
 </style>
 </head>
 <body>
@@ -172,6 +275,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     </div>
     <p class="small" style="margin:12px 0 0"><a href="#retomar">¿Ya empezaste en otro celular? Retoma con tu código →</a></p>
     <div id="welcome" class="welcome hidden"></div>
+    <div id="rutaInicio" style="margin-top:14px"></div>
   </section>
 
   <div class="eyebrow">Datos que nadie te cuenta</div>
@@ -185,10 +289,10 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     <h2>Cuatro semanas, no un test</h2>
     <p class="muted" style="max-width:640px">Un test te pone una etiqueta. Radar te hace preguntas que te llevan a pensar, recuerda lo que respondiste y te propone misiones en el mundo real. Cuando tienes una pregunta clara en la cabeza, empiezas a ver las respuestas a tu alrededor: eso es encender el radar.</p>
     <div class="grid4" style="margin-top:16px">
-      <div class="card week"><div class="n">1</div><div class="t">Reconocer</div><div class="d">Dónde estás hoy, qué te frena y qué te mueve.</div><span class="pill on">Disponible</span></div>
-      <div class="card week"><div class="n">2</div><div class="t">Explorar</div><div class="d">Misiones reales: conversar con alguien que trabaje en lo que te interesa.</div><span class="pill on">Disponible</span></div>
-      <div class="card week"><div class="n">3</div><div class="t">Contrastar</div><div class="d">Puntajes, ponderaciones, institutos, becas y costos.</div><span class="pill on">Parcial: explorador</span></div>
-      <div class="card week"><div class="n">4</div><div class="t">Decidir</div><div class="d">Tu plan A, B y C, y la conversación con tu familia.</div><span class="pill">Próximamente</span></div>
+      <div class="card week"><div class="n">1</div><div class="t">Reconocer</div><div class="d">Dónde estás hoy, qué te frena y qué te mueve.</div><span class="pill on" id="wk1">Disponible</span></div>
+      <div class="card week"><div class="n">2</div><div class="t">Explorar</div><div class="d">Misiones reales: conversar con alguien que trabaje en lo que te interesa.</div><span class="pill lock" id="wk2">Se abre después de la Semana 1</span></div>
+      <div class="card week"><div class="n">3</div><div class="t">Contrastar</div><div class="d">Tus opciones lado a lado: lo que te atrae, lo que te cuesta, costos y empleabilidad.</div><span class="pill lock" id="wk3">Se abre después de la Semana 2</span></div>
+      <div class="card week"><div class="n">4</div><div class="t">Decidir</div><div class="d">Tu decisión por ahora, tu plan B, tus próximos pasos y tu antes y después.</div><span class="pill lock" id="wk4">Se abre después de la Semana 3</span></div>
     </div>
   </section>
 
@@ -235,6 +339,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
     <p class="hint">En las últimas 2 semanas, ¿cuántas veces hiciste esto? Cuenta solo lo que hiciste de verdad, por la ruta o por tu cuenta. Si no te acuerdas exacto, aproxima. · 10 frases · 1 min</p>
     <div id="expBox"></div>
   </div>
+  <div class="step" id="eW"><div id="esperaBox"></div></div>
 </div></main>
 
 <!-- ============ RADAR RÁPIDO ============ -->
@@ -374,9 +479,22 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
 
 <!-- ============ PERFIL ============ -->
 <main id="v-perfil" class="view hidden"><div class="narrow" style="padding-top:22px">
-  <div class="eyebrow">Semana 1 · Tu radar</div>
-  <div class="nit"><div class="bar"><i style="width:90%"></i></div><span>Nitidez 90%</span></div>
+  <div class="eyebrow">Tu radar</div>
   <div id="perfilBox"></div>
+</div></main>
+
+<!-- ============ SEMANA 3 · CONTRASTAR ============ -->
+<main id="v-semana3" class="view hidden"><div class="narrow" style="padding-top:22px">
+  <div class="wtop"><div class="eyebrow">Semana 3 · Contrastar</div><span class="part" id="nit3p"></span></div>
+  <div class="nit"><div class="bar"><i id="nit3"></i></div><span id="nit3t"></span></div>
+  <div id="s3box"></div>
+</div></main>
+
+<!-- ============ SEMANA 4 · DECIDIR ============ -->
+<main id="v-semana4" class="view hidden"><div class="narrow" style="padding-top:22px">
+  <div class="wtop"><div class="eyebrow">Semana 4 · Decidir</div><span class="part" id="nit4p"></span></div>
+  <div class="nit"><div class="bar"><i id="nit4"></i></div><span id="nit4t"></span></div>
+  <div id="s4box"></div>
 </div></main>
 
 <!-- ============ EXPLORAR ============ -->
@@ -395,21 +513,21 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
 
 <!-- ============ FAMILIA ============ -->
 <main id="v-familia" class="view hidden"><div class="narrow" style="padding-top:22px">
-  <div class="eyebrow">Recorrido para familias · Semana 1</div>
+  <div class="eyebrow">Recorrido para familias</div>
+  <p class="muted" style="margin:0">Una lectura corta y una conversación por semana. Usted no verá las respuestas de su hijo o hija, y eso es intencional: los jóvenes responden con honestidad cuando su espacio se respeta.</p>
+  <div class="tabs" role="tablist" aria-label="Semanas del recorrido para familias" id="famTabs">
+    <button role="tab" data-ft="1" aria-controls="fs1">Semana 1</button><button role="tab" data-ft="2" aria-controls="fs2">Semana 2</button><button role="tab" data-ft="3" aria-controls="fs3">Semana 3</button><button role="tab" data-ft="4" aria-controls="fs4">Semana 4</button>
+  </div>
+  <section id="fs1" role="tabpanel" data-fs="1">
+  <div class="eyebrow">Semana 1 · Reconocer</div>
   <h2>Su hijo o hija no está perdido: está explorando</h2>
-  <p class="muted">Lectura de 5 minutos. Usted no verá las respuestas de su hijo o hija, y eso es intencional: los jóvenes responden con honestidad cuando su espacio se respeta.</p>
+  <p class="muted">Lectura de 5 minutos.</p>
   <div class="read"><h3>Lo que pasa a esta edad</h3><p>No saber qué estudiar a los 17 años es normal. En psicología se distingue entre el joven que <strong>no ha explorado</strong> y el que <strong>está explorando</strong>. Lo preocupante no es la duda: es decidir sin haber explorado, eligiendo solo por lo que otros esperan, por la plata o para irse lejos de casa.</p></div>
   <div class="read"><h3>Tres trampas frecuentes</h3><ul><li><strong>Decidir por él o ella.</strong> La carrera elegida para cumplirle a otro es la que más se abandona.</li><li><strong>Hablar solo de plata.</strong> Importa, pero sin sentido personal no sostiene cinco años de estudio.</li><li><strong>Dejar el tema para enero.</strong> Con los puntajes encima se decide con apuro y sin información.</li></ul></div>
   <div class="read"><h3>Tres datos prácticos que conviene saber</h3><ul>
     <li><strong>Gratuidad:</strong> cubre al 60% de los hogares de menores ingresos, pero <strong>solo en instituciones adscritas</strong>. Si su hijo la obtiene y se matricula en una institución no adscrita, no la puede usar.</li>
     <li><strong>Duración real:</strong> una carrera profesional de 10 semestres dura en promedio 13. Conviene presupuestar más tiempo del que dice la malla.</li></ul></div>
   <div class="read" style="background:var(--goldsoft);border-color:#e8d9a8"><h3>Conversación puente de esta semana</h3><p class="quote" style="font-size:1.12rem">"¿Qué espera cada uno de nosotros de esta decisión?"</p><p class="small muted" style="margin:0">Elijan un momento tranquilo. Usted también responde la pregunta.</p></div>
-  <div class="read" id="fam2" style="border-color:var(--navy)"><div class="eyebrow">Semana 2 · Abrirle puertas</div><h3>Su red es el mejor recurso de su hijo o hija</h3>
-  <p>Esta semana su hijo o hija tiene una misión: conversar 15 minutos con alguien que trabaje en una carrera que le interesa. Muchos jóvenes no la cumplen porque no conocen a nadie. Usted sí.</p>
-  <ul><li><strong>Pregúntele qué dos rutas eligió</strong> y piense a quién conoce que trabaje en eso: familiares, colegas, vecinos, amigos.</li>
-  <li><strong>Haga el contacto, pero no la conversación.</strong> Presente a su hijo o hija y deje que pregunte solo.</li>
-  <li><strong>Después, escuche antes de opinar.</strong> Pregunte "¿qué te sorprendió?" antes de decir lo que usted piensa de esa carrera.</li></ul>
-  <p class="quote" style="font-size:1.08rem;margin:10px 0 0">Conversación puente: "¿Qué trabajo te habría gustado conocer a mi edad, y por qué?"</p><p class="small muted" style="margin:4px 0 0">Esta vez la pregunta es para usted: cuente su propia historia.</p></div>
   <h3 style="margin-top:20px">Para usted (opcional y anónimo)</h3>
   <label class="field" for="pclar">¿Qué tan preparado o preparada se siente para acompañar esta decisión?</label>
   <div class="slider" style="margin-top:4px"><div class="sv" id="pclarV">5</div><input type="range" id="pclar" min="0" max="10" value="5" aria-label="Preparación de 0 a 10"><div class="sl"><span>Nada</span><span>Totalmente</span></div></div>
@@ -418,6 +536,20 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
   <label class="check"><input type="checkbox" id="pacepto"> <span>Acepto que estas respuestas se guarden sin mi nombre, asociadas a un código, para mejorar Radar Vocacional. Solo se informan resultados de grupos de 10 o más personas.</span></label>
   <button class="btn primary block" id="pGuardar" disabled>Guardar y terminar la Semana 1</button>
   <p class="small muted" id="pState" style="margin-top:6px"></p>
+  <div class="nav"><button class="btn ghost block" data-ftgo="2">Ir a la Semana 2 →</button></div>
+  </section>
+  <section id="fs2" role="tabpanel" data-fs="2" class="hidden">
+  <div class="eyebrow">Semana 2 · Abrirle puertas</div><h2>Su red es el mejor recurso de su hijo o hija</h2>
+  <div class="read" id="fam2">
+  <p>Esta semana su hijo o hija tiene una misión: conversar 15 minutos con alguien que trabaje en una carrera que le interesa. Muchos jóvenes no la cumplen porque no conocen a nadie. Usted sí.</p>
+  <ul><li><strong>Pregúntele qué dos rutas eligió</strong> y piense a quién conoce que trabaje en eso: familiares, colegas, vecinos, amigos.</li>
+  <li><strong>Haga el contacto, pero no la conversación.</strong> Presente a su hijo o hija y deje que pregunte solo.</li>
+  <li><strong>Después, escuche antes de opinar.</strong> Pregunte "¿qué te sorprendió?" antes de decir lo que usted piensa de esa carrera.</li></ul></div>
+  <div class="read" style="background:var(--goldsoft);border-color:#e8d9a8"><h3>Conversación puente de esta semana</h3><p class="quote" style="font-size:1.08rem">"¿Qué trabajo te habría gustado conocer a mi edad, y por qué?"</p><p class="small muted" style="margin:0">Esta vez la pregunta es para usted: cuente su propia historia.</p></div>
+  <div class="nav"><button class="btn ghost block" data-ftgo="3">Ir a la Semana 3 →</button></div>
+  </section>
+  <section id="fs3" role="tabpanel" data-fs="3" class="hidden"></section>
+  <section id="fs4" role="tabpanel" data-fs="4" class="hidden"></section>
 </div></main>
 
 <div id="sheet" class="sheet-bg hidden" role="dialog" aria-modal="true"><div class="sheet" id="sheetBox"></div></div>
@@ -433,7 +565,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;margin-top:20px;font
 const SUPABASE_URL="https://kbvfqooclspbugfiehma.supabase.co";
 const SUPABASE_KEY="sb_publishable_SsVm__pDUG6PfxW-k0yzYQ_OBT1sqFW";
 const KEY="radar_vocacional_v2";
-const APP_V="mvp-5",INST_V="r2-v1";
+const APP_V="mvp-6",INST_V="r3-v1";
 const CARRERAS_RESPALDO=[{"n":"Medicina","t":"U","c":"ISR","np":22,"emp":91,"ret":96,"dr":15.1,"ing":3500000,"ar":9980000,"df":14,"m":[{"i":"U. Autónoma De Chile","s":"Talca","ar":10621000,"paes":899,"p":[10,20,35,25,0,0,10]},{"i":"U. Católica del Maule","s":"Talca","ar":10453000,"paes":884,"p":[20,30,10,25,0,0,15]},{"i":"U. de Talca","s":"Talca","ar":10324000,"paes":864,"p":[20,30,10,25,0,0,15]}]},{"n":"Enfermería","t":"U","c":"SIC","np":43,"emp":79,"ret":89,"dr":12.1,"ing":1750000,"ar":5580000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6058000,"paes":680,"p":[10,40,15,20,0,0,15]},{"i":"U. de Talca","s":"Talca","ar":5983000,"paes":669,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5279000,"paes":667,"p":[10,20,35,25,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":5616000,"paes":632,"p":[10,10,35,35,0,10,10]}]},{"n":"Kinesiología","t":"U","c":"SIR","np":38,"emp":53,"ret":88,"dr":12.3,"ing":1350000,"ar":5550000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5983000,"paes":649,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5324000,"paes":648,"p":[10,20,30,30,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":6058000,"paes":644,"p":[10,40,15,20,0,0,15]},{"i":"U. Santo Tomás","s":"Talca","ar":5347000,"paes":630,"p":[10,10,35,35,0,10,10]}]},{"n":"Psicología","t":"U","c":"SIA","np":44,"emp":62,"ret":90,"dr":11.5,"ing":1150000,"ar":5110000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6222000,"paes":689,"p":[20,30,20,20,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":5822000,"paes":648,"p":[10,40,20,20,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5097000,"paes":647,"p":[10,30,40,10,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5822000,"paes":640,"p":[10,40,20,20,0,10,10]}]},{"n":"Odontología","t":"U","c":"IRS","np":20,"emp":65,"ret":90,"dr":14.9,"ing":1750000,"ar":9520000,"df":12,"m":[{"i":"U. de Talca","s":"Talca","ar":9384000,"paes":null,"p":[20,30,15,20,0,0,15]}]},{"n":"Química y Farmacia","t":"U","c":"ICS","np":11,"emp":99,"ret":91,"dr":14.1,"ing":2350000,"ar":5790000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":5372000,"paes":762,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5258000,"paes":705,"p":[10,25,25,30,0,10,10]},{"i":"U. de Talca","s":"Talca","ar":6990000,"paes":null,"p":[20,30,10,25,0,0,15]}]},{"n":"Nutrición y Dietética","t":"U","c":"ISE","np":27,"emp":46,"ret":81,"dr":12.3,"ing":1150000,"ar":5090000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5342000,"paes":610,"p":[20,30,10,20,0,0,20]},{"i":"U. Santo Tomás","s":"Talca","ar":4822000,"paes":594,"p":[10,10,35,35,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5196000,"paes":588,"p":[10,40,15,20,0,0,15]}]},{"n":"Obstetricia y Puericultura","t":"U","c":"SIR","np":15,"emp":73,"ret":93,"dr":12.4,"ing":1650000,"ar":5800000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5397000,"paes":702,"p":[20,30,10,25,0,0,15]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5793000,"paes":694,"p":[10,20,35,25,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5089000,"paes":645,"p":[10,40,15,20,0,0,15]}]},{"n":"Tecnología Médica","t":"U","c":"IRC","np":21,"emp":73,"ret":87,"dr":12.7,"ing":1750000,"ar":5910000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6032000,"paes":701,"p":[10,40,15,20,0,0,15]},{"i":"U. de Talca","s":"Talca","ar":5958000,"paes":697,"p":[20,30,10,20,0,0,20]}]},{"n":"Fonoaudiología","t":"U","c":"SIA","np":25,"emp":43,"ret":83,"dr":12.1,"ing":1050000,"ar":5500000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5983000,"paes":571,"p":[20,30,20,20,0,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":4940000,"paes":564,"p":[10,30,30,20,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":4840000,"paes":559,"p":[10,10,35,35,0,10,10]}]},{"n":"Terapia Ocupacional","t":"U","c":"SIR","np":18,"emp":50,"ret":90,"dr":11.6,"ing":1250000,"ar":5020000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5642000,"paes":619,"p":[20,30,15,25,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5089000,"paes":597,"p":[10,30,35,15,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5409000,"paes":587,"p":[10,40,20,20,0,10,10]}]},{"n":"Medicina Veterinaria","t":"U","c":"IRS","np":11,"emp":66,"ret":88,"dr":15,"ing":1350000,"ar":6430000,"df":10,"m":[{"i":"U. Santo Tomás","s":"Talca","ar":6495000,"paes":680,"p":[10,10,30,40,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":6209000,"paes":651,"p":[10,40,15,15,0,0,20]}]},{"n":"Derecho","t":"U","c":"EIS","np":31,"emp":69,"ret":85,"dr":16.3,"ing":1850000,"ar":5420000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6628000,"paes":698,"p":[20,30,25,10,0,15,0]},{"i":"U. Católica del Maule","s":"Talca","ar":5762000,"paes":646,"p":[10,40,25,10,0,15,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5334000,"paes":621,"p":[10,30,40,10,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":5430000,"paes":551,"p":[10,10,40,20,0,20,20]}]},{"n":"Trabajo Social","t":"U","c":"SEI","np":32,"emp":63,"ret":81,"dr":11.3,"ing":1050000,"ar":3680000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4436000,"paes":580,"p":[10,40,25,10,0,15,0]},{"i":"U. Católica del Maule","s":"Curicó","ar":4436000,"paes":562,"p":[10,40,25,10,0,15,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3772000,"paes":536,"p":[10,30,40,10,0,10,10]}]},{"n":"Periodismo","t":"U","c":"AES","np":24,"emp":65,"ret":87,"dr":11.6,"ing":1350000,"ar":5050000,"df":9,"m":[{"i":"U. Autónoma De Chile","s":"Talca","ar":5257000,"paes":573,"p":[10,30,40,10,0,10,10]}]},{"n":"Publicidad","t":"U","c":"EAS","np":10,"emp":72,"ret":91,"dr":9.6,"ing":1250000,"ar":5250000,"df":8,"m":[]},{"n":"Sociología","t":"U","c":"ISA","np":11,"emp":57,"ret":77,"dr":12.9,"ing":1350000,"ar":4870000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":5100000,"paes":null,"p":[10,40,15,25,0,10,0]}]},{"n":"Ciencias Políticas","t":"U","c":"IES","np":7,"emp":56,"ret":83,"dr":11.5,"ing":1550000,"ar":4740000,"df":10,"m":[]},{"n":"Arquitectura","t":"U","c":"AIR","np":22,"emp":59,"ret":85,"dr":15.1,"ing":1350000,"ar":5840000,"df":11,"m":[{"i":"U. de Talca","s":"Talca","ar":6845000,"paes":688,"p":[20,30,15,25,0,10,0]},{"i":"U. Católica del Maule","s":"Talca","ar":6183000,"paes":661,"p":[10,40,15,25,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5409000,"paes":620,"p":[10,25,25,30,0,10,10]}]},{"n":"Diseño","t":"U","c":"ARE","np":9,"emp":54,"ret":89,"dr":12.2,"ing":1450000,"ar":5710000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5887000,"paes":null,"p":[20,30,20,20,0,10,10]}]},{"n":"Diseño Gráfico","t":"IP","c":"ARE","np":5,"emp":40,"ret":70,"dr":10.2,"ing":950000,"ar":3110000,"df":8,"m":[{"i":"IP Inacap","s":"Curicó","ar":3288000,"paes":null,"p":null},{"i":"IP Santo Tomás","s":"Talca","ar":2944000,"paes":null,"p":null}]},{"n":"Comunicación Audiovisual y/o Multimedia","t":"U","c":"AER","np":4,"emp":48,"ret":84,"dr":11.3,"ing":1300000,"ar":4590000,"df":9,"m":[]},{"n":"Ingeniería Civil en Computación e Informática","t":"U","c":"ICR","np":21,"emp":88,"ret":85,"dr":14.2,"ing":2750000,"ar":5650000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6183000,"paes":727,"p":[10,40,10,25,5,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5193000,"paes":623,"p":[10,30,20,25,5,10,10]},{"i":"U. de Talca","s":"Curicó","ar":6222000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Ingeniería en Computación e Informática","t":"IP","c":"ICR","np":6,"emp":78,"ret":75,"dr":10.1,"ing":1550000,"ar":3260000,"df":8,"m":[{"i":"IP Inacap","s":"Talca","ar":3352000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":3352000,"paes":null,"p":null},{"i":"IP Santo Tomás","s":"Talca","ar":2954000,"paes":null,"p":null}]},{"n":"Técnico en Computación e Informática","t":"CFT","c":"RIC","np":5,"emp":52,"ret":69,"dr":6.2,"ing":1200000,"ar":2360000,"df":5,"m":[{"i":"CFT San Agustín","s":"Talca","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Cauquenes","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Linares","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Constitución","ar":2910000,"paes":null,"p":null}]},{"n":"Ingeniería Civil Industrial","t":"U","c":"EIC","np":34,"emp":85,"ret":88,"dr":14.4,"ing":2150000,"ar":5660000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":6058000,"paes":725,"p":[10,40,10,25,5,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5193000,"paes":646,"p":[10,30,20,25,5,10,10]},{"i":"U. de Talca","s":"Talca","ar":6222000,"paes":null,"p":[20,30,10,20,10,0,10]},{"i":"U. de Talca","s":"Curicó","ar":6222000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Ingeniería Comercial","t":"U","c":"ECI","np":40,"emp":76,"ret":82,"dr":12.6,"ing":1750000,"ar":5170000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5820000,"paes":674,"p":[20,30,10,30,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":5327000,"paes":628,"p":[10,40,15,25,0,10,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":5201000,"paes":584,"p":[10,30,20,30,0,10,10]},{"i":"U. Santo Tomás","s":"Talca","ar":4929000,"paes":569,"p":[10,10,30,40,0,10,10]}]},{"n":"Contador Auditor","t":"U","c":"CEI","np":25,"emp":84,"ret":84,"dr":11.6,"ing":1450000,"ar":4390000,"df":8,"m":[{"i":"U. de Talca","s":"Talca","ar":5293000,"paes":686,"p":[20,30,10,30,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":4794000,"paes":632,"p":[10,40,15,25,0,10,0]},{"i":"U. Católica del Maule","s":"Talca","ar":4794000,"paes":612,"p":[10,40,15,25,0,10,0]}]},{"n":"Técnico en Contabilidad General","t":"IP","c":"CEI","np":8,"emp":70,"ret":66,"dr":6.9,"ing":1150000,"ar":2410000,"df":5,"m":[{"i":"IP Inacap","s":"Talca","ar":2796000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2280000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2190000,"paes":null,"p":null}]},{"n":"Ingeniería Civil Eléctrica","t":"U","c":"RIC","np":10,"emp":92,"ret":83,"dr":15.5,"ing":2750000,"ar":6630000,"df":10.5,"m":[{"i":"U. de Talca","s":"Curicó","ar":6493000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Ingeniería en Electricidad","t":"IP","c":"RIC","np":6,"emp":87,"ret":76,"dr":10.9,"ing":1650000,"ar":2820000,"df":8,"m":[{"i":"IP Inacap","s":"Talca","ar":3312000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2590000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2320000,"paes":null,"p":null}]},{"n":"Técnico en Electricidad y Electricidad Industrial","t":"CFT","c":"RIC","np":5,"emp":77,"ret":68,"dr":6.3,"ing":1250000,"ar":2320000,"df":5,"m":[{"i":"CFT San Agustín","s":"Talca","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Linares","ar":2910000,"paes":null,"p":null},{"i":"CFT San Agustín","s":"Constitución","ar":2910000,"paes":null,"p":null},{"i":"CFT de la Región del Maule","s":"Linares","ar":2413000,"paes":null,"p":null}]},{"n":"Ingeniería Civil en Minas","t":"U","c":"RIE","np":13,"emp":80,"ret":81,"dr":15.3,"ing":3250000,"ar":6110000,"df":10,"m":[{"i":"U. de Talca","s":"Curicó","ar":6493000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Técnico en Minería","t":"CFT","c":"RCI","np":3,"emp":78,"ret":68,"dr":6.9,"ing":1650000,"ar":2390000,"df":5,"m":[]},{"n":"Ingeniería Civil Mecánica","t":"U","c":"RIC","np":12,"emp":84,"ret":77,"dr":16.1,"ing":2750000,"ar":6420000,"df":10,"m":[{"i":"U. de Talca","s":"Curicó","ar":6493000,"paes":null,"p":[20,30,10,20,10,0,10]}]},{"n":"Técnico en Mecánica Automotriz","t":"IP","c":"RCI","np":4,"emp":64,"ret":68,"dr":6.1,"ing":1050000,"ar":2960000,"df":4,"m":[{"i":"IP Inacap","s":"Talca","ar":3019000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":3019000,"paes":null,"p":null}]},{"n":"Construcción Civil","t":"U","c":"REC","np":7,"emp":80,"ret":82,"dr":12,"ing":1850000,"ar":3850000,"df":5,"m":[]},{"n":"Agronomía","t":"U","c":"IRE","np":12,"emp":64,"ret":81,"dr":14.3,"ing":1550000,"ar":5440000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6465000,"paes":624,"p":[20,30,10,30,0,0,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":5848000,"paes":606,"p":[10,40,15,20,0,0,15]},{"i":"U. Santo Tomás","s":"Talca","ar":5633000,"paes":null,"p":[10,10,30,40,0,10,10]}]},{"n":"Técnico Agropecuario","t":"IP","c":"RIC","np":3,"emp":49,"ret":76,"dr":6.6,"ing":950000,"ar":2950000,"df":4,"m":[{"i":"IP Inacap","s":"Talca","ar":2952000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":2952000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2400000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2220000,"paes":null,"p":null}]},{"n":"Ingeniería Forestal","t":"U","c":"RIE","np":2,"emp":82,"ret":73,"dr":12.8,"ing":1650000,"ar":6920000,"df":10,"m":[]},{"n":"Geología","t":"U","c":"IRE","np":9,"emp":69,"ret":83,"dr":16.8,"ing":2750000,"ar":5770000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":5664000,"paes":678,"p":[10,40,10,25,0,0,15]}]},{"n":"Bioquímica","t":"U","c":"IRC","np":7,"emp":63,"ret":82,"dr":14.8,"ing":1450000,"ar":6470000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":6825000,"paes":710,"p":[20,30,10,25,0,0,15]}]},{"n":"Pedagogía en Educación Básica","t":"U","c":"SAC","np":27,"emp":90,"ret":89,"dr":10.6,"ing":1150000,"ar":4120000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4442000,"paes":616,"p":[10,40,20,20,0,10,10]},{"i":"U. Católica del Maule","s":"Curicó","ar":4442000,"paes":613,"p":[10,40,20,20,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3894000,"paes":576,"p":[10,30,25,25,0,10,10]},{"i":"U. de Talca","s":"Linares","ar":4559000,"paes":568,"p":[20,30,30,10,0,10,10]}]},{"n":"Pedagogía en Matemáticas y Computación","t":"U","c":"SIC","np":12,"emp":91,"ret":76,"dr":11.7,"ing":1350000,"ar":4030000,"df":10,"m":[{"i":"U. de Talca","s":"Linares","ar":4559000,"paes":null,"p":[20,30,10,25,5,0,10]},{"i":"U. Católica del Maule","s":"Talca","ar":4356000,"paes":null,"p":[10,40,10,25,5,0,10]}]},{"n":"Pedagogía en Educación Física","t":"U","c":"SRE","np":26,"emp":57,"ret":86,"dr":11.1,"ing":1050000,"ar":4240000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4356000,"paes":611,"p":[10,40,20,20,0,0,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3803000,"paes":588,"p":[10,30,35,15,0,10,10]}]},{"n":"Pedagogía en Historia, Geografía y Ciencias Sociales","t":"U","c":"SAI","np":14,"emp":74,"ret":84,"dr":11.5,"ing":1100000,"ar":3980000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4278000,"paes":632,"p":[10,40,20,10,0,20,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3894000,"paes":null,"p":[10,30,40,10,0,10,10]}]},{"n":"Pedagogía en Educación de Párvulos","t":"U","c":"SAC","np":30,"emp":69,"ret":87,"dr":10.1,"ing":1050000,"ar":3960000,"df":9,"m":[{"i":"U. Católica del Maule","s":"Curicó","ar":4278000,"paes":562,"p":[10,40,20,20,0,10,10]},{"i":"U. Católica del Maule","s":"Talca","ar":4278000,"paes":553,"p":[10,40,20,20,0,10,10]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3926000,"paes":551,"p":[10,30,35,15,0,10,10]}]},{"n":"Pedagogía en Idiomas","t":"U","c":"SAE","np":26,"emp":63,"ret":86,"dr":11.7,"ing":1050000,"ar":4280000,"df":10,"m":[{"i":"U. Católica del Maule","s":"Talca","ar":4377000,"paes":639,"p":[10,40,25,15,0,10,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":3897000,"paes":579,"p":[10,30,40,10,0,10,10]},{"i":"U. de Talca","s":"Linares","ar":4559000,"paes":null,"p":[20,30,30,10,0,10,0]}]},{"n":"Técnico en Enfermería","t":"IP","c":"SRC","np":9,"emp":65,"ret":70,"dr":5.9,"ing":850000,"ar":2870000,"df":5,"m":[{"i":"IP Inacap","s":"Talca","ar":2948000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2860000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2900000,"paes":null,"p":null}]},{"n":"Técnico en Gastronomía y Cocina","t":"IP","c":"RAE","np":3,"emp":45,"ret":75,"dr":6,"ing":750000,"ar":3910000,"df":4,"m":[{"i":"IP Inacap","s":"Talca","ar":3911000,"paes":null,"p":null},{"i":"IP Inacap","s":"Curicó","ar":3911000,"paes":null,"p":null}]},{"n":"Ingeniería en Prevención de Riesgos","t":"IP","c":"RCE","np":7,"emp":79,"ret":62,"dr":11.2,"ing":1250000,"ar":2460000,"df":8,"m":[{"i":"IP Aiep","s":"Curicó","ar":2560000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2280000,"paes":null,"p":null}]},{"n":"Técnico en Logística","t":"IP","c":"CRE","np":5,"emp":78,"ret":68,"dr":5.8,"ing":1150000,"ar":2580000,"df":5,"m":[{"i":"IP Inacap","s":"Talca","ar":2916000,"paes":null,"p":null},{"i":"IP Aiep","s":"Curicó","ar":2410000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2120000,"paes":null,"p":null}]},{"n":"Animación Digital","t":"IP","c":"AIR","np":3,"emp":31,"ret":68,"dr":9.9,"ing":950000,"ar":3880000,"df":8,"m":[]},{"n":"Ingeniería en Marketing","t":"IP","c":"EAC","np":1,"emp":60,"ret":80,"dr":9.4,"ing":1250000,"ar":3260000,"df":8,"m":[]},{"n":"Administración Pública","t":"U","c":"ECS","np":15,"emp":70,"ret":85,"dr":11.3,"ing":1450000,"ar":4550000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5198000,"paes":642,"p":[20,30,20,20,0,10,0]},{"i":"U. Católica del Maule","s":"Curicó","ar":4854000,"paes":585,"p":[10,40,20,20,0,10,0]},{"i":"U. Autónoma De Chile","s":"Talca","ar":4927000,"paes":550,"p":[10,30,30,20,0,10,10]}]},{"n":"Actuación y Teatro","t":"U","c":"AES","np":4,"emp":25,"ret":86,"dr":11.5,"ing":null,"ar":5360000,"df":9,"m":[]},{"n":"Música, Canto o Danza","t":"U","c":"ASE","np":5,"emp":48,"ret":88,"dr":12.9,"ing":null,"ar":5290000,"df":10,"m":[{"i":"U. de Talca","s":"Talca","ar":5887000,"paes":649,"p":[10,10,10,10,0,10,0]}]},{"n":"Ingeniería en Recursos Humanos","t":"IP","c":"ESC","np":3,"emp":81,"ret":78,"dr":9.7,"ing":1250000,"ar":2730000,"df":8,"m":[]},{"n":"Técnico en Deporte, Recreación y Preparación Física","t":"IP","c":"SRE","np":4,"emp":43,"ret":74,"dr":6.5,"ing":850000,"ar":2460000,"df":4,"m":[{"i":"IP Aiep","s":"Curicó","ar":2480000,"paes":null,"p":null},{"i":"IP Aiep","s":"Talca","ar":2520000,"paes":null,"p":null}]},{"n":"Técnico Veterinario","t":"IP","c":"RSI","np":1,"emp":43,"ret":83,"dr":6.3,"ing":750000,"ar":3060000,"df":5,"m":[]},{"n":"Ingeniería en Sonido","t":"IP","c":"RAI","np":2,"emp":45,"ret":73,"dr":10,"ing":1000000,"ar":3190000,"df":8,"m":[]},{"n":"Técnico en Instrumentación, Automatización y Control Industrial","t":"CFT","c":"RIC","np":5,"emp":78,"ret":57,"dr":7,"ing":1450000,"ar":2480000,"df":5,"m":[{"i":"CFT San Agustín","s":"Linares","ar":2910000,"paes":null,"p":null}]},{"n":"Técnico en Laboratorio Clínico","t":"IP","c":"IRC","np":3,"emp":51,"ret":79,"dr":5.6,"ing":850000,"ar":2820000,"df":5,"m":[]},{"n":"Ingeniería en Comercio Exterior","t":"IP","c":"ECI","np":3,"emp":82,"ret":75,"dr":10,"ing":1300000,"ar":2630000,"df":8,"m":[]}];
 let CARRERAS=CARRERAS_RESPALDO, CATALOGO="respaldo";
 const REGIONES=["Arica y Parinacota","Tarapacá","Antofagasta","Atacama","Coquimbo","Valparaíso","Metropolitana","Lib. Gral. B. O'Higgins","Maule","Ñuble","Biobío","La Araucanía","Los Ríos","Los Lagos","Aysén","Magallanes"];
@@ -467,6 +599,528 @@ const FACT_DIF={
  1:["Hay más caminos de los que crees","Un técnico en electricidad de un CFT estudia 5 semestres y tiene 77% de empleabilidad al primer año. No todo pasa por una carrera universitaria de 5 años.","mifuturo.cl 2025–2026"]
 };
 const ALERTA=/(suicid|matarme|quitarme la vida|no quiero vivir|quiero morir|morirme|hacerme dano|cortarme|me pegan|me golpean|abus|violac)/;
+/* ===== Especificación de contenido Semanas 3 y 4 (spec_semanas34.js v0.1, 16-oct-2026, tal cual) ===== */
+/* ---------- anclas nuevas ---------- */
+const FREC_ANCLAS = ["Nunca", "Pocas veces", "A veces", "Seguido", "Siempre"];   // FAM
+const BAR_ANCLAS  = ["Nada", "Poco", "Algo", "Bastante", "Mucho"];               // BAR01–BAR08
+const UTIL_ANCLAS = ["Nada", "Poco", "Más o menos", "Bastante", "Mucho"];        // satisfacción S4
+const PIE_NORTEA  = "Estas preguntas están en etapa de prueba en Chile. Sirven para que reflexiones sobre tu proceso, no para ponerte una etiqueta ni para elegir carreras por ti.";
+
+/* =====================================================================
+   S3 · CONTRASTAR  (~15 min de contenido)
+   Orden: intro → retomar/debrief misión → [aviso sensible → FAM → dev FAM
+   → BAR → afrontamiento → dev BAR + tarjetas] (solo con casilla b) →
+   Contrastar → entrevista → plan B → (extra Mini-IPIP) → cierre.
+   BAR SIEMPRE antes de mostrar datos de costo/financiamiento del contraste.
+   ===================================================================== */
+const S3 = {
+  semana: 3, momento: "S3", nombre: "Contrastar", minutos: 15,
+  nitidez: 90,   // la nitidez sube de 75 % (S2) a 90 % al terminar
+
+  intro: {
+    eyebrow: "Semana 3 · Contrastar",
+    titulo: "Hoy pones tus opciones lado a lado",
+    texto: "Ya tienes pistas de lo que te atrae y de lo que buscas. Esta semana toca mirar tus opciones con lupa: qué te gusta, qué te cuesta y qué dicen los datos. No es para descartar al tiro, es para elegir con los ojos abiertos.",
+    pasos: ["Cómo te fue con la misión · 2 min", "Preguntas sobre tu contexto (opcional) · 3 min", "Compara 2 o 3 opciones · 6 min", "Tu plan B y tu cierre · 3 min"],
+    boton: "Empezar"
+  },
+
+  /* --- retomar la misión de S2 (debrief corto) --- */
+  debrief: {
+    id: "S3_DEB",
+    titulo: "¿Alcanzaste a hacer tu misión?",
+    texto: "La semana pasada te propusimos conversar con alguien que estudia o trabaja en algo que te interesa.",
+    campos: [
+      { id: "DEB_HIZO", tipo: "opcion", texto: "¿Pudiste conversar con alguien?", opciones: ["Sí", "Lo intenté, pero no resultó", "No alcancé"] },
+      { id: "DEB_ATRAE", tipo: "opcion", si: "DEB_HIZO==Sí", texto: "Después de esa conversación, esa opción te atrae…", opciones: ["Más que antes", "Igual", "Menos que antes"] },
+      { id: "DEB_SORP", tipo: "texto_corto", si: "DEB_HIZO==Sí", max: 200, texto: "¿Qué te sorprendió?", placeholder: "Una frase basta" }
+    ],
+    sin_culpa: "Tranqui, pasa harto. Hoy te dejamos una versión más fácil de la misión: está más abajo, en «Entrevista a alguien que lo vive». Puede ser por mensaje."
+  },
+
+  /* --- datos sensibles: SOLO si consentimiento.sensibles === true (casilla b) --- */
+  condicion_sensibles: "Mostrar aviso_sensible, FAM y BAR solo si el estudiante marcó la casilla (b) (en el piloto CEMMLE: y el profesor jefe registró la (b) del apoderado). Sin (b): saltar directo a tarjetas_sin_b y luego a contrastar.",
+
+  aviso_sensible: {
+    titulo: "Unas preguntas sobre tu contexto",
+    texto: "Las próximas preguntas son sobre tu familia y tu situación. Nadie de tu familia ni del colegio va a ver estas respuestas. Puedes saltarlas todas o marcar «Prefiero no responder» en cualquiera.",
+    tiempo: "17 frases · 3 min",
+    botones: ["Responder", "Saltar este bloque"],
+    modo_discreto: true   // JOVEN §4.4: botones seleccionados sin colores fuertes
+  },
+
+  /* ---------- FAM · «Mi familia y mi futuro» ---------- */
+  FAM: {
+    key: "fam",
+    escala: "frecuencia 1-5",
+    anclas: "FREC_ANCLAS",
+    valores: [1, 2, 3, 4, 5],
+    pnr: true,                // «Prefiero no responder» → null
+    enprueba: true,
+    barras: false,
+    instruccion: "Piensa en las personas adultas que te acompañan o con quienes vives (pueden ser tu familia, tus cuidadores u otras personas). ¿Qué tan seguido pasa esto? Si alguna no te acomoda, marca «Prefiero no responder».",
+    tiempo: "8 frases · 1 min",
+    // Texto TAL CUAL nortea-capa-radar-v01.md §2.3. Sin invertidos (por diseño).
+    items: [
+      ["FAM01", "Mi familia me pregunta qué me gustaría estudiar o hacer."],
+      ["FAM02", "Mi familia me ayuda a buscar información sobre carreras u otras opciones."],
+      ["FAM03", "Mi familia me dice que confía en lo que yo decida."],
+      ["FAM04", "Puedo conversar con mi familia sobre mis dudas del futuro."],
+      ["FAM05", "Mi familia insiste en que estudie algo que yo no quiero."],
+      ["FAM06", "Siento que tengo que elegir algo que deje contenta a mi familia."],
+      ["FAM07", "En mi familia descartan opciones que a mí me interesan."],
+      ["FAM08", "Siento que mi familia espera de mí algo distinto de lo que yo quiero."],
+      ["FAM09", "Mi familia anda con muy poco tiempo para hablar de mi futuro."],
+      ["FAM10", "En mi casa casi no se habla de qué voy a hacer después de 4° medio."]
+    ]
+  },
+  FAM_META: {
+    // piloto2026:false = ÉTICA §4 recomienda retirarlo en 2026 (el programador filtra por este flag).
+    // rev = redacción propuesta por JOVEN/ÉTICA; NO se usa salvo decisión del fundador.
+    FAM01: { faceta: "apoyo",       corta: true,  piloto2026: true },
+    FAM02: { faceta: "apoyo",       corta: true,  piloto2026: true },
+    FAM03: { faceta: "apoyo",       corta: false, piloto2026: true },
+    FAM04: { faceta: "apoyo",       corta: true,  piloto2026: true,  rev: "Converso con mi familia sobre mis dudas sobre el futuro. (JOVEN: verbo de conducta para escala de frecuencia)" },
+    FAM05: { faceta: "presion",     corta: true,  piloto2026: true,  rev: "Mi familia insiste en que estudie algo distinto de lo que yo quiero. (ÉTICA)" },
+    FAM06: { faceta: "presion",     corta: true,  piloto2026: true },
+    FAM07: { faceta: "presion",     corta: false, piloto2026: false },
+    FAM08: { faceta: "presion",     corta: true,  piloto2026: true },
+    FAM09: { faceta: "desconexion", corta: false, piloto2026: false, rev: "En mi familia, el trabajo o las obligaciones dejan poco tiempo para hablar de mi futuro. (JOVEN)" },
+    FAM10: { faceta: "desconexion", corta: false, piloto2026: false, rev: "En mi casa, el tema de qué voy a hacer después de 4° medio se deja para después. (JOVEN)" }
+  },
+  FAM_puntaje: {
+    apoyo:  { items: ["FAM01", "FAM02", "FAM03", "FAM04"], calculo: "media de respondidos (1-5)", min_respondidos: 3 },
+    presion:{ items: ["FAM05", "FAM06", "FAM07", "FAM08"], calculo: "media de respondidos (1-5); si FAM07 está fuera, usar los 3 restantes", min_respondidos: 2 },
+    regla_pnr: "Si una subescala tiene 2 o más «Prefiero no responder» (o no llega a min_respondidos), NO se devuelve esa subescala (ÉTICA §7).",
+    desconexion: "FAM09-FAM10 no se puntúan ni se devuelven en 2026."
+  },
+  FAM_devolucion: {
+    abrir_con_toque: "Ver mi devolución sobre familia (ábrela cuando quieras)",  // modo discreto
+    apoyo: [
+      "Hoy parece que el tema del futuro no se conversa tanto en tu casa. Pasa harto: muchos adultos quieren ayudar, pero no saben cómo partir. Para pensar: ¿hay algún adulto, dentro o fuera de tu casa, con quien te gustaría hablar de esto?",
+      "A ratos sientes apoyo con tu decisión. Una idea: cuéntale a alguien de tu casa una sola cosa que descubriste en esta ruta. A veces la conversación parte cuando uno pone el primer tema.",
+      "Sientes bastante apoyo para pensar tu futuro. Aprovéchalo: ¿qué dato o contacto te podría conseguir alguien de tu familia para la comparación de hoy?"
+    ],
+    presion: [
+      "Hoy no sientes mucha presión por elegir algo en particular. Eso te da espacio para explorar a tu ritmo.",
+      "A veces sientes que lo que esperan de ti y lo que tú quieres no calzan del todo. Es súper común, y muchas veces esa expectativa nace del cariño. Para pensar: ¿qué crees que tu familia quiere para ti en el fondo (tranquilidad, estabilidad, que te vaya bien)?",
+      "Sientes bastante presión por elegir algo que deje contenta a tu familia. No es culpa tuya ni de ellos: suele venir de querer lo mejor para ti. Para pensar: ¿qué parte de lo que esperan de ti también es tuya, y qué parte no? Esta semana tu familia recibe una conversación para hacer contigo; puedes usarla o no."
+    ],
+    cierre: "Nadie más ve esto. " + "Si quieres hablarlo con alguien, el orientador o el encargado de convivencia de tu colegio pueden escucharte."
+  },
+
+  /* ---------- BAR · «Lo que podría frenarme» ---------- */
+  BAR: {
+    key: "bar",
+    escala: "intensidad 1-5",
+    anclas: "BAR_ANCLAS",
+    valores: [1, 2, 3, 4, 5],
+    pnr: true,
+    enprueba: true,
+    barras: true,
+    instruccion: "¿Cuánto te podría frenar cada una de estas cosas? Según lo que marques, te mostramos qué existe para enfrentarla.",
+    tiempo: "8 frases · 1 min",
+    // Texto TAL CUAL nortea-capa-radar-v01.md §2.4. Sin invertidos.
+    items: [
+      ["BAR01", "El costo de la carrera (arancel y matrícula)."],
+      ["BAR02", "Los gastos para vivir mientras estudio (pasajes, comida, arriendo)."],
+      ["BAR03", "No saber si voy a tener Gratuidad, becas o crédito."],
+      ["BAR04", "Que mi puntaje PAES no me alcance."],
+      ["BAR05", "Que mi colegio no me haya preparado lo suficiente."],
+      ["BAR06", "Tener que irme lejos de mi ciudad o región para estudiar lo que quiero."],
+      ["BAR07", "Ser de las primeras personas de mi familia en entrar a la educación superior."],
+      ["BAR08", "Tener que trabajar o ayudar en mi casa mientras estudio."]
+    ],
+    // Pantalla aparte, con DESC_ANCLAS (1-5) + pnr
+    afrontamiento: {
+      key: "bar_af",
+      anclas: "DESC_ANCLAS",
+      pnr: true,
+      instruccion: "Ahora, dos frases sobre cómo te ves frente a esos obstáculos.",
+      items: [
+        ["BAR09", "Si aparece un obstáculo, sé a quién pedirle ayuda."],
+        ["BAR10", "Creo que puedo encontrar la forma de financiar mis estudios."]
+      ]
+    }
+  },
+  BAR_META: {
+    BAR01: { faceta: "economica",       corta: true,  tarjeta: "T_GRAT" },
+    BAR02: { faceta: "economica",       corta: false, tarjeta: "T_MANT" },
+    BAR03: { faceta: "info_financ",     corta: false, tarjeta: "T_FUAS" },
+    BAR04: { faceta: "academica",       corta: true,  tarjeta: "T_PUNT" },
+    BAR05: { faceta: "academica",       corta: false, tarjeta: "T_PREP", reporte: "solo total del piloto (ÉTICA A18)" },
+    BAR06: { faceta: "territorial",     corta: true,  tarjeta: "T_REG" },
+    BAR07: { faceta: "primera_gen",     corta: true,  tarjeta: "T_PG",   opcion_extra: "No es mi caso", nunca_comentar_aislado: true,
+             rev: "Ser de las primeras personas de mi familia en estudiar en un instituto o universidad. (ÉTICA; JOVEN propone «en un CFT, instituto o universidad»)" },
+    BAR08: { faceta: "responsabilidades", corta: true, tarjeta: "T_TRAB", nunca_comentar_aislado: true },
+    BAR09: { faceta: "afrontamiento",   corta: false },
+    BAR10: { faceta: "afrontamiento",   corta: true,  rev: "Creo que voy a encontrar la forma de pagar mis estudios. (JOVEN)" }
+  },
+  BAR_puntaje: {
+    indice: "n.º de BAR01–BAR08 con valor 4 o 5 (0–8). PNR y «No es mi caso» no cuentan. Formativo: sin ω.",
+    rangos_indice: { bajo: "0–1", medio: "2–3", alto: "4 o más" },
+    afrontamiento: "media de BAR09–BAR10 respondidos (1-5); con 1 solo ítem respondido se usa ese; con 0 no se devuelve",
+    tarjetas: "Cada ítem con 4 o 5 destapa su tarjeta. Siempre mostrar el botón «Ver todas las tarjetas»."
+  },
+  BAR_devolucion: {
+    indice: [
+      "Hoy ves pocas cosas que te puedan frenar. Igual vale la pena conocer la letra chica: te dejamos las tarjetas por si alguna te sirve más adelante.",
+      "Hay algunas cosas que te podrían complicar. No dependen de cuánto vales tú: son parte de cómo funciona el sistema. Para cada una hay algo que existe para enfrentarla; revisa tus tarjetas.",
+      "Ves varias cosas que te podrían frenar. Eso habla de tu contexto, no de tus capacidades. No estás solo ni sola en esto: elige la tarjeta que más te urge y conversa ese tema con alguien esta semana."
+    ],
+    afrontamiento: [
+      "Hoy no tienes muy claro a quién recurrir si algo se complica. Para pensar: ¿quién es un adulto de confianza (profe, orientador, alguien de tu familia) a quien le podrías preguntar una sola cosa?",
+      "Tienes algunas ideas de cómo enfrentar los obstáculos. Para pensar: de lo que marcaste, ¿cuál tiene una salida que todavía no conoces?",
+      "Te ves con recursos para enfrentar lo que venga. Úsalos para tu plan B de hoy."
+    ]
+  },
+
+  /* Tarjetas «dato que nadie te cuenta» que BAR destapa.
+     Sin cifras no verificadas. El texto NO alude a lo que marcó el joven. */
+  TARJETAS: {
+    T_GRAT: ["La Gratuidad tiene letra chica", "Cubre al 60% de los hogares de menores ingresos, pero solo si estudias en una institución adscrita. Si te la ganas y te matriculas en una que no lo está, no la puedes usar. Revisa la institución en gratuidad.cl antes de matricularte.", "Subsecretaría de Educación Superior (dato ya usado en la app)"],
+    T_MANT: ["El arancel no es el único gasto", "Además de la matrícula y el arancel hay pasajes, comida, materiales y, si te cambias de ciudad, arriendo. Existen becas de alimentación y de mantención; revisa cuáles hay en beneficiosestudiantiles.cl.", "beneficiosestudiantiles.cl (Mineduc)"],
+    T_FUAS: ["Los beneficios se piden cada año", "Gratuidad, becas y créditos del Estado se postulan en el FUAS de cada año. Si este año no lo llenaste, pregunta en la institución y en beneficiosestudiantiles.cl qué opciones quedan: no lo des por perdido sin preguntar.", "beneficiosestudiantiles.cl (Mineduc)"],
+    T_PUNT: ["El puntaje no es solo la PAES", "Cada carrera pondera distinto tu NEM, tu ranking y cada prueba: tus notas de enseñanza media cuentan. Además, hay vías de ingreso distintas a la PAES y muchas carreras técnicas en IP y CFT. Calcula tu puntaje ponderado en el explorador.", "mifuturo.cl 2025–2026, ponderaciones"],
+    T_PREP: ["Hay apoyo para prepararse", "Existen programas de acompañamiento para entrar y mantenerse en la educación superior, como el PACE en los liceos que participan. Pregúntale al orientador si tu liceo está en alguno y qué preuniversitarios gratuitos conoce.", "Mineduc, programa PACE"],
+    T_REG:  ["Irse no es la única opción", "Muchas carreras existen en sedes de la región, a veces en universidad, IP o CFT. En el explorador puedes filtrar por región. Y si te vas, mucha gente se va a estudiar y después vuelve: en el Maule rural, 7 de cada 10 que pensaban migrar querían volver.", "Vásquez y Vallejos (2014), Revista de Ciencias Sociales 27(35)"],
+    T_PG:   ["Ser de los primeros es más común de lo que crees", "En la Universidad de Chile, la mitad de quienes entraron en 2024 se declaró primera generación universitaria. Muchas instituciones tienen programas de acompañamiento para el primer año: pregunta por ellos.", "Universidad de Chile, encuesta de admisión 2024"],
+    T_TRAB: ["Estudiar y trabajar se puede organizar", "Hay carreras en jornada vespertina y carreras técnicas más cortas que permiten combinar estudio y trabajo. En el explorador puedes comparar duración y jornada.", "mifuturo.cl 2025–2026"]
+  },
+  // Sin casilla (b): no se pregunta nada; se ofrece el mazo para elegir libremente.
+  tarjetas_sin_b: {
+    titulo: "Datos que nadie te cuenta",
+    texto: "Elige 2 tarjetas para destapar. Las demás quedan guardadas en «Mi archivo».",
+    elegir: 2
+  },
+  pie_nortea: PIE_NORTEA,
+
+  /* ---------- Actividad CONTRASTAR ---------- */
+  contrastar: {
+    id: "S3_CONT",
+    titulo: "Pon tus opciones lado a lado",
+    texto: "Elige 2 o 3 opciones de tu ranking o del explorador. Pueden ser de universidad, IP o CFT. Vale mezclar.",
+    tiempo: "6 min",
+    seleccion: { min: 2, max: 3, fuentes: ["top del ranking", "favoritas del explorador", "rutas elegidas en S2"], precargar: "rutas elegidas en S2" },
+    filtros_realidad: "Se encienden aquí (ORIENTA §4.4): región, puntaje esperado, financiamiento, duración. Apagados por defecto; los activa el joven. Nunca filtran por sexo ni dependencia.",
+    // Campos por opción (una columna por opción en móvil = tarjetas deslizables, una por opción)
+    campos: [
+      { id: "atrae",    tipo: "texto_corto", max: 140, etiqueta: "Lo que me atrae", placeholder: "Me atrae porque…", obligatorio: true },
+      { id: "cuesta",   tipo: "texto_corto", max: 140, etiqueta: "Lo que me cuesta o me da miedo", placeholder: "Me complica que…", obligatorio: true },
+      { id: "dur",      tipo: "auto", fuente: "catálogo: df (formal) y dr (real) en semestres", etiqueta: "Duración (formal / real)", sin_dato: "Sin dato aún" },
+      { id: "costo",    tipo: "auto", fuente: "catálogo: ar (arancel mediana anual)", etiqueta: "Arancel anual aprox.", nota: "Revisa si la institución está adscrita a Gratuidad" },
+      { id: "grat",     tipo: "opcion", opciones: ["Sí", "No", "No sé aún"], etiqueta: "¿La institución que miras está adscrita a Gratuidad?", ayuda: "Lo revisas en gratuidad.cl" },
+      { id: "emp",      tipo: "auto", fuente: "catálogo: emp (empleabilidad 1er año, %)", etiqueta: "Empleabilidad al 1er año" },
+      { id: "ing",      tipo: "auto", fuente: "catálogo: ing (ingreso al 4º año)", etiqueta: "Ingreso al 4º año" },
+      { id: "creia",    tipo: "opcion", opciones: ["Más de lo que creía", "Más o menos lo que creía", "Menos de lo que creía", "No tenía idea"], etiqueta: "Ese ingreso es…", nota: "Se pregunta DESPUÉS de mostrar ing (calibración)" },
+      { id: "vive",     tipo: "texto_corto", max: 200, etiqueta: "Qué dice alguien que la vive", placeholder: "Lo completas después de tu entrevista", obligatorio: false, editable_despues: true },
+      { id: "tinca",    tipo: "opcion", opciones: ["Me tinca harto", "Me tinca", "No sé", "Me tinca poco"], etiqueta: "Después de compararla, esta opción…" }
+    ],
+    dato: ["Lo que crees que se gana puede estar lejos", "En un estudio con postulantes chilenos, quienes iban a carreras con sueldos más bajos creían que se ganaba más del doble de lo real. Cuando vieron los datos, varios cambiaron su elección.", "Hastings, Neilson y Zimmerman (2015), NBER w21300"],
+    cierre_pregunta: { id: "CONT_REF", tipo: "texto_corto", max: 200, texto: "Al ponerlas lado a lado, ¿qué notaste que antes no veías?" },
+    regla: "La comparación NO reordena el ranking ni usa datos de NORTEA."
+  },
+
+  /* ---------- Entrevista a alguien que lo vive ---------- */
+  entrevista: {
+    id: "S3_ENT",
+    titulo: "Entrevista a alguien que lo vive",
+    texto: "Elige una de tus opciones y busca a alguien que la estudie o trabaje en eso: un familiar, un vecino, un ex alumno del liceo, alguien de redes. Puede ser en persona, por mensaje o por videollamada. 10 minutos bastan.",
+    preguntas_guia: [
+      "¿Cómo es un día normal en lo que estudias o trabajas?",
+      "¿Qué es lo que más te gusta y lo que menos te gusta?",
+      "¿Qué te habría gustado saber antes de entrar?",
+      "Si volvieras a elegir, ¿elegirías lo mismo? ¿Por qué?",
+      "¿Qué le recomendarías a alguien de 4° medio que está pensando en esto?"
+    ],
+    plantilla_mensaje: "Hola, estoy en 3°/4° medio y estoy averiguando sobre [carrera]. ¿Me podrías responder 3 preguntas cortas por aquí cuando puedas? ¡Gracias!",
+    campos: [
+      { id: "ENT_QUIEN", tipo: "opcion", texto: "¿A quién se lo vas a preguntar?", opciones: ["Alguien de mi familia", "Un conocido o vecino", "Alguien de mi liceo (ex alumno, profe)", "Alguien de redes", "Aún no sé"] },
+      { id: "ENT_CUANDO", tipo: "fecha", texto: "¿Cuándo?", min: "hoy", max: "inicio S4" },
+      { id: "ENT_SI_ENTONCES", tipo: "texto_corto", max: 120, texto: "Si me da vergüenza o no me responden, entonces…", placeholder: "Le pido ayuda a… / Le escribo a otra persona" }
+    ],
+    aviso: "Cuida tus datos: no compartas tu dirección ni datos personales con desconocidos. Si es por redes, prefiere cuentas de instituciones o personas que conozcas.",
+    pago: "Tarjeta de entrevista para guardar en tu celular (preguntas + a quién + cuándo)."
+  },
+
+  /* ---------- Plan B (técnico-profesional) ---------- */
+  planB: {
+    id: "S3_PLANB",
+    texto: "Si tu opción principal no resulta (por puntaje, plata o cupo), ¿qué otro camino te llevaría hacia algo parecido?",
+    tipo: "opcion+texto",
+    opciones: [
+      "La misma área en un IP o CFT",
+      "Otra carrera parecida en universidad",
+      "Entrar a una técnica y después continuar estudios",
+      "Trabajar un tiempo y postular después",
+      "Todavía no lo sé"
+    ],
+    texto_libre: { id: "S3_PLANB_TXT", max: 140, placeholder: "Por ejemplo: Técnico en enfermería en un CFT de Curicó" },
+    ayuda: "En el explorador, busca tu área y filtra por «IP» y «CFT»: compara duración y empleabilidad.",
+    dato: ["Un plan B no es rendirse", "Muchos postulantes no ponen opciones «de seguridad» en su lista. En Chile, entregar información personalizada sobre las probabilidades de quedar redujo esos errores de postulación.", "Larroucau, Ríos, Fabre y Neilson (2025), NBER w34164"]
+  },
+
+  /* ---------- Extra opcional ---------- */
+  mini_ipip: {
+    estado: "HUECO: Mini-IPIP opcional (bitácora 16-oct). Sus ítems NO están en los documentos del proyecto: no se incluyen. Ubicación: después del cierre, fuera del tiempo de clase, botón «Extra: cómo te gusta trabajar (3 min)». Requiere casilla (b) si incluye neuroticismo (ÉTICA A15). Devolución: 3 frases de estilo, sin etiqueta, no tocan el ranking.",
+    items: []
+  },
+
+  /* ---------- Cierre ---------- */
+  reflexion_cierre: [
+    { id: "S3_REF1", tipo: "textarea", max: 400, obligatorio: false, texto: "De lo que comparaste hoy, ¿qué pesa más para ti y por qué?", placeholder: "No hay respuesta correcta" },
+    { id: "S3_REF2", tipo: "textarea", max: 400, obligatorio: false, texto: "¿Qué pregunta te llevas para la próxima semana?" }
+  ],
+  cierre: {
+    titulo: "Listo, contrastaste",
+    texto: "Pusiste tus opciones a prueba con datos y con tu propia mirada. La próxima semana toca decidir… por ahora. Antes de eso, haz tu entrevista: una conversación de 10 minutos puede cambiar mucho.",
+    adelanto: "Semana 4: tu decisión por ahora, tu plan y tu antes y después.",
+    guardar: { rol: "estudiante", semana: 3, momento: "S3", campos: ["debrief", "fam (si b)", "bar (si b)", "contrastar", "entrevista", "planB", "reflexiones"] }
+  }
+};
+
+/* =====================================================================
+   S4 · DECIDIR (T1)  (~15 min)
+   Orden (JOVEN R3: medir antes de mostrar el antes/después):
+   intro → claridad T1 → EXP T1 → [HUECO CAAS-SF T1] → antes/después →
+   mi decisión por ahora → próximos pasos → satisfacción → carta → cierre.
+   ===================================================================== */
+const S4 = {
+  semana: 4, momento: "T1", nombre: "Decidir", minutos: 15,
+  nitidez: 100,
+
+  intro: {
+    eyebrow: "Semana 4 · Decidir",
+    titulo: "Hoy decides… por ahora",
+    texto: "Llegaste a la última semana. Primero, 2 minutos de preguntas que ya conoces para ver cuánto cambiaste. Después armas tu decisión por ahora y tu plan. Decidir por ahora no es amarrarte: es tener un norte para los próximos meses.",
+    pasos: ["Tu medición final · 2 min", "Tu antes y después · 1 min", "Tu decisión y tu plan · 8 min", "Cierre · 2 min"],
+    boton: "Empezar"
+  },
+
+  /* ---------- Medición final T1 ---------- */
+  T1: {
+    claridad: {
+      id: "CLAR_T1",
+      igual_que: "T0 (misma pregunta, mismas anclas, mismo formato)",
+      texto: "Hoy, ¿qué tan clara tienes tu decisión sobre qué hacer después de 4° medio?",
+      formato: "11 botones 0–10 en 2 filas (0–5 / 6–10), sin valor por defecto. NO deslizador.",
+      anclas_extremos: ["0 · Nada clara", "10 · Totalmente clara"],
+      nota_dev: "Si en T0 se usó el deslizador con value=5, marcar en los datos claridad_t0_formato='slider' para el análisis."
+    },
+    EXP: {
+      key: "exp_t1",
+      items: "EXP_ITEMS",           // referencia a la constante existente: NO copiar
+      ids: "todos (EXP01–EXP10), igual que T0",
+      ids_corta: ["EXP01", "EXP02", "EXP04", "EXP07", "EXP08", "EXP09"],   // para análisis T0–T1 con versión corta (PSICOMETRA)
+      anclas: "EXP_ANCLAS",
+      enprueba: true,
+      instruccion: "En las últimas 2 semanas, ¿cuántas veces hiciste esto? Cuenta solo lo que hiciste de verdad, por la ruta o por tu cuenta. Si no te acuerdas exacto, aproxima.",
+      tiempo: "10 frases · 1 min",
+      sin_devolucion_entre_items: true
+    },
+    CAAS_SF: "HUECO: CAAS-SF T1 (12 ítems). Sin permiso escrito de Savickas: NO desplegar. Si llega el permiso, va aquí, antes del antes/después, con la presentación autorizada.",
+    AUT_corta: "OPCIONAL (decisión del fundador): AUT corta T1 = AUT01, AUT02, AUT04, AUT05, AUT08, AUT09 desde AUT_ITEMS, DESC_ANCLAS. No incluida por defecto."
+  },
+
+  antes_despues: {
+    titulo: "Tu antes y después",
+    regla: "Se muestra SOLO después de guardar T1. Compara al joven solo consigo mismo. Sin números de NORTEA: la claridad sí se muestra (no es NORTEA).",
+    claridad: {
+      subio:   "Tu claridad subió desde la Semana 1. Para pensar: ¿qué fue lo que más te ayudó a aclararte?",
+      igual:   "Tu claridad se mantuvo. Eso también es información: a veces explorar abre preguntas antes de cerrarlas.",
+      bajo:    "Tu claridad bajó un poco. Es más común de lo que parece: cuando uno conoce más opciones, a veces todo se ve menos simple. No es retroceder, es mirar con más detalle."
+    },
+    exploracion: {
+      texto: "Formas de explorar que usaste: antes {a0} de 6, ahora {a1} de 6.",   // amplitud = actividades distintas con ≥1 vez (definición PSICOMETRA: 0-6 sobre los 6 ítems de la corta)
+      nota: "Amplitud calculada con ids_corta en ambos momentos. Mensaje sin juicio aunque baje."
+    }
+  },
+
+  /* ---------- Mi decisión por ahora ---------- */
+  decision: {
+    id: "S4_DEC",
+    titulo: "Mi decisión por ahora",
+    texto: "Elige tu opción principal y una alternativa. Si todavía no decides, también es una respuesta válida: vamos a armar tu plan igual.",
+    modo: [
+      { id: "decido", label: "Tengo una opción principal" },
+      { id: "aun_no", label: "Aún no decido" }
+    ],
+    campos_decido: [
+      { id: "DEC_PRINC", tipo: "carrera", fuente: "opciones contrastadas en S3 + ranking + explorador + texto libre", obligatorio: true, etiqueta: "Mi opción principal" },
+      { id: "DEC_ALT",   tipo: "carrera", fuente: "ídem + plan B de S3 precargado", obligatorio: false, etiqueta: "Mi alternativa (plan B)" },
+      { id: "DEC_PORQUE", tipo: "texto_corto", max: 160, obligatorio: false, etiqueta: "La elijo porque…" },
+      { id: "DEC_SEGURO", tipo: "opcion", opciones: ["Bastante seguro o segura", "Más o menos", "Con dudas"], etiqueta: "Hoy me siento…" }
+    ],
+    campos_aun_no: [
+      { id: "DEC_ENTRE", tipo: "carrera_multiple", max: 3, obligatorio: false, etiqueta: "Estoy entre…" },
+      { id: "DEC_FALTA", tipo: "multi", etiqueta: "Lo que me falta para decidir", opciones: ["Saber si me alcanza el puntaje", "Saber cuánto cuesta y cómo pagarlo", "Conocer mejor cómo es la carrera o el trabajo", "Conversarlo con mi familia", "Saber qué quiero de verdad", "Otra cosa"] }
+    ],
+    msg_aun_no: "Está bien no tenerlo listo hoy. Lo importante es saber qué te falta averiguar: eso es lo que vamos a poner en tu plan."
+  },
+
+  /* ---------- Mapa de próximos pasos ---------- */
+  pasos: {
+    id: "S4_PASOS",
+    titulo: "Tus 3 próximos pasos",
+    texto: "Elige 3 pasos concretos y ponles una fecha tuya. Mejor algo chico que se cumple que algo grande que no.",
+    n: 3,
+    por_paso: [
+      { id: "accion", tipo: "chip+texto", obligatorio: true },
+      { id: "fecha",  tipo: "fecha", obligatorio: true, min: "hoy", nota: "sin fechas oficiales precargadas" },
+      { id: "con",    tipo: "texto_corto", max: 60, obligatorio: false, placeholder: "¿Con quién? (opcional)" },
+      { id: "hecho",  tipo: "check", default: false, nota: "Se puede marcar al volver con el código" }
+    ],
+    catalogo: [
+      { id: "P_BECAS",  t: "Averiguar qué beneficios podría tener (Gratuidad, becas, créditos)", ayuda: "beneficiosestudiantiles.cl · se postulan en el FUAS de cada año" },
+      { id: "P_ADSC",   t: "Revisar si mis instituciones están adscritas a Gratuidad", ayuda: "gratuidad.cl" },
+      { id: "P_PAES",   t: "Hacer un ensayo PAES o repasar una prueba", ayuda: "Revisa en demre.cl el calendario y los materiales oficiales" },
+      { id: "P_POND",   t: "Calcular mi puntaje ponderado en el explorador" },
+      { id: "P_VISITA", t: "Visitar una institución o ir a una clase abierta (presencial u online)" },
+      { id: "P_HABLAR", t: "Hablar con… (alguien que estudia o trabaja en lo que me interesa)" },
+      { id: "P_ORIENT", t: "Conversar mi plan con el orientador o un profe" },
+      { id: "P_FAMILIA",t: "Contarle mi decisión por ahora a alguien de mi familia" },
+      { id: "P_PLANB",  t: "Revisar mi plan B en un IP o CFT" },
+      { id: "P_OTRO",   t: "Otro paso", libre: true }
+    ],
+    sugeridos_aun_no: { "Saber si me alcanza el puntaje": "P_POND", "Saber cuánto cuesta y cómo pagarlo": "P_BECAS", "Conocer mejor cómo es la carrera o el trabajo": "P_HABLAR", "Conversarlo con mi familia": "P_FAMILIA" },
+    pago: "Tarjeta descargable «Mi plan» (decisión por ahora + alternativa + 3 pasos con fecha). Se genera en el celular."
+  },
+
+  /* ---------- Satisfacción / utilidad ---------- */
+  satisfaccion: {
+    anclas: "UTIL_ANCLAS",
+    items: [
+      ["UTIL01", "¿Qué tan útil fue esta ruta para pensar tu futuro?"],
+      ["UTIL02", "¿Qué tanto te ayudó a conocer opciones que no conocías?"]
+    ],
+    abierta: { id: "UTIL_AMIGO", tipo: "textarea", max: 300, obligatorio: false, texto: "Si un amigo o amiga te pregunta por Radar Vocacional, ¿qué le dirías?" }
+  },
+
+  /* ---------- Carta a mi yo de marzo ---------- */
+  carta: {
+    id: "S4_CARTA",
+    tipo: "textarea", max: 1000, obligatorio: false,
+    titulo: "Carta a tu yo de marzo (opcional)",
+    texto: "En marzo vas a estar en otro lugar: en 4° medio, estudiando, trabajando o decidiendo. Escríbete unas líneas: qué piensas hoy, qué te da miedo, qué esperas que no se te olvide.",
+    placeholder: "Querido yo de marzo…",
+    almacenamiento: "PROPUESTA: la carta NO se envía al servidor; se guarda en el celular y se ofrece «Descargar mi carta». Motivo: los textos libres se purgan a los 90 días y la carta es íntima. Si se envía, pasa por ALERTA como todo texto libre."
+  },
+
+  /* ---------- Cierre ---------- */
+  cierre: {
+    titulo: "Terminaste tu ruta",
+    texto: "Hiciste algo que mucha gente no hace: explorar antes de decidir. Tu decisión de hoy es un punto de partida, no una sentencia. Puede cambiar, y eso está bien: más de la mitad de quienes dejan una carrera y vuelven a estudiar se cambia de área. Lo importante es que, si cambias, sepas por qué.",
+    fuente_dato: "Blanco, Meneses y Paredes (2018), Calidad en la Educación 49",
+    recordatorio: "Tu radar y tu plan siguen disponibles con tu código. Vuelve cuando quieras a marcar tus pasos.",
+    ayuda: "Si algo de esto te dejó inquieto o inquieta, conversa con tu orientador o con el encargado de convivencia de tu colegio.",
+    guardar: { rol: "estudiante", semana: 4, momento: "T1", campos: ["claridad", "exp", "decision", "pasos", "satisfaccion", "util_amigo"], carta: "solo local (ver carta.almacenamiento)" }
+  },
+  pie_nortea: PIE_NORTEA
+};
+
+/* =====================================================================
+   FAM34 · Recorrido para familias, Semanas 3 y 4
+   Mismo formato que #fam2: eyebrow, titulo, lectura (párrafos/bullets),
+   puente (preguntas para hacerle al hijo/a), para_usted (pregunta breve).
+   Los apoderados NO ven el perfil ni las respuestas FAM/BAR del hijo/a.
+   ===================================================================== */
+const FAM34 = {
+  semana3: {
+    eyebrow: "Semana 3 · Contrastar",
+    titulo: "Acompañar la comparación sin decidir por él o ella",
+    lectura: [
+      { tipo: "p", t: "Esta semana su hijo o hija pone 2 o 3 opciones lado a lado: lo que le atrae, lo que le cuesta, cuánto dura, cuánto cuesta y qué dice alguien que la vive. Es normal que aparezcan dudas nuevas. Eso no es retroceder: es mirar con más detalle." },
+      { tipo: "ul", t: [
+        "<strong>Pregunte antes de opinar.</strong> \"¿Qué te gustó de esta opción?\" abre más que \"eso no tiene futuro\".",
+        "<strong>Separe sus sueños de los de su hijo o hija.</strong> Es natural querer lo mejor para ellos. Vale la pena preguntarse: ¿esto que espero es por él o ella, o por mí?",
+        "<strong>Ayude con contactos, no con respuestas.</strong> Esta semana tiene que entrevistar a alguien que estudie o trabaje en lo que le interesa. Usted puede conocer a esa persona."
+      ]},
+      { tipo: "h", t: "Sobre la plata, sin angustiarse" },
+      { tipo: "ul", t: [
+        "<strong>No es el único hogar con dudas.</strong> En un estudio con más de 35.000 estudiantes de 4° medio técnico-profesional, 7 de cada 10 sabían poco de financiamiento y solo 4 de cada 100 identificaban bien los requisitos de la Gratuidad (Fundación Luksic, 2023).",
+        "<strong>Gratuidad:</strong> cubre al 60% de los hogares de menores ingresos, pero solo en instituciones adscritas. Antes de matricular, revisen la institución en gratuidad.cl.",
+        "<strong>Los beneficios se postulan cada año en el FUAS.</strong> El proceso de este año ya cerró. Si no alcanzaron a llenarlo, pregunten en la institución y en beneficiosestudiantiles.cl qué opciones quedan.",
+        "<strong>Hable de plata como un dato, no como un veredicto.</strong> \"Veamos cómo se podría pagar\" ayuda más que \"eso no nos alcanza\"."
+      ]}
+    ],
+    puente: {
+      titulo: "Conversación puente de esta semana",
+      preguntas: [
+        "\"De las opciones que estás comparando, ¿cuál te entusiasma más y por qué?\"",
+        "\"¿Qué te preocupa de cada una? ¿Hay algo de plata o de lugar que te gustaría que averiguáramos juntos?\"",
+        "\"¿Conoces a alguien a quien le puedas preguntar cómo es? ¿Te ayudo a contactarlo?\""
+      ],
+      nota: "Escuche más de lo que habla. Si aparece la plata, propongan averiguar juntos en vez de cerrar la opción."
+    },
+    para_usted: { id: "P3_1", tipo: "textarea", max: 400, texto: "¿Qué opción de su hijo o hija le cuesta más aceptar, y por qué?" }
+  },
+
+  semana4: {
+    eyebrow: "Semana 4 · Decidir",
+    titulo: "Su hijo o hija decide por ahora: su rol es sostener",
+    lectura: [
+      { tipo: "p", t: "Esta semana su hijo o hija elige una opción principal y una alternativa, o reconoce que aún no decide. Ambas respuestas son válidas. Una decisión \"por ahora\" no es definitiva: es un norte para los próximos meses." },
+      { tipo: "ul", t: [
+        "<strong>Respete la decisión, aunque no sea la que usted esperaba.</strong> Puede preguntar \"¿qué te hace elegir esto?\" sin convertirlo en un examen. La carrera elegida para cumplirle a otro es la que más cuesta sostener.",
+        "<strong>Pregunte por el plan B.</strong> Tener una alternativa no es dudar: la misma área muchas veces se puede estudiar en universidad, instituto o CFT, con distinta duración y costo.",
+        "<strong>Ofrezca ayuda para los próximos pasos.</strong> Su hijo o hija anotará 3 pasos con fecha (averiguar becas, ensayar la PAES, visitar una institución). Pregúntele en cuál le puede acompañar."
+      ]},
+      { tipo: "h", t: "Si le dice \"no sé\"" },
+      { tipo: "ul", t: [
+        "<strong>No es flojera ni fracaso.</strong> Muchas veces significa que está tomando la decisión en serio.",
+        "<strong>Cambie la pregunta.</strong> En vez de \"¿qué vas a estudiar?\", pruebe con \"¿qué te falta saber para decidir?\". Eso se puede averiguar.",
+        "<strong>Baje la presión del tiempo, no la del proceso.</strong> Acuerden un paso pequeño y una fecha, y vuelvan a conversar después.",
+        "<strong>Cambiar de rumbo es parte del camino.</strong> Más de la mitad de quienes dejan una carrera y vuelven a estudiar se cambian de área (Blanco, Meneses y Paredes, 2018). Lo que ayuda es decidir con información, no decidir sin dudas."
+      ]}
+    ],
+    puente: {
+      titulo: "Conversación puente de esta semana",
+      preguntas: [
+        "\"¿Cuál es tu decisión por ahora, y cuál es tu plan B?\"",
+        "\"¿Cuál de tus próximos pasos te gustaría hacer conmigo?\"",
+        "\"Si en marzo cambias de idea, ¿cómo te gustaría que yo reaccionara?\""
+      ],
+      nota: "Cierre la conversación diciéndole algo que valora de cómo ha enfrentado esta decisión."
+    },
+    para_usted: { id: "P4_1", tipo: "textarea", max: 400, texto: "¿Qué hará usted distinto, después de esta ruta, para acompañar a su hijo o hija?" },
+    // Cierre del recorrido familiar (misma medida que la S1 de familias, ahora en 11 botones)
+    cierre_medida: { id: "P4_CLAR", texto: "Hoy, ¿qué tan preparado o preparada se siente para acompañar esta decisión?", formato: "11 botones 0–10 (igual que el estudiante; NO deslizador)", nota: "En S1 de familias hoy es deslizador con value=5: marcar el formato en los datos." }
+  }
+};
+
+/* =====================================================================
+   ESPERA · Curso en lista de espera (CM3B26), parte el 10-nov
+   Mide SOLO claridad T0 y EXP (10). Sin devolución de NORTEA hasta el final
+   (ÉTICA A12), sin explorador ni radar (para que funcione como comparación).
+   Momento 1: 27-oct (o primera sesión del curso). Momento 2: el 10-nov la
+   propia Semana 1 vuelve a medir claridad y EXP antes de cualquier contenido
+   → retest a 2 semanas sin intervención.
+   ===================================================================== */
+const ESPERA = {
+  curso: "CM3B26",
+  inicio_ruta: "2026-11-10",
+  requiere: "casilla (c) investigación; sin (c): mostrar solo pantalla_sin_c",
+  pantalla: {
+    eyebrow: "Radar Vocacional · Tu curso parte pronto",
+    titulo: "Tu ruta parte el 10 de noviembre",
+    texto: "Tu curso empieza su ruta el 10 de noviembre. Mientras tanto, te pedimos solo una línea base: 11 preguntas, unos 2 minutos. Nos sirve para saber cómo cambian las cosas con el tiempo. No hay respuestas buenas ni malas.",
+    boton: "Responder (2 min)"
+  },
+  mide: [
+    { id: "CLAR_T0", ref: "misma pregunta y formato que CLAR_T1 (11 botones, sin valor por defecto)" },
+    { id: "EXP", ref: "EXP_ITEMS completos (10) con EXP_ANCLAS, enprueba: true, sin devolución" }
+  ],
+  gracias: {
+    titulo: "Listo, gracias",
+    texto: "Guardamos tus respuestas con tu código. El 10 de noviembre empiezas tu ruta completa, con tu radar, tus carreras para explorar y todo lo demás. ¡Nos vemos!"
+  },
+  pantalla_sin_c: {
+    titulo: "Tu ruta parte el 10 de noviembre",
+    texto: "Tu curso empieza su ruta el 10 de noviembre. Ese día parte todo: tu radar, tus carreras para explorar y tu plan. ¡Nos vemos!"
+  },
+  guardar: { rol: "estudiante", semana: 0, momento: "ESPERA_T0", campos: ["claridad", "exp"] }
+};
+
 
 const S={qi:0,acts:{},clar:5,estado:null,difs:new Set(),sim:{}};
 const $=id=>document.getElementById(id);
@@ -516,18 +1170,28 @@ function routeCard(c,opts={}){return `<button class="route" data-car="${esc(c.n)
  <div class="meta"><span>Empleabilidad <b>${c.emp!=null?c.emp+"%":"sin datos aún"}</b></span><span>Ingreso 4° año <b>${mill(c.ing)}</b></span><span>Duración real <b>${c.dr!=null?dec(c.dr)+" sem.":"s/i"}</b></span><span>Arancel <b>${mill(c.ar)}/año</b></span></div></button>`}
 
 /* ---- rutas ---- */
-const VIEWS=["inicio","entrada","retomar","radar","revela","afinar","perfil","semana2","explorar","familia"];
+const VIEWS=["inicio","entrada","retomar","radar","revela","afinar","perfil","semana2","semana3","semana4","explorar","familia"];
 function route(){let h=(location.hash||"#inicio").slice(1).split("?")[0];if(!VIEWS.includes(h))h="inicio";
+ liberarEspera();
  const pv=load()||{};if(["radar","revela","afinar"].includes(h)&&!pv.consent)h="entrada";
+ if(enEspera()&&pv.consent&&["radar","revela","afinar","perfil","semana2","semana3","semana4"].includes(h))h="entrada";
  if(["radar","revela","afinar"].includes(h)&&pv.consent&&!pv.expDone)h="entrada";
- if(h==="entrada"&&pv.consent&&pv.t0!=null&&pv.expDone)h="radar";
+ if(h==="entrada"&&pv.consent&&pv.t0!=null&&pv.expDone&&!enEspera())h=pv.completo?"perfil":"radar";
+ if(h==="perfil"&&!pv.completo)h=pv.consent?"entrada":"inicio";
  if(h==="semana2"&&!pv.completo)h="retomar";
+ if(h==="semana3"&&!pv.s2hecha)h=pv.completo?"semana2":"retomar";
+ if(h==="semana4"&&!pv.s3hecha)h=pv.s2hecha?"semana3":pv.completo?"semana2":"retomar";
  if((h==="revela"||h==="afinar")&&!ipDone())h="radar";
  VIEWS.forEach(v=>$("v-"+v).classList.toggle("hidden",v!==h));
  document.querySelectorAll("[data-nav]").forEach(a=>a.classList.toggle("on",a.dataset.nav===h));
  if(h!==lastStep){ev("step_viewed",null,h);lastStep=h;lastT=Date.now()}
+ if(h==="inicio")renderInicio();
  if(h==="entrada")renderEntrada();
+ if(h==="perfil")renderPerfil();
  if(h==="semana2")renderSemana2();
+ if(h==="semana3")renderSemana3();
+ if(h==="semana4")renderSemana4();
+ if(h==="familia")renderFamilia();
  if(h==="radar")renderSwipe(); if(h==="revela")renderRevela(); if(h==="explorar")renderExplorar(); if(h==="afinar")showStep(S.step||0);
  window.scrollTo(0,0)}
 window.addEventListener("hashchange",route);
@@ -541,10 +1205,10 @@ function bloque(box,cfg){const st=BLK[cfg.key]||(BLK[cfg.key]={ans:{...(cfg.ans|
   if(cfg.pauseAt&&cfg.pauseAt.includes(st.i)&&!st["p"+st.i]){box.innerHTML=cfg.pauseHTML(st.i);box.querySelector("[data-cont]").onclick=()=>{st["p"+st.i]=1;draw()};return}
   const it=items[st.i];const yaNE=NE.has(it.code||it.id);
   box.innerHTML=`<div class="bq"><div class="k">${st.i+1} de ${items.length}</div><p class="it">${esc(it.t)}</p><div class="bopts">${cfg.anclas.map((a,ix)=>{const v=cfg.valores?cfg.valores[ix]:ix;const sel=st.ans[it.id]===v?" sel":"";
-   return `<button data-v="${v}" class="${sel}">${cfg.icon?`<span class="ic">${a[0]}</span><span>${a[1]}</span>`:cfg.barras?`<span class="lv">${[0,1,2,3,4].map(k=>`<i class="${k<=ix?"on":""}"></i>`).join("")}</span><span>${a}</span>`:`<span>${a}</span>`}</button>`}).join("")}${cfg.pnr?`<button data-v="pnr" class="pnr">Prefiero no responder</button>`:""}</div>
+   return `<button data-v="${v}" class="${sel}">${cfg.icon?`<span class="ic">${a[0]}</span><span>${a[1]}</span>`:cfg.barras?`<span class="lv">${[0,1,2,3,4].map(k=>`<i class="${k<=ix?"on":""}"></i>`).join("")}</span><span>${a}</span>`:`<span>${a}</span>`}</button>`}).join("")}${it.extra?`<button data-v="x" class="pnr${st.ans[it.id]==="nmc"?" sel":""}">${esc(it.extra)}</button>`:""}${cfg.pnr?`<button data-v="pnr" class="pnr${(it.id in st.ans)&&st.ans[it.id]===null?" sel":""}">Prefiero no responder</button>`:""}</div>
    <div class="bfoot"><button class="lnk" data-back ${st.i===0?"hidden":""}>← Anterior</button><button class="lnk" data-ne>${yaNE?"Marcaste que no se entendió":"No entendí esta pregunta"}</button></div>
    <div class="nemsg ${yaNE?"":"hidden"}">Gracias: nos sirve para mejorar esta pregunta. Responde como mejor puedas o <button class="lnk" data-skip>sáltala</button>.</div>${cfg.enprueba?`<div class="enprueba">NORTEA · cuestionario en prueba</div>`:""}</div>`;
-  box.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>{const v=b.dataset.v==="pnr"?null:+b.dataset.v;st.ans[it.id]=v;cfg.onAnswer&&cfg.onAnswer(it,v,st);st.i++;draw()});
+  box.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>{const v=b.dataset.v==="pnr"?null:b.dataset.v==="x"?"nmc":+b.dataset.v;st.ans[it.id]=v;cfg.onAnswer&&cfg.onAnswer(it,v,st);st.i++;draw()});
   box.querySelector("[data-back]").onclick=()=>{st.i=Math.max(0,st.i-1);draw()};
   box.querySelector("[data-ne]").onclick=()=>{NE.add(it.code||it.id);guardarNE();draw()};
   const sk=box.querySelector("[data-skip]");if(sk)sk.onclick=()=>{st.ans[it.id]=null;cfg.onAnswer&&cfg.onAnswer(it,null,st);st.i++;draw()};
@@ -581,10 +1245,34 @@ function showStep(n){S.step=n;document.querySelectorAll("#v-afinar .step").forEa
 document.querySelectorAll("#v-afinar [data-next]").forEach(b=>b.onclick=()=>showStep(S.step+1));
 document.querySelectorAll("#v-afinar [data-back]").forEach(b=>b.onclick=()=>showStep(S.step-1));
 /* ---- entrada: consentimiento y punto de partida (T0) ---- */
-function renderEntrada(){const pv=load()||{};const on=!pv.consent?"e0":pv.t0==null?"e1":"e2";["e0","e1","e2"].forEach(id=>$(id).classList.toggle("on",id===on));if(on==="e2")runExp()}
+function renderEntrada(){const pv=load()||{};let on=!pv.consent?"e0":pv.t0==null?"e1":"e2";
+ if(pv.consent&&enEspera()){const es=pv.espera||{};
+  if(!pv.eval)on="eW";else if(pv.t0==null)on=es.intro?"e1":"eW";else if(pv.expDone)on="eW";
+  if(on==="eW")renderEspera(pv)}
+ ["e0","e1","e2","eW"].forEach(id=>$(id).classList.toggle("on",id===on));if(on==="e2")runExp()}
+/* ---- lista de espera (curso en modo «espera») ---- */
+let CURSO_INFO=null;
+const INFO_P=(async()=>{const c=CURSO_URL||((load()||{}).curso)||null;if(!c)return null;
+ const r=await Promise.race([rpc("atlas_curso_info",{p_curso:c}),new Promise(res=>setTimeout(()=>res(null),5000))]);
+ CURSO_INFO=r&&r.ok?r:null;return CURSO_INFO})();
+function enEspera(){return !!(CURSO_INFO&&CURSO_INFO.ok&&CURSO_INFO.modo==="espera"&&CURSO_INFO.disponible===false)}
+function fechaLarga(iso){if(!iso)return "";const M=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];const[y,m,d]=iso.slice(0,10).split("-").map(Number);return d+" de "+M[m-1]}
+function txtEspera(t){const f=CURSO_INFO&&CURSO_INFO.fecha_inicio;return f&&f.slice(0,10)!==ESPERA.inicio_ruta?t.replace(/10 de noviembre/g,fechaLarga(f)):t}
+/* Cuando el curso deja de estar en espera, la Semana 1 vuelve a medir claridad y EXP (retest a ~2 semanas sin intervención). */
+function liberarEspera(){const pv=load()||{};if(!pv.espera||pv.espera.lib||!CURSO_INFO||enEspera())return;
+ if(pv.espera.hecho){store({...pv,espera:{...pv.espera,lib:true,t0:pv.t0,exp:pv.exp||null},t0:null,exp:null,expDone:false});delete BLK.exp;S.clar=5;$("clar").value=5;$("clarV").textContent=5}
+ else store({...pv,espera:{...pv.espera,lib:true}})}
+const RADAR_ICO=`<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#1B3A5C" stroke-width="1.6"/><circle cx="20" cy="20" r="11" fill="none" stroke="#1B3A5C" stroke-width="1.2" opacity=".55"/><circle cx="20" cy="20" r="4" fill="none" stroke="#1B3A5C" stroke-width="1.2" opacity=".35"/><path d="M20 20 L34 9" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/><circle cx="29" cy="13" r="2.4" fill="#C9A84C"/></svg>`;
+function renderEspera(pv){const es=pv.espera||{};const f=CURSO_INFO&&CURSO_INFO.fecha_inicio?fechaLarga(CURSO_INFO.fecha_inicio):"10 de noviembre";let h;
+ if(!pv.eval){const x=ESPERA.pantalla_sin_c;h=`<div class="esp">${RADAR_ICO}<div class="eyebrow">${ESPERA.pantalla.eyebrow}</div><h2>${txtEspera(x.titulo)}</h2><span class="fecha">Desde el ${f}</span><p class="lead2">${txtEspera(x.texto)}</p></div><a class="btn ghost block" href="#explorar" style="margin-top:18px">Mientras tanto, mira el explorador de carreras</a>`}
+ else if(pv.t0==null){const x=ESPERA.pantalla;h=`<div class="esp">${RADAR_ICO}<div class="eyebrow">${x.eyebrow}</div><h2>${txtEspera(x.titulo)}</h2><span class="fecha">Desde el ${f}</span><p class="lead2" style="text-align:left">${txtEspera(x.texto)}</p></div><button class="btn gold block" id="espGo" style="margin-top:18px">${x.boton}</button>`}
+ else{const x=ESPERA.gracias;h=`<div class="esp">${RADAR_ICO}<div class="eyebrow">Línea base lista</div><h2>${x.titulo}</h2><span class="fecha">Tu ruta parte el ${f}</span><p class="lead2" style="text-align:left">${txtEspera(x.texto)}</p></div><div class="rc" style="margin-top:18px"><h3>Tu código: <span class="code">${esc(pv.codigo||"")}</span></h3><p class="small muted" style="margin:0">Sácale una captura: con él retomas tu ruta el ${f}.</p><p class="small muted" id="espSave" style="margin:6px 0 0"></p></div>`}
+ $("esperaBox").innerHTML=h;const b=$("espGo");if(b)b.onclick=()=>{const p2=load()||{};store({...p2,espera:{...(p2.espera||{}),intro:true}});ev("step_viewed",{espera:true},"espera_intro");renderEntrada();window.scrollTo(0,0)}}
 function runExp(){const pv=load()||{};bloque($("expBox"),{key:"exp",items:EXP_ITEMS.map(([id,t])=>({id,t})),anclas:EXP_ANCLAS,valores:[0,1,2,3,4],enprueba:true,ans:pv.exp||{},
  onAnswer:(it,v,st)=>{const p2=load()||{};store({...p2,exp:{...st.ans}})},
  onDone:ans=>{const n=Object.values(ans).filter(v=>v>0).length;const p2=load()||{};store({...p2,exp:ans,expDone:true});ev("step_viewed",{bloque:"EXP",amplitud:n},"exp");
+  if(enEspera()){const p3=load()||{};store({...p3,espera:{...(p3.espera||{}),curso:p3.curso||CURSO_URL,hecho:true,fecha:new Date().toISOString()}});renderEntrada();window.scrollTo(0,0);
+   guardar({rol:"estudiante",semana:0,momento:ESPERA.guardar.momento,nivel:p3.nivel||null,edad_14_o_mas:true,claridad:p3.t0,datos:{espera:true,momento_largo:ESPERA.guardar.momento,claridad_formato:"slider",exp:ans,ne:[...NE]}}).then(ok=>{const st=$("espSave");if(st&&ok!=="local")st.textContent=ok?"✓ Guardado con tu código, sin tu nombre.":"Quedó guardado en este celular (sin conexión al servidor)."});return}
   const t=n<=1?"En estas semanas exploraste poco, y es lo más común al empezar. Una acción pequeña cuenta: buscar una carrera en mifuturo.cl o mandarle un mensaje a alguien que la estudie.":n<=3?"Ya empezaste a moverte. Prueba sumar una forma de explorar que todavía no hayas usado: conversar con alguien o probar algo en la práctica.":"Has explorado de varias formas. Ahora vale la pena ordenar lo que encontraste: ¿qué te confirmó algo y qué te sorprendió?";
   $("expBox").innerHTML=`<div class="rc dark"><div class="eyebrow">Tu mapa de exploración</div><h3>Usaste ${n} de 10 formas de explorar</h3><p style="margin:0">${t}</p><p class="small" style="margin:10px 0 0;opacity:.85">La que más rinde y casi nadie usa: conversar con alguien que lo vive.</p></div><button class="btn gold block" id="goRadar">Encender mi radar</button>`;
   $("goRadar").onclick=()=>{if(location.hash==="#radar")route();else location.hash="#radar"}}})}
@@ -595,7 +1283,9 @@ $("e0b").onclick=async()=>{const typed=$("miCodigo").value.trim().toUpperCase();
  const pv=load()||{};const cod=(ev2&&typed)||pv.codigo||codigo();
  store({...pv,codigo:cod,consent:true,eval:ev2,sens:$("aceptoSens").checked,nivel:$("nivel").value,curso:CURSO_URL,ses:null,sesT:null});
  if(ev2){await sesion(cod);ev("consent_accepted",{servicio:true,sensibles:$("aceptoSens").checked,investigacion:true,nivel:$("nivel").value,codigo_tarjeta:!!typed})}
- $("e0").classList.remove("on");$("e1").classList.add("on");window.scrollTo(0,0)};
+ $("e0b").disabled=true;await INFO_P;chk0();
+ if(enEspera()){const p2=load()||{};store({...p2,espera:{...(p2.espera||{}),curso:p2.curso||CURSO_URL}});ev("step_viewed",{espera:true,investigacion:ev2},"espera")}
+ renderEntrada();window.scrollTo(0,0)};
 $("e1back").onclick=()=>{$("e1").classList.remove("on");$("e0").classList.add("on")};
 $("clar").oninput=e=>{S.clar=+e.target.value;$("clarV").textContent=S.clar};
 $("e1b").onclick=()=>{const pv=load()||{};store({...pv,t0:S.clar});ev("clarity_pre",{v:S.clar});$("e1").classList.remove("on");$("e2").classList.add("on");window.scrollTo(0,0);runExp()};
@@ -612,25 +1302,42 @@ $("a3").onclick=()=>{const ids=[...S.difs].filter(i=>FACT_DIF[i]).slice(0,2);con
 $("a5").onclick=finalizar;
 
 async function finalizar(){const p=perfil();const rk=ranking(p);const refl={r1:$("r1").value.trim(),r3:$("r3").value.trim(),r4:$("r4").value.trim()};
- const alerta=ALERTA.test(norm(Object.values(refl).join(" ")));const prev=load()||{};const cod=prev.codigo||codigo();if(prev.t0!=null)S.clar=prev.t0;const est=ESTADO_TXT[S.estado];
+ const alerta=ALERTA.test(norm(Object.values(refl).join(" ")));const prev=load()||{};const cod=prev.codigo||codigo();if(prev.t0!=null)S.clar=prev.t0;
+ store({...prev,codigo:cod,acts:S.acts,clar:S.clar,estado:S.estado,ident:S.ident,refl,alerta1:alerta,fecha:new Date().toISOString(),completo:true,s1save:prev.eval?"pend":null});
+ if(location.hash==="#perfil")route();else location.hash="#perfil";
+ const ok=await guardar({rol:"estudiante",semana:1,momento:"T0",nivel:prev.nivel||null,edad_14_o_mas:true,claridad:S.clar,estado:S.estado,dificultades:[...S.difs].map(i=>DIFS[i]),intereses:p,reflexiones:refl,datos:{ip:Object.fromEntries(ACTS.map((a,i)=>[a[2],S.acts[i]??null])),exp:prev.exp||null,ident:S.ident||null,ne:[...NE],plano:esPlano(p),aquiesc:!!prev.aquiesc,espera_previa:!!(prev.espera&&prev.espera.hecho)}});
+ if(ok!=="local")store({...(load()||{}),s1save:ok?"ok":"fail"});
+ const st=$("saveState");if(!st||ok==="local")return;st.textContent=ok?"✓ Respuestas guardadas con tu código, sin tu nombre.":"Tus respuestas quedaron guardadas en este dispositivo (sin conexión al servidor)."}
+const SUPPORT_HTML=`<div class="support"><h3>Gracias por contarlo</h3><p>Algo de lo que escribiste nos hace pensar que podrías estar pasando por un momento difícil. No tienes que pasarlo solo o sola: habla con alguien de confianza en tu casa o en tu colegio.</p><p style="margin:0">Puedes llamar gratis las 24 horas al <strong>*4141</strong> o a Salud Responde <strong>600 360 7777</strong>.</p></div>`;
+function renderPerfil(){const pv=load()||{};if(!pv.completo)return;const p=perfil();const rk=esPlano(p)?[]:ranking(p);const refl=pv.refl||{};
  const top5=rk.slice(0,5);const corta=rk.find(c=>c.t!=="U"&&!top5.includes(c));
  const frases=[["Se te pasa el tiempo volando en",refl.r1],["Te molesta",refl.r3],["Tus cercanos te buscan para",refl.r4]].filter(f=>f[1]);
  const fam=location.origin+location.pathname+"#familia";
  const msg=encodeURIComponent(`Hola, estoy usando Radar Vocacional para pensar qué estudiar. Hay una parte para la familia, ¿la puedes leer? Son 5 minutos: ${fam}\nLa pregunta de esta semana es: ¿Qué espera cada uno de nosotros de esta decisión?`);
- $("perfilBox").innerHTML=`${alerta?`<div class="support"><h3>Gracias por contarlo</h3><p>Algo de lo que escribiste nos hace pensar que podrías estar pasando por un momento difícil. No tienes que pasarlo solo o sola: habla con alguien de confianza en tu casa o en tu colegio.</p><p style="margin:0">Puedes llamar gratis las 24 horas al <strong>*4141</strong> o a Salud Responde <strong>600 360 7777</strong>.</p></div>`:""}
- <div class="rc dark"><div class="eyebrow">Tu punto de partida</div><p style="margin:0">${ID_TXT[S.estado]||""}</p><p class="small" style="margin:10px 0 0;opacity:.8">Claridad de hoy: ${S.clar}/10. La volveremos a medir al final de las 4 semanas.</p></div>
+ const est=pv.estado||S.estado;const cl=pv.clar??pv.t0;
+ $("perfilBox").innerHTML=`${pv.alerta1?SUPPORT_HTML:""}
+ ${rutaHTML(pv)}
+ <div class="rc dark"><div class="eyebrow">Tu punto de partida</div><p style="margin:0">${ID_TXT[est]||"Tu radar ya está encendido."}</p>${cl!=null?`<p class="small" style="margin:10px 0 0;opacity:.8">Claridad de la Semana 1: ${cl}/10. La volvemos a medir en la Semana 4.</p>`:""}</div>
  ${frases.length?`<div class="rc"><h3>Lo que dijiste</h3><p class="small muted">Léelo como si lo hubiera escrito otra persona. ¿Qué tienen en común estas respuestas?</p>${frases.map(f=>`<p class="quote">${f[0]}: "${esc(f[1].slice(0,180))}${f[1].length>180?"…":""}"</p>`).join("")}</div>`:""}
  <div class="rc radar"><h3>Tu radar de intereses</h3>${radarSVG(p)}</div>
- <h3>Tus 5 rutas más afines</h3>${top5.map(c=>routeCard(c)).join("")}
+ ${top5.length?`<h3>Tus 5 rutas más afines</h3>${top5.map(c=>routeCard(c)).join("")}`:`<div class="empty">Tus intereses están parejos, así que no te mostramos un ranking. <a href="#explorar">Explora por áreas en el buscador</a>.</div>`}
  ${corta?`<p class="small muted" style="margin:14px 0 6px">Ruta corta (técnica o profesional) que también calza contigo:</p>${routeCard(corta,{short:true})}`:""}
- <div class="rc goldc"><h3>Tu radar de la semana</h3><p>Durante 7 días, anota <b>3 trabajos o personas</b> que veas en tu día (en la calle, en redes, en tu familia) y que te despierten aunque sea un poco de curiosidad.</p><p style="margin:0"><b>Pregunta para la próxima vez:</b> ¿qué tienen en común esas 3 cosas?</p></div>
- <div class="rc"><h3>Conversación puente con tu familia</h3><p>Tu familia tiene su propio recorrido, sin acceso a tus respuestas. Envíales el enlace y conversen: <em>"¿Qué espera cada uno de nosotros de esta decisión?"</em></p><a class="btn primary block" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar a mi familia por WhatsApp</a></div>
- <a class="btn gold block" href="#semana2" style="margin-bottom:14px">Comenzar la Semana 2 · Explorar</a>
- <div class="rc"><h3>Tu código: <span class="code">${cod}</span></h3><p class="small muted" style="margin:0">Sácale una captura. Con él, Radar recordará lo que respondiste cuando vuelvas para la Semana 2.</p><p class="small muted" id="saveState" style="margin:6px 0 0">${prev.eval?"Guardando con tu código…":"Tus respuestas quedan solo en este dispositivo."}</p></div>`;
- location.hash="#perfil";
- store({...prev,codigo:cod,acts:S.acts,clar:S.clar,estado:S.estado,ident:S.ident,refl,fecha:new Date().toISOString(),completo:true});
- const ok=await guardar({rol:"estudiante",semana:1,momento:"T0",nivel:prev.nivel||null,edad_14_o_mas:true,claridad:S.clar,estado:S.estado,dificultades:[...S.difs].map(i=>DIFS[i]),intereses:p,reflexiones:refl,datos:{ip:Object.fromEntries(ACTS.map((a,i)=>[a[2],S.acts[i]??null])),exp:prev.exp||null,ident:S.ident||null,ne:[...NE],plano:esPlano(p),aquiesc:!!prev.aquiesc}});
- const st=$("saveState");if(!st||ok==="local")return;st.textContent=ok?"✓ Respuestas guardadas con tu código, sin tu nombre.":"Tus respuestas quedaron guardadas en este dispositivo (sin conexión al servidor)."}
+ ${!pv.s2hecha?`<div class="rc goldc"><h3>Tu radar de la semana</h3><p>Durante 7 días, anota <b>3 trabajos o personas</b> que veas en tu día (en la calle, en redes, en tu familia) y que te despierten aunque sea un poco de curiosidad.</p><p style="margin:0"><b>Pregunta para la próxima vez:</b> ¿qué tienen en común esas 3 cosas?</p></div>
+ <div class="rc"><h3>Conversación puente con tu familia</h3><p>Tu familia tiene su propio recorrido, sin acceso a tus respuestas. Envíales el enlace y conversen: <em>"¿Qué espera cada uno de nosotros de esta decisión?"</em></p><a class="btn primary block" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar a mi familia por WhatsApp</a></div>`:""}
+ <div class="rc"><h3>Tu código: <span class="code">${esc(pv.codigo||"")}</span></h3><p class="small muted" style="margin:0">Sácale una captura. Con él retomas tu ruta desde cualquier celular.</p><p class="small muted" id="saveState" style="margin:6px 0 0">${!pv.eval?"Tus respuestas quedan solo en este dispositivo.":pv.s1save==="pend"?"Guardando con tu código…":pv.s1save==="fail"?"Tus respuestas quedaron guardadas en este dispositivo (sin conexión al servidor).":"✓ Respuestas guardadas con tu código, sin tu nombre."}</p></div>`}
+
+/* ---- tu ruta (4 semanas) ---- */
+const RUTA=[[1,"Reconocer","#entrada",pv=>!!pv.completo],[2,"Explorar","#semana2",pv=>!!pv.s2hecha],[3,"Contrastar","#semana3",pv=>!!pv.s3hecha],[4,"Decidir","#semana4",pv=>!!pv.s4hecha]];
+function siguiente(pv){return RUTA.find(r=>!r[3](pv))||null}
+function rutaHTML(pv,o={}){const nx=siguiente(pv);const lbl="Semana "+RUTA.map(r=>r[0]+(r[3](pv)?" ✓":"")).join(", ");
+ const enCurso=nx&&((nx[0]===3&&pv.w3&&pv.w3.paso!=="intro")||(nx[0]===4&&pv.w4&&pv.w4.paso!=="intro")||(nx[0]===1&&Object.keys(S.acts).length>0));
+ return `<div class="rc ruta"><div class="eyebrow" style="margin-bottom:0">Tu ruta</div>
+ <ol aria-label="Tu ruta: ${lbl}">${RUTA.map(r=>{const d=r[3](pv);const now=nx&&nx[0]===r[0];return `<li class="${d?"done":now?"now":"lock"}"><span class="dot" aria-hidden="true">${d?"✓":r[0]}</span><b>Semana ${r[0]}</b>${r[1]}<span class="sr">${d?", completada":now?", te toca ahora":", se abre después"}</span></li>`}).join("")}</ol>
+ <p class="rsum" aria-hidden="true">${lbl}</p>
+ ${o.noBtn?"":nx?`<a class="btn gold block" href="${nx[2]}">${enCurso?"Continuar":"Empezar"} la Semana ${nx[0]} · ${nx[1]}</a>`:`<a class="btn primary block" href="#semana4">Ver mi plan y mi antes y después</a>`}</div>`}
+function renderInicio(){const pv=load()||{};const nx=siguiente(pv);
+ RUTA.forEach(r=>{const el=$("wk"+r[0]);if(!el)return;const d=r[3](pv);const now=nx&&nx[0]===r[0];el.className="pill "+(d||now?"on":"lock");el.textContent=d?"✓ Completada":now?"Disponible":"Se abre después de la Semana "+(r[0]-1)});
+ $("rutaInicio").innerHTML=(pv.completo||Object.keys(S.acts).length)?rutaHTML(pv):""}
 
 function saveLocal(){const prev=load()||{};store({...prev,acts:S.acts})}
 
@@ -644,10 +1351,15 @@ $("retBtn").onclick=async()=>{const c=$("retCod").value.trim().toUpperCase();con
  $("retBtn").disabled=false;
  if(!r){m.textContent="No pudimos conectarnos. Revisa tu internet e inténtalo de nuevo.";return}
  if(!r.encontrado){m.textContent="No encontramos ese código. Revisa que esté bien escrito. Si en la Semana 1 no marcaste la casilla opcional, tu recorrido quedó solo en el otro celular.";return}
+ const sem=r.semanas||[];const pv=load()||{};
+ if(!r.intereses){/* solo hay línea base (p. ej., lista de espera): falta la Semana 1 */
+  store({...pv,codigo:c,consent:true,eval:true,t0:r.claridad_t0??pv.t0??null,nivel:r.nivel||pv.nivel,ses:null,sesT:null,curso:pv.curso||CURSO_URL});
+  await sesion(c);ev("progress_restored",{semanas:sem,solo_base:true});m.textContent="";location.hash="#entrada";return}
  S.acts=actsDesdePerfil(r.intereses);S.estado=r.estado;S.clar=r.claridad_t0??5;
- const pv=load()||{};store({...pv,codigo:c,consent:true,eval:true,t0:r.claridad_t0,acts:S.acts,estado:r.estado,clar:r.claridad_t0,completo:true,riasecSent:true,expDone:true,ipDone:true,sens:pv.sens||false,nivel:r.nivel||pv.nivel,s2:r.semana2||null,s2hecha:(r.semanas||[]).includes(2),ses:null,sesT:null,curso:pv.curso||CURSO_URL});
- await sesion(c);ev("progress_restored",{semanas:r.semanas});
- m.textContent="";if(location.hash==="#semana2")route();else location.hash="#semana2"};
+ const mismo=pv.codigo===c;
+ store({...pv,codigo:c,consent:true,eval:true,t0:r.claridad_t0,acts:S.acts,estado:r.estado,clar:r.claridad_t0,completo:true,riasecSent:true,expDone:true,ipDone:true,sens:pv.sens||false,nivel:r.nivel||pv.nivel,s2:r.semana2||pv.s2||null,s2hecha:sem.includes(2)||(mismo&&!!pv.s2hecha),s3hecha:sem.includes(3)||(mismo&&!!pv.s3hecha),s4hecha:sem.includes(4)||(mismo&&!!pv.s4hecha),ses:null,sesT:null,curso:pv.curso||CURSO_URL});
+ await sesion(c);ev("progress_restored",{semanas:sem});
+ m.textContent="";const nx=siguiente(load()||{});const dest=nx?nx[2]:"#semana4";if(location.hash===dest)route();else location.hash=dest};
 
 /* ---- semana 2 ---- */
 const W2={step:0,rutas:[],cuando:null};
@@ -692,10 +1404,11 @@ $("w3b").onclick=async()=>{const pv=load()||{};const obs=["o1","o2","o3"].map(id
  const refl={s2_obs:obs.join(" · "),s2_comun:$("oComun").value.trim(),s2_desc:$("w2desc").value.trim()};
  const alerta=ALERTA.test(norm(Object.values(refl).join(" ")));const clar=W2.clar??pv.t0??5;
  const s2={rutas:W2.rutas,cuando:W2.cuando,n_obs:obs.length,clar,valores:W2.valores||null,sen:W2.sen||null,aut:W2.aut||null,ne:[...NE]};
- store({...pv,s2,s2hecha:true,s2refl:refl,s2alerta:alerta});
+ store({...pv,s2,s2hecha:true,s2refl:refl,s2alerta:alerta,s2save:pv.eval?"pend":null});
  ev("week_completed",{semana:2,n_obs:obs.length,cuando:W2.cuando});
  renderW2Fin(load());showW(7);
  const ok=await guardar({rol:"estudiante",semana:2,momento:"S2",claridad:clar,reflexiones:refl,datos:s2});
+ if(ok!=="local")store({...(load()||{}),s2save:ok?"ok":"fail"});
  const st=$("w2save");if(st&&ok!=="local")st.textContent=ok?"✓ Guardado con tu código, sin tu nombre.":"Quedó guardado en este dispositivo (sin conexión al servidor)."};
 function renderW2Fin(pv){const s2=pv.s2||{};const refl=pv.s2refl||{};const d=(s2.clar??0)-(pv.t0??0);
  const fam=location.origin+location.pathname+"#familia";
@@ -707,7 +1420,8 @@ function renderW2Fin(pv){const s2=pv.s2||{};const refl=pv.s2refl||{};const d=(s2
  <h3>Tus rutas en exploración</h3>${(s2.rutas||[]).map(r=>{const[n,t]=r.split("|");const c=CARRERAS.find(x=>x.n===n&&x.t===t);return c?routeCard({...c,af:afinidad(perfil(),c.c)}):""}).join("")}
  <div class="rc goldc"><h3>Antes de la Semana 3</h3><p style="margin:0">Cumple tu misión ${s2.cuando==="finde"?"este fin de semana":s2.cuando==="semana"?"un día después de clases":"con ayuda de tu familia"} y anota en tu celular la respuesta que más te sorprendió. En la Semana 3 la vamos a contrastar con puntajes, costos y duración real.</p></div>
  <div class="rc"><h3>Pídele ayuda a tu familia</h3><p>Su recorrido de esta semana les pide abrirte puertas con gente que conocen.</p><a class="btn primary block" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar a mi familia por WhatsApp</a></div>
- <p class="small muted" id="w2save">${pv.eval?"Guardando con tu código…":"Tus respuestas quedan solo en este dispositivo."}</p>
+ <p class="small muted" id="w2save">${pv.eval?(pv.s2save==="pend"?"Guardando con tu código…":pv.s2save==="fail"?"Quedó guardado en este dispositivo (sin conexión al servidor).":"✓ Guardado con tu código, sin tu nombre."):"Tus respuestas quedan solo en este dispositivo."}</p>
+ ${rutaHTML(pv)}
  <a class="btn ghost block" href="#explorar">Seguir explorando carreras</a>`}
 
 /* ---- explorador ---- */
@@ -742,6 +1456,7 @@ function updSim(){(SH.vis||[]).forEach((m,ix)=>{const el=$("pd"+ix);if(!el)retur
   if(v==null){const[nem,rk,l,m1,m2,h,c2]=m.p;const miss=[["nem","NEM"],["rank","Ranking"],["len","Lenguaje"],["m1","Matemática 1"]].filter(([k])=>!(+S.sim[k]>0)).map(x=>x[1]);if(m2&&!(+S.sim.m2>0))miss.push("Matemática 2");if((h||c2)&&!((h&&+S.sim.his>0)||(c2&&+S.sim.cie>0)))miss.push(h&&c2?"Historia o Ciencias":h?"Historia":"Ciencias");el.className="pond";el.textContent="Para calcular aquí falta: "+miss.join(", ")+".";return}
   if(m.paes){const d=v-Math.round(m.paes);el.className="pond "+(d>=0?"ok":"no");el.textContent=`Tu ponderado: ${v}. ${d>=0?`Estás ${d} ${d===1?"punto":"puntos"} sobre el`:`Te ${-d===1?"falta 1 punto":`faltan ${-d} puntos`} para llegar al`} promedio de quienes entraron en 2025 (${Math.round(m.paes)}).`}else{el.className="pond";el.textContent=`Tu ponderado: ${v}.`}})}
 async function openCarrera(id){const[n,t]=id.split("|");const c=CARRERAS.find(x=>x.n===n&&x.t===t);if(!c)return;SH={c,progs:[],region:getRegion(),vis:[],simSent:false};ev("career_opened",{n:c.n,t:c.t,desde:lastStep});
+ {const pv=load()||{};const k=c.n+"|"+c.t;store({...pv,vistas:[k,...(pv.vistas||[]).filter(x=>x!==k)].slice(0,12)})}
  const p=ipDone()?perfil():null;const af=p&&c.c?afinidad(p,c.c):null;
  const perfilTxt=c.c?c.c.split("").map(k=>DSHORT[k]).join(", "):"categoría amplia, sin perfil asignado";
  $("sheetBox").innerHTML=`<button class="x" aria-label="Cerrar" data-close>×</button>
@@ -770,6 +1485,332 @@ function closeSheet(){$("sheet").classList.add("hidden");document.body.style.ove
 document.addEventListener("click",e=>{const r=e.target.closest("[data-car]");if(r){openCarrera(r.dataset.car);return}if(e.target.closest("[data-close]")||e.target.id==="sheet")closeSheet()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
 
+/* =====================================================================
+   mvp-6 · utilidades de formularios por pasos (Semanas 3 y 4)
+   ===================================================================== */
+const hoyISO=(add=0)=>{const d=new Date(Date.now()+add*864e5);d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+const fechaCorta=iso=>{if(!iso)return "";const[y,m,d]=iso.split("-");return `${+d}/${+m}/${y}`};
+function bajar(nombre,texto){try{const b=new Blob([texto],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=nombre;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},800)}catch(e){}}
+function getP(o,p){return p.split(".").reduce((a,k)=>a==null?a:a[k],o)}
+function setP(o,p,v){const ks=p.split(".");let a=o;for(let i=0;i<ks.length-1;i++){if(a[ks[i]]==null)a[ks[i]]=/^\d+$/.test(ks[i+1])?[]:{};a=a[ks[i]]}a[ks[ks.length-1]]=v}
+const cleanRev=t=>t.replace(/\s*\((JOVEN|ÉTICA)[^)]*\)\s*$/,"");
+const revTxt=(meta,id,t)=>meta[id]&&meta[id].rev?cleanRev(meta[id].rev):t;
+const findCar=id=>{const[n,t]=String(id).split("|");return CARRERAS.find(x=>x.n===n&&x.t===t)||CARRERAS_RESPALDO.find(x=>x.n===n&&x.t===t)||null};
+const nomCar=id=>String(id).split("|")[0];
+const kk=id=>String(id).replace(/[^A-Za-z0-9]/g,"_");
+const tarjeta=c=>`<div class="tcard open"><b class="h">${c[0]}</b><p>${c[1]}</p><span class="src">Fuente: ${c[2].replace(/\s*\(dato ya usado en la app\)/,"")}</span></div>`;
+function og(path,opts,cur,o={}){const cls=o.chips?"chip":"opt",wrap=o.chips?"chips tight":"opts tight";
+ return `<div class="${wrap}" role="group">${opts.map((x,i)=>{const v=o.vals?o.vals[i]:x;const on=cur===v;return `<button type="button" class="${cls}${on?" sel":""}" data-g="${path}" data-v="${esc(String(v))}"${o.num?" data-n":""} aria-pressed="${on}">${esc(x)}</button>`}).join("")}</div>`}
+function om(path,opts,cur,max){cur=cur||[];return `<div class="chips tight" role="group">${opts.map(x=>{const on=cur.includes(x);return `<button type="button" class="chip${on?" sel":""}" data-m="${path}" data-v="${esc(x)}"${max?` data-max="${max}"`:""} aria-pressed="${on}">${esc(x)}</button>`}).join("")}</div>`}
+function refocus(box,sel){try{const el=box.querySelector(sel);if(el)el.focus({preventScroll:true})}catch(e){}}
+function bindForm(box,W,h){
+ box.querySelectorAll("[data-f]").forEach(el=>{const v=getP(W,el.dataset.f);if(el.type==="checkbox")el.checked=!!v;else if(v!=null)el.value=v;else if(el.type!=="range")el.value="";
+  const fn=()=>{setP(W,el.dataset.f,el.type==="checkbox"?el.checked:el.type==="range"?+el.value:el.value);h.save();if(el.hasAttribute("data-rr")){h.rr();refocus(box,`[data-f="${el.dataset.f}"]`)}else h.upd()};
+  if(el.tagName==="SELECT"||el.type==="checkbox"||el.type==="date")el.onchange=fn;else el.oninput=fn});
+ box.onclick=e=>{const t=e.target;
+  const g=t.closest("[data-g]");if(g){let v=g.dataset.v;if(g.hasAttribute("data-n"))v=+v;setP(W,g.dataset.g,v);h.save();h.rr();refocus(box,`[data-g="${g.dataset.g}"][data-v="${CSS.escape(g.dataset.v)}"]`);return}
+  const m=t.closest("[data-m]");if(m&&!m.disabled){const a=(getP(W,m.dataset.m)||[]).slice();const v=m.dataset.v;const i=a.indexOf(v);if(i>=0)a.splice(i,1);else if(!m.dataset.max||a.length<+m.dataset.max)a.push(v);setP(W,m.dataset.m,a);h.save();h.rr();refocus(box,`[data-m="${m.dataset.m}"][data-v="${CSS.escape(v)}"]`);return}
+  const to=t.closest("[data-to]");if(to&&!to.disabled){if(to.dataset.set)setP(W,to.dataset.set,true);h.nav(to.dataset.to);return}
+  if(t.closest("[data-prev]"))h.back()}}
+function updForm(box,W,R){box.querySelectorAll("[data-show]").forEach(e=>{const v=getP(W,e.dataset.show);e.textContent=v??"–"});
+ box.querySelectorAll("[data-cnt]").forEach(e=>{const v=getP(W,e.dataset.cnt)||"";e.textContent=v.length+" / "+e.dataset.max});
+ const b=box.querySelector("[data-ok]");if(b&&R.ok)b.disabled=!R.ok()}
+const navH=(next,o={})=>`<div class="nav">${o.noPrev?`<a class="btn ghost" href="#inicio">Salir</a>`:`<button type="button" class="btn ghost" data-prev>Atrás</button>`}<button type="button" class="btn ${o.gold?"gold":"primary"}" data-to="${next}" data-ok>${o.label||"Seguir"}</button></div>`;
+const introH=(I,extra="")=>`<div class="whead"><h2>${I.titulo}</h2><p class="lead2">${I.texto}</p></div>${extra}<ol class="pasos">${I.pasos.map(x=>{const[a,b]=x.split(" · ");return `<li><span>${a}</span><span class="t">${b||""}</span></li>`}).join("")}</ol>`;
+const BLQ=new Set(["fam","bar","baraf","exp","aut"]);
+const famUrl=s=>location.origin+location.pathname+"#familia?s="+s;
+const nivelTxt=pv=>pv.nivel==="3medio"?"3° medio":pv.nivel==="4medio"?"4° medio":"3°/4° medio";
+function sugerencias(pv){const L=[...((pv.s3&&pv.s3.sel)||[]),...((pv.s2&&pv.s2.rutas)||[]),...(ipDone()&&!esPlano(perfil())?ranking(perfil()).slice(0,3).map(c=>c.n+"|"+c.t):[]),...((pv.vistas||[]).slice(0,2))].map(nomCar);return [...new Set(L)].slice(0,8)}
+
+/* =====================================================================
+   SEMANA 3 · CONTRASTAR
+   ===================================================================== */
+const FAM_ITEMS=S3.FAM.items.filter(([id])=>S3.FAM_META[id].piloto2026!==false).map(([id,t])=>({id,t:revTxt(S3.FAM_META,id,t)}));
+const BAR_ITEMS=S3.BAR.items.map(([id,t])=>({id,t:revTxt(S3.BAR_META,id,t),extra:S3.BAR_META[id].opcion_extra}));
+const BARAF_ITEMS=S3.BAR.afrontamiento.items.map(([id,t])=>({id,t:revTxt(S3.BAR_META,id,t)}));
+const ORD3=["intro","deb","sens","cartas","fam","famdev","bar","baraf","bardev","sel","cont","lado","ent","planb","ref","fin"];
+const PART3={deb:[1,"La misión"],sens:[2,"Tu contexto"],cartas:[2,"Datos que nadie te cuenta"],fam:[2,"Tu contexto"],famdev:[2,"Tu contexto"],bar:[2,"Tu contexto"],baraf:[2,"Tu contexto"],bardev:[2,"Tu contexto"],sel:[3,"Comparar"],cont:[3,"Comparar"],lado:[3,"Comparar"],ent:[4,"Entrevista y plan B"],planb:[4,"Entrevista y plan B"],ref:[4,"Cierre"]};
+const W3D=()=>({paso:"intro",hist:[],deb:{},famA:{},barA:{},barafA:{},fam:null,bar:null,baraf:null,salto:false,cartas:[],cont:{sel:[],op:{},q:"",init:false},cref:"",ent:{},pb:{},r1:"",r2:""});
+let W3=null;
+function save3(){if(W3&&W3.paso!=="fin")store({...(load()||{}),w3:W3})}
+function go3(p){if(p==="fam")W3.salto=false;if(W3.paso&&W3.paso!==p)W3.hist.push(W3.paso);W3.paso=p;save3();ev("step_viewed",{semana:3},"s3_"+p);lastT=Date.now();draw3();window.scrollTo(0,0)}
+function back3(){let p;do{p=W3.hist.pop()}while(p&&BLQ.has(p));W3.paso=p||"intro";save3();draw3();window.scrollTo(0,0)}
+function famDev(a){const sub=(ids,min)=>{const r=ids.map(i=>a[i]).filter(v=>typeof v==="number");const pnr=ids.filter(i=>(i in a)&&a[i]==null).length;if(pnr>=2||r.length<min)return null;return rango3(r.reduce((x,y)=>x+y,0)/r.length)};
+ return {apoyo:sub(S3.FAM_puntaje.apoyo.items,S3.FAM_puntaje.apoyo.min_respondidos),presion:sub(S3.FAM_puntaje.presion.items.filter(i=>S3.FAM_META[i].piloto2026!==false),S3.FAM_puntaje.presion.min_respondidos)}}
+function barRes(){const b=W3.bar||{};const altos=BAR_ITEMS.filter(it=>typeof b[it.id]==="number"&&b[it.id]>=4).map(it=>it.id);const n=altos.length;
+ const af=BARAF_ITEMS.map(it=>(W3.baraf||{})[it.id]).filter(v=>typeof v==="number");const am=af.length?af.reduce((x,y)=>x+y,0)/af.length:null;
+ const aisl=n>0&&altos.every(id=>S3.BAR_META[id].nunca_comentar_aislado);
+ const shown=aisl?Object.keys(S3.TARJETAS):[...new Set(altos.map(id=>S3.BAR_META[id].tarjeta))];
+ return {n,idx:n<=1?0:n<=3?1:2,af:am==null?null:rango3(am),shown}}
+const pickBtn=(id,sel,full)=>{const on=sel.includes(id);const[n,t]=String(id).split("|");return `<button type="button" class="pick${on?" sel":""}" data-m="cont.sel" data-v="${esc(id)}" data-max="3" aria-pressed="${on}" ${!on&&full?"disabled":""}><span>${esc(n)} <span class="badge b-${t}">${t}</span></span><span class="ck" aria-hidden="true">${on?"✓":""}</span></button>`};
+function entMsg(ent,pv){return S3.entrevista.plantilla_mensaje.replace("3°/4° medio",nivelTxt(pv)).replace("[carrera]",(ent&&ent.car)||"[carrera]")}
+function entTxt(ent,pv){const E=S3.entrevista;return `MI ENTREVISTA · Radar Vocacional\n\nSobre: ${ent.car||"-"}\nA quién: ${ent.quien||"por definir"}\nCuándo: ${ent.cuando?fechaCorta(ent.cuando):"por definir"}\nSi me da vergüenza o no me responden, entonces: ${ent.si||"-"}\n\nPreguntas:\n${E.preguntas_guia.map((q,i)=>`${i+1}. ${q}`).join("\n")}\n\nMensaje para pedir la entrevista:\n${entMsg(ent,pv)}\n\n${E.aviso}\n`}
+const archivoHTML=()=>`<details class="disc"><summary>Mi archivo · Datos que nadie te cuenta</summary><div class="in"><div class="tgrid" style="margin:0">${Object.values(S3.TARJETAS).map(tarjeta).join("")}</div></div></details>`;
+const R3={
+ intro:{h:pv=>{const I={...S3.intro,pasos:S3.intro.pasos.map(x=>!pv.sens&&/contexto/.test(x)?"Datos que nadie te cuenta · 2 min":x)};return introH(I)+navH("deb",{noPrev:true,gold:true,label:S3.intro.boton})}},
+ deb:{h:pv=>{const d=S3.debrief,c=d.campos,D=W3.deb;const rutas=((pv.s2&&pv.s2.rutas)||[]).map(nomCar);
+  return `<p class="q">${d.titulo}</p><p class="hint">${d.texto}${rutas.length?` Tus rutas eran <b>${rutas.map(esc).join("</b> y <b>")}</b>.`:""}</p>
+  <span class="fl">${c[0].texto}</span>${og("deb.hizo",c[0].opciones,D.hizo)}
+  ${D.hizo==="Sí"?`<span class="fl">${c[1].texto}</span>${og("deb.atrae",c[1].opciones,D.atrae,{chips:1})}<label class="fl" for="f_sorp">${c[2].texto} <span class="op">(opcional)</span></label><input type="text" id="f_sorp" data-f="deb.sorp" maxlength="${c[2].max}" placeholder="${c[2].placeholder}">`:D.hizo?`<div class="nemsg" style="margin-top:14px">${d.sin_culpa}</div>`:""}
+  ${navH("sens")}`},ok:()=>!!W3.deb.hizo},
+ sens:{h:()=>{const a=S3.aviso_sensible;return `<div class="rc" style="margin-top:4px"><div class="eyebrow">Opcional · ${a.tiempo}</div><h3>${a.titulo}</h3><p style="margin:0">${a.texto}</p></div>
+  <button type="button" class="btn primary block" data-to="fam">${a.botones[0]}</button><button type="button" class="btn ghost block" style="margin-top:10px" data-to="cartas" data-set="salto">${a.botones[1]}</button>
+  <div style="margin-top:8px"><button type="button" class="lnk" data-prev>← Atrás</button></div>`}},
+ cartas:{h:()=>{const x=S3.tarjetas_sin_b;const n=W3.cartas.length;return `<p class="q">${x.titulo}</p><p class="hint">${x.texto}</p><p class="small" aria-live="polite" style="margin:0"><b>Destapaste ${n} de ${x.elegir}</b></p>
+  <div class="tgrid">${Object.entries(S3.TARJETAS).map(([id,c])=>W3.cartas.includes(id)?tarjeta(c):`<button type="button" class="tcard back" data-m="cartas" data-v="${id}" data-max="${x.elegir}" ${n>=x.elegir?"disabled":""}><b>${c[0]}</b><span>Toca para destapar</span></button>`).join("")}</div>${navH("sel")}`},ok:()=>W3.cartas.length>=S3.tarjetas_sin_b.elegir},
+ fam:{h:()=>`<p class="q">Mi familia y mi futuro</p><p class="hint">${S3.FAM.instruccion} · ${S3.FAM.tiempo.replace(/^\d+/,FAM_ITEMS.length)}</p><div id="famQ"></div><p class="enprueba" style="margin-top:14px">${PIE_NORTEA}</p>`,
+  a:()=>bloque($("famQ"),{key:"fam",items:FAM_ITEMS,anclas:FREC_ANCLAS,valores:[1,2,3,4,5],pnr:true,enprueba:true,ans:W3.famA,onAnswer:(it,v,st)=>{W3.famA={...st.ans};save3()},onDone:ans=>{W3.fam={...ans};go3("famdev")}})},
+ famdev:{h:()=>{const r=famDev(W3.fam||{});const D=S3.FAM_devolucion;const parts=[];if(r.apoyo!=null)parts.push(D.apoyo[r.apoyo]);if(r.presion!=null)parts.push(D.presion[r.presion]);
+  return `<p class="q">Gracias por responder</p><p class="hint">Preparamos unas frases para pensar. Son solo para ti.</p>
+  <details class="disc"><summary>${D.abrir_con_toque}</summary><div class="in">${parts.length?parts.map(t=>`<p>${t}</p>`).join(""):`<p>Como dejaste varias frases sin responder, esta vez no te mostramos una devolución. Está perfecto así.</p>`}<p class="small muted" style="margin:0">${D.cierre}</p></div></details>
+  <p class="enprueba">${PIE_NORTEA}</p>${navH("bar")}`}},
+ bar:{h:()=>`<p class="q">Lo que podría frenarme</p><p class="hint">${S3.BAR.instruccion} · ${S3.BAR.tiempo}</p><div id="barQ"></div><p class="enprueba" style="margin-top:14px">${PIE_NORTEA}</p>`,
+  a:()=>bloque($("barQ"),{key:"bar",items:BAR_ITEMS,anclas:BAR_ANCLAS,valores:[1,2,3,4,5],pnr:true,barras:true,enprueba:true,ans:W3.barA,onAnswer:(it,v,st)=>{W3.barA={...st.ans};save3()},onDone:ans=>{W3.bar={...ans};go3("baraf")}})},
+ baraf:{h:()=>`<p class="q">Cómo te ves frente a eso</p><p class="hint">${S3.BAR.afrontamiento.instruccion}</p><div id="barafQ"></div><p class="enprueba" style="margin-top:14px">${PIE_NORTEA}</p>`,
+  a:()=>bloque($("barafQ"),{key:"baraf",items:BARAF_ITEMS,anclas:DESC_ANCLAS,valores:[1,2,3,4,5],pnr:true,barras:true,enprueba:true,ans:W3.barafA,onAnswer:(it,v,st)=>{W3.barafA={...st.ans};save3()},onDone:ans=>{W3.baraf={...ans};go3("bardev")}})},
+ bardev:{h:()=>{const r=barRes();const D=S3.BAR_devolucion;const rest=Object.keys(S3.TARJETAS).filter(k=>!r.shown.includes(k));
+  return `<div class="rc dark"><div class="eyebrow">Lo que podría frenarte</div><p style="margin:0">${D.indice[r.idx]}</p>${r.af!=null?`<p style="margin:12px 0 0">${D.afrontamiento[r.af]}</p>`:""}</div>
+  ${r.shown.length?`<h3>Tus tarjetas</h3><div class="tgrid">${r.shown.map(id=>tarjeta(S3.TARJETAS[id])).join("")}</div>`:""}
+  ${rest.length?`<details class="disc"><summary>Ver todas las tarjetas</summary><div class="in"><div class="tgrid" style="margin:0">${rest.map(id=>tarjeta(S3.TARJETAS[id])).join("")}</div></div></details>`:""}
+  <p class="enprueba">${PIE_NORTEA}</p>${navH("sel")}`}},
+ sel:{h:pv=>{const C=W3.cont;if(!C.init){C.init=true;C.sel=((pv.s2&&pv.s2.rutas)||[]).filter(findCar).slice(0,3);save3()}
+  const s2r=(pv.s2&&pv.s2.rutas)||[];const top=(ipDone()&&!esPlano(perfil())?ranking(perfil()):[]).slice(0,6).map(c=>c.n+"|"+c.t);const vis=(pv.vistas||[]).slice(0,6);
+  const x=S3.contrastar;const full=C.sel.length>=3;
+  const grp=(t,L)=>{L=[...new Set(L)].filter(findCar);return L.length?`<div class="grp">${t}</div>${L.map(id=>pickBtn(id,C.sel,full)).join("")}`:""};
+  return `<p class="q">${x.titulo}</p><p class="hint">${x.texto} · ${x.tiempo}</p>
+  <div class="selbar" aria-live="polite"><b>${C.sel.length} de 3 elegidas</b>${C.sel.length?`<div class="chips">${C.sel.map(id=>`<button type="button" class="chip sel" data-m="cont.sel" data-v="${esc(id)}" aria-label="Quitar ${esc(nomCar(id))}">${esc(nomCar(id))} ✕</button>`).join("")}</div>`:`<p class="small muted" style="margin:4px 0 0">Elige al menos 2.</p>`}</div>
+  ${grp("Las que elegiste en la Semana 2",s2r)}${grp("Tu top del radar",top)}${grp("Las que abriste en el explorador",vis)}
+  <div class="grp">Buscar en el catálogo</div><input type="search" id="s3q" placeholder="Ej: enfermería, mecánica, diseño…" aria-label="Buscar carrera para comparar"><div id="s3res" style="margin-top:8px"></div>
+  ${navH("cont")}`},
+  a:()=>{const q=$("s3q");q.value=W3.cont.q||"";const res=()=>{const t=norm(q.value.trim());W3.cont.q=q.value;const full=W3.cont.sel.length>=3;
+   $("s3res").innerHTML=t.length<2?`<p class="small muted" style="margin:0">Escribe al menos 2 letras para buscar entre ${CARRERAS.length} carreras.</p>`:(L=>L.length?L.map(c=>pickBtn(c.n+"|"+c.t,W3.cont.sel,full)).join(""):`<div class="empty">No encontramos esa carrera. Prueba con otra palabra.</div>`)(CARRERAS.filter(c=>norm(c.n).includes(t)).slice(0,8))};
+   q.oninput=()=>{res();save3()};res()},
+  ok:()=>W3.cont.sel.length>=2&&W3.cont.sel.length<=3},
+ cont:{h:()=>{const C=W3.cont;const F=S3.contrastar.campos;const fc=id=>F.find(f=>f.id===id);
+  return `<p class="q">Ahora, opción por opción</p><p class="hint">Escribe lo que te atrae y lo que te cuesta. Los datos duros se llenan solos con datos oficiales de mifuturo.cl.</p>
+  ${C.sel.map((id,ix)=>{const c=findCar(id);const k=kk(id);const P="cont.op."+k+".";const o=C.op[k]||{};const[n,t]=id.split("|");
+   return `<article class="ocard"><header><h3>${esc(n)} <span class="badge b-${t}">${t}</span></h3><span class="num" aria-hidden="true">${ix+1}</span></header>
+   <label class="fl" for="f_${k}_a">${fc("atrae").etiqueta}</label><input type="text" id="f_${k}_a" data-f="${P}atrae" maxlength="${fc("atrae").max}" placeholder="${fc("atrae").placeholder}">
+   <label class="fl" for="f_${k}_c">${fc("cuesta").etiqueta}</label><input type="text" id="f_${k}_c" data-f="${P}cuesta" maxlength="${fc("cuesta").max}" placeholder="${fc("cuesta").placeholder}">
+   <div class="kv"><div><div class="v">${c&&c.df!=null?dec(c.df)+" / "+(c.dr!=null?dec(c.dr):"s/i"):fc("dur").sin_dato}</div><div class="l">${fc("dur").etiqueta}, en semestres</div></div>
+   <div><div class="v">${c&&c.ar!=null?mill(c.ar):fc("dur").sin_dato}</div><div class="l">${fc("costo").etiqueta}</div></div><div class="nt">${fc("costo").nota}.</div></div>
+   <span class="fl">${fc("grat").etiqueta}</span>${og(P+"grat",fc("grat").opciones,o.grat,{chips:1})}<p class="small muted" style="margin:0">${fc("grat").ayuda}.</p>
+   <div class="kv"><div><div class="v">${c&&c.emp!=null?c.emp+"%":fc("dur").sin_dato}</div><div class="l">${fc("emp").etiqueta}</div></div>
+   <div><div class="v">${c&&c.ing!=null?mill(c.ing):fc("dur").sin_dato}</div><div class="l">${fc("ing").etiqueta} (al mes)</div></div></div>
+   ${c&&c.ing!=null?`<span class="fl">${fc("creia").etiqueta}</span>${og(P+"creia",fc("creia").opciones,o.creia,{chips:1})}`:""}
+   <label class="fl" for="f_${k}_v">${fc("vive").etiqueta} <span class="op">(opcional)</span></label><input type="text" id="f_${k}_v" data-f="${P}vive" maxlength="${fc("vive").max}" placeholder="${fc("vive").placeholder}">
+   <span class="fl">${fc("tinca").etiqueta}</span>${og(P+"tinca",fc("tinca").opciones,o.tinca,{chips:1})}</article>`}).join("")}
+  <p class="small muted" id="contMiss"></p>${navH("lado",{label:"Ver lado a lado"})}`},
+  ok:()=>{const ok=W3.cont.sel.every(id=>{const o=W3.cont.op[kk(id)]||{};return (o.atrae||"").trim()&&(o.cuesta||"").trim()});const m=$("contMiss");if(m)m.textContent=ok?"":"Para seguir, completa «Lo que me atrae» y «Lo que me cuesta» en cada opción.";return ok}},
+ lado:{h:()=>{const C=W3.cont;const cols=C.sel.map(id=>({id,c:findCar(id),o:C.op[kk(id)]||{}}));const n=cols.length;
+  const row=(lbl,f,cls="v")=>`<tr class="lb"><td colspan="${n}">${lbl}</td></tr><tr>${cols.map(x=>`<td class="${cls}">${f(x)}</td>`).join("")}</tr>`;
+  return `<p class="q">Tus opciones, lado a lado</p><p class="hint">Mira las columnas juntas. No hay una respuesta correcta: la idea es ver qué pesa más para ti.</p>
+  <div class="cmpw"><table class="cmp"><thead><tr>${cols.map(x=>{const t=x.id.split("|")[1];return `<th scope="col">${esc(nomCar(x.id))}<br><span class="badge b-${t}" style="margin:4px 0 0">${t}</span></th>`}).join("")}</tr></thead><tbody>
+  ${row("Duración real",x=>x.c&&x.c.dr!=null?dec(x.c.dr)+" sem.":"s/i")}
+  ${row("Arancel anual",x=>x.c?mill(x.c.ar):"s/i")}
+  ${row("¿Adscrita a Gratuidad?",x=>esc(x.o.grat||"–"))}
+  ${row("Empleabilidad 1er año",x=>x.c&&x.c.emp!=null?x.c.emp+"%":"s/i")}
+  ${row("Ingreso 4° año (mes)",x=>x.c?mill(x.c.ing):"s/i")}
+  ${row("Me atrae",x=>esc(x.o.atrae||""),"tx")}
+  ${row("Me cuesta",x=>esc(x.o.cuesta||""),"tx")}
+  ${row("Después de compararla",x=>esc(x.o.tinca||"–"),"tx")}
+  </tbody></table></div>
+  ${factHTML(S3.contrastar.dato)}
+  <label class="fl" for="f_cref">${S3.contrastar.cierre_pregunta.texto} <span class="op">(opcional)</span></label><textarea id="f_cref" data-f="cref" maxlength="${S3.contrastar.cierre_pregunta.max}"></textarea>
+  ${navH("ent")}`}},
+ ent:{h:pv=>{const E=S3.entrevista;const W=W3.ent;const opts=W3.cont.sel.map(nomCar);if(!W.car&&opts.length)W.car=opts[0];const msg=entMsg(W,pv);const c=E.campos;
+  return `<p class="q">${E.titulo}</p><p class="hint">${E.texto}</p>
+  ${opts.length>1?`<span class="fl">¿Sobre cuál opción?</span>${og("ent.car",opts,W.car,{chips:1})}`:""}
+  <div class="rc"><h3 style="margin-top:0">Preguntas para tu entrevista</h3><ol style="margin:0 0 0 1.1em;padding:0">${E.preguntas_guia.map(q=>`<li>${q}</li>`).join("")}</ol></div>
+  <div class="rc goldc"><div class="eyebrow">Mensaje listo para enviar</div><p class="quote" style="margin:4px 0 12px">${esc(msg)}</p><a class="btn primary block" href="https://wa.me/?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">Enviar por WhatsApp</a><button type="button" class="btn ghost block" id="entCopy" style="margin-top:8px">Copiar el mensaje</button></div>
+  <span class="fl">${c[0].texto}</span>${og("ent.quien",c[0].opciones,W.quien)}
+  <label class="fl" for="f_cuando">${c[1].texto}</label><input type="date" id="f_cuando" data-f="ent.cuando" min="${hoyISO()}" max="${hoyISO(14)}">
+  <label class="fl" for="f_si">${c[2].texto}</label><input type="text" id="f_si" data-f="ent.si" maxlength="${c[2].max}" placeholder="${c[2].placeholder}">
+  <p class="small muted" style="margin-top:12px">🔒 ${E.aviso}</p>
+  <button type="button" class="btn ghost block" id="entDl">Descargar mi tarjeta de entrevista</button>
+  ${navH("planb")}`},
+  a:(box,pv)=>{$("entCopy").onclick=()=>{const m=entMsg(W3.ent,pv);try{navigator.clipboard.writeText(m).then(()=>{$("entCopy").textContent="✓ Copiado"}).catch(()=>{})}catch(e){}};$("entDl").onclick=()=>{bajar("mi-entrevista.txt",entTxt(W3.ent,pv));ev("download",{que:"entrevista"})}}},
+ planb:{h:()=>{const B=S3.planB;return `<p class="q">Tu plan B</p><p class="hint">${B.texto}</p>${og("pb.op",B.opciones,W3.pb.op)}
+  <label class="fl" for="f_pb">Cuéntalo en una frase <span class="op">(opcional)</span></label><input type="text" id="f_pb" data-f="pb.txt" maxlength="${B.texto_libre.max}" placeholder="${B.texto_libre.placeholder}">
+  <p class="small muted" style="margin:8px 0 0">${B.ayuda} <a href="#explorar">Abrir el explorador</a></p>${factHTML(B.dato)}${navH("ref")}`}},
+ ref:{h:()=>`<p class="q">Para cerrar</p><p class="hint">Opcional. Escribe lo primero que se te venga.</p>${S3.reflexion_cierre.map((r,i)=>`<label class="fl" for="f_r${i+1}">${r.texto}</label><textarea id="f_r${i+1}" data-f="r${i+1}" maxlength="${r.max}" placeholder="${r.placeholder||""}"></textarea>`).join("")}
+  <div class="nav"><button type="button" class="btn ghost" data-prev>Atrás</button><button type="button" class="btn gold" id="fin3">Terminar la Semana 3</button></div>`,
+  a:()=>{$("fin3").onclick=finish3}},
+ fin:{h:pv=>{const s3=pv.s3;const C=S3.cierre;const names=s3?s3.sel.map(nomCar):[];
+  const msg=encodeURIComponent(`Esta semana en Radar Vocacional estoy comparando ${names.length?names.join(", "):"mis opciones"}. Hay una lectura corta para ti y una conversación para hacer juntos: ${famUrl(3)}`);
+  return `${pv.s3alerta?SUPPORT_HTML:""}
+  <div class="rc dark"><div class="eyebrow">Semana 3 completa · Nitidez ${S3.nitidez}%</div><h3>${C.titulo}</h3><p style="margin:0">${C.texto}</p></div>
+  ${s3?`<h3>Tus opciones</h3>${s3.ops.map(o=>{const c=findCar(o.id);return c?routeCard({...c,af:ipDone()?afinidad(perfil(),c.c):null}):""}).join("")}`:`<div class="empty">Completaste esta semana en otro celular: lo que escribiste quedó allá.</div>`}
+  ${s3&&s3.ent?`<div class="rc goldc"><div class="eyebrow">Tu entrevista</div><p style="margin:0 0 10px">Sobre <b>${esc(s3.ent.car||"")}</b>${s3.ent.quien&&s3.ent.quien!=="Aún no sé"?`, a ${esc(s3.ent.quien.toLowerCase())}`:""}${s3.ent.cuando?`, el <b>${fechaCorta(s3.ent.cuando)}</b>`:""}.</p><button type="button" class="btn ghost block" id="entDl2">Descargar mi tarjeta de entrevista</button></div>`:""}
+  ${rutaHTML(pv)}
+  ${pv.s4hecha?"":`<div class="rc"><div class="eyebrow">Lo que viene</div><p style="margin:0">${S3.cierre.adelanto}</p></div>`}
+  ${archivoHTML()}
+  <div class="rc"><h3>Comparte con tu familia</h3><p>Su recorrido de esta semana les ayuda a acompañar tu comparación sin decidir por ti.</p><a class="btn primary block" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar a mi familia por WhatsApp</a></div>
+  <p class="small muted" id="s3save">${pv.eval?(pv.s3save==="pend"?"Guardando con tu código…":pv.s3save==="fail"?"Quedó guardado en este dispositivo (sin conexión al servidor).":"✓ Guardado con tu código, sin tu nombre."):"Tus respuestas quedan solo en este dispositivo."}</p>`},
+  a:(box,pv)=>{const b=$("entDl2");if(b)b.onclick=()=>bajar("mi-entrevista.txt",entTxt(pv.s3.ent,pv))}}
+};
+function draw3(){const pv=load()||{};let p=W3.paso;if(p==="sens"&&!pv.sens)p=W3.paso="cartas";
+ const R=R3[p]||R3.intro;const box=$("s3box");
+ const i=ORD3.indexOf(p),pr=p==="fin"?1:Math.max(0,i)/(ORD3.length-1);const nit=75+Math.round(pr*15);
+ $("nit3").style.width=nit+"%";$("nit3t").textContent="Nitidez "+nit+"%";const pt=PART3[p];$("nit3p").textContent=pt?`Parte ${pt[0]} de 4 · ${pt[1]}`:p==="fin"?"Completa ✓":"4 partes · 15 min";
+ box.innerHTML=R.h(pv);R.a&&R.a(box,pv);if(W3.paso!==p)return;
+ const H={rr:draw3,save:save3,nav:go3,back:back3,upd:()=>updForm(box,W3,R)};bindForm(box,W3,H);H.upd()}
+function renderSemana3(){const pv=load()||{};
+ if(pv.s3hecha)W3={paso:"fin"};else{if(!W3||W3.paso==="fin"||!W3.cont)W3={...W3D(),...(pv.w3||{})};if(!W3.started){W3.started=1;ev("week_started",{semana:3})}}
+ draw3()}
+async function finish3(){const pv=load()||{};const sel=W3.cont.sel;const ops=sel.map(id=>({id,...(W3.cont.op[kk(id)]||{})}));
+ const sens=!!pv.sens&&!W3.salto&&!!W3.bar;const br=sens?barRes():null;
+ const refl={deb_sorp:W3.deb.sorp||"",cont:ops.map(o=>({n:nomCar(o.id),atrae:o.atrae||"",cuesta:o.cuesta||"",vive:o.vive||""})),cont_ref:W3.cref||"",ent_si:W3.ent.si||"",planb_txt:W3.pb.txt||"",s3_ref1:W3.r1||"",s3_ref2:W3.r2||""};
+ const alerta=ALERTA.test(norm(JSON.stringify(refl)));
+ const datos={deb:{hizo:W3.deb.hizo||null,atrae:W3.deb.atrae||null},sens:!!pv.sens,salto:!!W3.salto,fam:sens?W3.fam:null,bar:sens?W3.bar:null,bar_af:sens?W3.baraf:null,bar_n:br?br.n:null,cartas:W3.cartas,
+  cont:ops.map(o=>({id:o.id,grat:o.grat||null,creia:o.creia||null,tinca:o.tinca||null})),ent:{quien:W3.ent.quien||null,cuando:W3.ent.cuando||null,car:W3.ent.car||null},planb:W3.pb.op||null,ne:[...NE]};
+ const s3={sel,ops,ent:W3.ent,pb:W3.pb,deb:W3.deb,cartas:br?br.shown:W3.cartas,cref:W3.cref,r1:W3.r1,r2:W3.r2,fecha:new Date().toISOString()};
+ store({...pv,s3,s3hecha:true,s3alerta:alerta,s3save:pv.eval?"pend":null,w3:null});
+ ev("week_completed",{semana:3,n_opciones:sel.length,sens});
+ W3={paso:"fin"};draw3();window.scrollTo(0,0);
+ const ok=await guardar({rol:"estudiante",semana:3,momento:"S3",nivel:pv.nivel||null,reflexiones:refl,datos});
+ if(ok!=="local")store({...(load()||{}),s3save:ok?"ok":"fail"});
+ const st=$("s3save");if(st&&ok!=="local")st.textContent=ok?"✓ Guardado con tu código, sin tu nombre.":"Quedó guardado en este dispositivo (sin conexión al servidor)."}
+
+/* =====================================================================
+   SEMANA 4 · DECIDIR (T1)
+   ===================================================================== */
+const ORD4=["intro","clar","exp","aut","ad","dec","pasos","util","carta","fin"];
+const PART4={clar:[1,"Tu medición final"],exp:[1,"Tu medición final"],aut:[1,"Tu medición final"],ad:[2,"Tu antes y después"],dec:[3,"Tu decisión y tu plan"],pasos:[3,"Tu decisión y tu plan"],util:[4,"Cierre"],carta:[4,"Cierre"]};
+const W4D=()=>({paso:"intro",hist:[],clar:5,expA:{},autA:{},exp:null,aut:null,t1:false,dec:{},pasos:[{},{},{}],util:{},amigo:"",carta:""});
+let W4=null;
+function save4(){if(W4&&W4.paso!=="fin"){const pv=load()||{};store({...pv,w4:W4,carta:W4.carta||pv.carta||""})}}
+function go4(p){if(p==="pasos"&&!W4.pasosInit){W4.pasosInit=true;if(W4.dec.modo==="aun_no"){const ids=[...new Set((W4.dec.falta||[]).map(f=>S4.pasos.sugeridos_aun_no[f]).filter(Boolean))].slice(0,3);ids.forEach((id,i)=>{W4.pasos[i]={...W4.pasos[i],id}})}}
+ if(W4.paso&&W4.paso!==p)W4.hist.push(W4.paso);W4.paso=p;save4();ev("step_viewed",{semana:4},"s4_"+p);lastT=Date.now();draw4();window.scrollTo(0,0)}
+function back4(){let p;do{p=W4.hist.pop()}while(p&&(BLQ.has(p)||(W4.t1&&p==="clar")));W4.paso=p||(W4.t1?"ad":"intro");save4();draw4();window.scrollTo(0,0)}
+function saveT1(){W4.t1=true;const pv=load()||{};store({...pv,t1:{clar:W4.clar,exp:W4.exp,aut:W4.aut,fecha:new Date().toISOString()},w4:W4});ev("clarity_post",{v:W4.clar});
+ guardar({rol:"estudiante",semana:4,momento:S4.momento,nivel:pv.nivel||null,claridad:W4.clar,datos:{parte:"medicion",claridad_formato:"slider",exp:W4.exp,aut:W4.aut,ne:[...NE]}}).then(ok=>{if(ok!=="local")store({...(load()||{}),t1save:ok?"ok":"fail"})})}
+const pasoTxt=s=>{const c=S4.pasos.catalogo.find(x=>x.id===s.id);if(!c)return s.txt||"";return c.libre?(s.txt||c.t):c.t};
+function planTxt(s4){const d=s4.dec||{};const L=["MI PLAN · Radar Vocacional",""];
+ if(d.modo==="decido"){L.push("Mi decisión por ahora: "+(d.princ||"-"));if(d.alt)L.push("Mi alternativa (plan B): "+d.alt);if(d.porque)L.push("La elijo porque "+d.porque);if(d.seguro)L.push("Hoy me siento: "+d.seguro.toLowerCase())}
+ else{L.push("Aún no decido.");if((d.entre||[]).length)L.push("Estoy entre: "+d.entre.join(", "));if((d.falta||[]).length)L.push("Me falta: "+d.falta.join("; "))}
+ L.push("","Mis 3 próximos pasos:");(s4.pasos||[]).forEach((s,i)=>L.push(`${i+1}. [${s.hecho?"x":" "}] ${pasoTxt(s)}${s.fecha?" · "+fechaCorta(s.fecha):""}${s.con?" · con "+s.con:""}`));
+ L.push("",S4.cierre.recordatorio);return L.join("\n")+"\n"}
+function planHTML(s4){const d=s4.dec||{};return `<div class="plan"><div class="eyebrow">Mi plan</div>
+ ${d.modo==="decido"?`<h3 style="margin-bottom:6px">Mi decisión por ahora: ${esc(d.princ||"")}</h3>${d.alt?`<p style="margin:0 0 4px">Plan B: <b>${esc(d.alt)}</b></p>`:""}${d.porque?`<p class="small" style="margin:0;opacity:.85">La elijo porque ${esc(d.porque)}</p>`:""}`
+ :`<h3 style="margin-bottom:6px">Aún no decido, y tengo un plan</h3>${(d.entre||[]).length?`<p style="margin:0 0 4px">Estoy entre: <b>${d.entre.map(esc).join(", ")}</b></p>`:""}${(d.falta||[]).length?`<p class="small" style="margin:0;opacity:.85">Me falta: ${d.falta.map(esc).join("; ")}</p>`:""}`}
+ <ol>${(s4.pasos||[]).map((s,i)=>`<li class="${s.hecho?"ok":""}"><label><input type="checkbox" data-hecho="${i}" ${s.hecho?"checked":""}><span><span class="tx">${esc(pasoTxt(s))}</span><span class="f">${s.fecha?fechaCorta(s.fecha):""}${s.con?" · con "+esc(s.con):""}</span></span></label></li>`).join("")}</ol></div>`}
+const R4={
+ intro:{h:()=>introH(S4.intro)+navH("clar",{noPrev:true,gold:true,label:S4.intro.boton})},
+ clar:{h:()=>`<p class="q">Hoy, ¿qué tan claro tienes lo que harás después de 4° medio?</p><p class="hint">La misma pregunta de la Semana 1. Con honestidad: subir, bajar o mantenerse, todo es información.</p>
+  <div class="slider"><div class="sv" data-show="clar" aria-hidden="true">5</div><input type="range" data-f="clar" min="0" max="10" aria-label="Claridad de 0 a 10"><div class="sl"><span>Niebla total</span><span>Lo tengo muy claro</span></div></div>${navH("exp")}`},
+ exp:{h:()=>`<p class="q">Lo que hiciste para explorar</p><p class="hint">${S4.T1.EXP.instruccion} · ${S4.T1.EXP.tiempo}</p><div id="expQ"></div>`,
+  a:()=>bloque($("expQ"),{key:"exp_t1",items:EXP_ITEMS.map(([id,t])=>({id,t})),anclas:EXP_ANCLAS,valores:[0,1,2,3,4],enprueba:true,ans:W4.expA,onAnswer:(it,v,st)=>{W4.expA={...st.ans};save4()},onDone:ans=>{W4.exp={...ans};go4("aut")}})},
+ aut:{h:()=>`<p class="q">Cómo vas pensando tu decisión</p><p class="hint">Las mismas 10 frases de la Semana 2. Responde según cómo estás hoy. · 10 frases · 1 min</p><div id="autQ"></div>`,
+  a:()=>bloque($("autQ"),{key:"aut_t1",items:AUT_ITEMS.map(([id,t])=>({id,t})),anclas:DESC_ANCLAS,valores:[1,2,3,4,5],barras:true,enprueba:true,ans:W4.autA,onAnswer:(it,v,st)=>{W4.autA={...st.ans};save4()},onDone:ans=>{W4.aut={...ans};saveT1();go4("ad")}})},
+ ad:{h:pv=>{const A=S4.antes_despues;const t0=pv.t0;const s2=pv.s2&&pv.s2.clar;const t1=W4.clar;
+  const rows=[["Semana 1",t0],["Semana 2",s2],["Hoy",t1]].filter(r=>r[1]!=null);
+  const msg=t0==null?"":t1>t0?A.claridad.subio:t1===t0?A.claridad.igual:A.claridad.bajo;
+  const ids=S4.T1.EXP.ids_corta;const amp=e=>e?ids.filter(i=>(e[i]||0)>0).length:null;const a0=amp(pv.exp),a1=amp(W4.exp)||0;
+  const et=a0==null?`Formas de explorar que usaste ahora: ${a1} de 6.`:A.exploracion.texto.replace("{a0}",a0).replace("{a1}",a1);
+  return `<div class="whead"><h2>${A.titulo}</h2><p class="lead2">Solo te comparamos contigo mismo o contigo misma.</p></div>
+  <div class="rc dark"><div class="eyebrow">Tu claridad (0 a 10)</div><div class="ad">${rows.map(([l,v])=>`<div class="row${l==="Hoy"?" hoy":""}"><span>${l}</span><span class="b"><i style="width:${Math.max(3,v*10)}%"></i></span><span class="n">${v}</span></div>`).join("")}</div>${msg?`<p style="margin:16px 0 0">${msg}</p>`:""}</div>
+  <div class="rc"><div class="eyebrow">Tu exploración</div><p class="q" style="margin:0 0 6px">${et}</p><p class="small muted" style="margin:0">Contamos las formas distintas que usaste al menos una vez: buscar información, revisar puntajes, conversar con alguien, ir a una feria o clase abierta, probar algo y pensar en tus habilidades.</p></div>
+  ${navH("dec",{noPrev:true,label:"Armar mi decisión"})}`}},
+ dec:{h:pv=>{const D=S4.decision;const W=W4.dec;const sug=sugerencias(pv);const pb=(pv.s3&&pv.s3.pb)||{};
+  if(W.modo==="decido"&&!W.altInit){W.altInit=true;if(!W.alt&&(pb.txt||(pb.op&&pb.op!=="Todavía no lo sé")))W.alt=pb.txt||pb.op}
+  const C=D.campos_decido,N=D.campos_aun_no;
+  return `<p class="q">${D.titulo}</p><p class="hint">${D.texto}</p>${og("dec.modo",D.modo.map(m=>m.label),W.modo,{vals:D.modo.map(m=>m.id)})}
+  ${W.modo==="decido"?`<span class="fl">${C[0].etiqueta}</span>${sug.length?og("dec.princ",sug,W.princ,{chips:1}):""}<input type="text" data-f="dec.princ" maxlength="80" aria-label="${C[0].etiqueta}" placeholder="${sug.length?"O escríbela aquí":"Escribe tu opción principal"}">
+   <span class="fl">${C[1].etiqueta} <span class="op">(opcional)</span></span>${sug.length?og("dec.alt",sug,W.alt,{chips:1}):""}<input type="text" data-f="dec.alt" maxlength="${S3.planB.texto_libre.max}" aria-label="${C[1].etiqueta}" placeholder="Tu plan B">
+   <label class="fl" for="f_porque">${C[2].etiqueta} <span class="op">(opcional)</span></label><input type="text" id="f_porque" data-f="dec.porque" maxlength="${C[2].max}">
+   <span class="fl">${C[3].etiqueta}</span>${og("dec.seguro",C[3].opciones,W.seguro,{chips:1})}`
+  :W.modo==="aun_no"?`<div class="nemsg" style="margin-top:14px">${D.msg_aun_no}</div>
+   ${sug.length?`<span class="fl">${N[0].etiqueta} <span class="op">(hasta ${N[0].max}, opcional)</span></span>${om("dec.entre",sug,W.entre,N[0].max)}`:""}
+   <span class="fl">${N[1].etiqueta}</span>${om("dec.falta",N[1].opciones,W.falta)}`:""}
+  ${navH("pasos",{noPrev:true})}`},
+  ok:()=>W4.dec.modo==="aun_no"||(W4.dec.modo==="decido"&&!!(W4.dec.princ||"").trim())},
+ pasos:{h:()=>{const P=S4.pasos;return `<p class="q">${P.titulo}</p><p class="hint">${P.texto}</p>
+  ${W4.pasos.map((s,i)=>{const cat=P.catalogo.find(c=>c.id===s.id);return `<div class="pcard"><label class="h" for="p_${i}_id" style="display:block">Paso ${i+1}</label>
+  <select id="p_${i}_id" data-f="pasos.${i}.id" data-rr><option value="">Elige un paso…</option>${P.catalogo.map(c=>`<option value="${c.id}">${esc(c.t)}</option>`).join("")}</select>
+  ${cat&&cat.ayuda?`<p class="small muted" style="margin:6px 0 0">${cat.ayuda}</p>`:""}
+  ${cat&&cat.libre?`<input type="text" data-f="pasos.${i}.txt" maxlength="100" placeholder="Escribe tu paso" aria-label="Escribe tu paso ${i+1}" style="margin-top:8px">`:""}
+  <div class="two" style="margin-top:10px"><div><label class="small muted" for="p_${i}_f">¿Cuándo?</label><input type="date" id="p_${i}_f" data-f="pasos.${i}.fecha" min="${hoyISO()}"></div><div><label class="small muted" for="p_${i}_c">¿Con quién? (opcional)</label><input type="text" id="p_${i}_c" data-f="pasos.${i}.con" maxlength="60"></div></div></div>`}).join("")}
+  <p class="small muted" id="pasosMiss"></p>${navH("util")}`},
+  ok:()=>{const ok=W4.pasos.every(s=>s.id&&s.fecha&&(s.id!=="P_OTRO"||(s.txt||"").trim()));const m=$("pasosMiss");if(m)m.textContent=ok?"":"Para seguir, elige los 3 pasos y ponle fecha a cada uno.";return ok}},
+ util:{h:()=>{const U=S4.satisfaccion;return `<p class="q">Tu opinión</p><p class="hint">Nos ayuda a mejorar Radar Vocacional para otros estudiantes.</p>
+  ${U.items.map(([id,t])=>`<span class="fl">${t}</span>${og("util."+id,UTIL_ANCLAS,W4.util[id],{vals:[1,2,3,4,5],num:1,chips:1})}`).join("")}
+  <label class="fl" for="f_amigo">${U.abierta.texto} <span class="op">(opcional)</span></label><textarea id="f_amigo" data-f="amigo" maxlength="${U.abierta.max}"></textarea>${navH("carta")}`}},
+ carta:{h:()=>{const C=S4.carta;return `<p class="q">${C.titulo}</p><p class="hint">${C.texto}</p>
+  <label class="sr" for="f_carta">Tu carta</label><textarea id="f_carta" data-f="carta" maxlength="${C.max}" placeholder="${C.placeholder}" style="min-height:190px"></textarea><div class="cnt" data-cnt="carta" data-max="${C.max}"></div>
+  <p class="small muted">🔒 Tu carta queda solo en este celular: no la enviamos a ningún servidor. Descárgala para no perderla.</p>
+  <button type="button" class="btn ghost block" id="cartaDl">Descargar mi carta (.txt)</button>
+  <div class="nav"><button type="button" class="btn ghost" data-prev>Atrás</button><button type="button" class="btn gold" id="fin4">Terminar mi ruta</button></div>`},
+  a:()=>{$("cartaDl").onclick=()=>{if(!(W4.carta||"").trim()){$("f_carta").focus();return}bajar("carta-a-mi-yo-de-marzo.txt",cartaTxt(W4.carta));ev("download",{que:"carta"})};$("fin4").onclick=finish4}},
+ fin:{h:pv=>{const s4=pv.s4;const C=S4.cierre;const msg=encodeURIComponent(`Terminé mi ruta en Radar Vocacional. Me gustaría contarte mi decisión por ahora y mis próximos pasos. Hay una lectura corta para ti: ${famUrl(4)}`);
+  return `${pv.s4alerta?SUPPORT_HTML:""}
+  <div class="rc dark"><div class="eyebrow">Ruta completa · Nitidez ${S4.nitidez}%</div><h3>${C.titulo}</h3><p>${C.texto}</p><p class="small" style="margin:0;opacity:.7">Dato: ${C.fuente_dato}</p></div>
+  ${s4?planHTML(s4)+`<button type="button" class="btn primary block" id="planDl">Descargar «Mi plan»</button>`:`<div class="empty">Terminaste tu ruta en otro celular: tu plan quedó guardado allá.</div>`}
+  ${pv.carta?`<button type="button" class="btn ghost block" id="cartaDl2" style="margin-top:10px">Descargar mi carta a marzo</button>`:""}
+  <div class="rc goldc" style="margin-top:14px"><p style="margin:0">${C.recordatorio}</p></div>
+  ${rutaHTML(pv,{noBtn:true})}
+  <div class="rc"><h3>Cuéntale a tu familia</h3><p>Su última lectura les ayuda a sostener tu decisión, sea cual sea.</p><a class="btn primary block" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar a mi familia por WhatsApp</a></div>
+  <p class="small muted">${C.ayuda}</p>
+  <p class="small muted" id="s4save">${pv.eval?(pv.s4save==="pend"?"Guardando con tu código…":pv.s4save==="fail"?"Quedó guardado en este dispositivo (sin conexión al servidor).":"✓ Guardado con tu código, sin tu nombre. Tu carta no se envió: está solo en este celular."):"Tus respuestas quedan solo en este dispositivo."}</p>
+  <a class="btn ghost block" href="#perfil">Ver mi radar</a>`},
+  a:(box,pv)=>{const d=$("planDl");if(d)d.onclick=()=>{bajar("mi-plan-radar-vocacional.txt",planTxt((load()||{}).s4));ev("download",{que:"plan"})};
+   const c=$("cartaDl2");if(c)c.onclick=()=>bajar("carta-a-mi-yo-de-marzo.txt",cartaTxt(pv.carta));
+   box.querySelectorAll("[data-hecho]").forEach(x=>x.onchange=()=>{const p2=load()||{};if(!p2.s4)return;const i=+x.dataset.hecho;p2.s4.pasos[i].hecho=x.checked;store(p2);ev("plan_step_done",{id:p2.s4.pasos[i].id,hecho:x.checked});x.closest("li").classList.toggle("ok",x.checked)})}}
+};
+const cartaTxt=t=>`Carta a mi yo de marzo\nEscrita el ${fechaCorta(hoyISO())} con Radar Vocacional\n\n${t||""}\n`;
+function draw4(){const pv=load()||{};let p=W4.paso;if(W4.t1&&["clar","exp","aut"].includes(p))p=W4.paso="ad";
+ const R=R4[p]||R4.intro;const box=$("s4box");
+ const i=ORD4.indexOf(p),pr=p==="fin"?1:Math.max(0,i)/(ORD4.length-1);const nit=90+Math.round(pr*10);
+ $("nit4").style.width=nit+"%";$("nit4t").textContent="Nitidez "+nit+"%";const pt=PART4[p];$("nit4p").textContent=pt?`Parte ${pt[0]} de 4 · ${pt[1]}`:p==="fin"?"Completa ✓":"4 partes · 15 min";
+ box.innerHTML=R.h(pv);R.a&&R.a(box,pv);if(W4.paso!==p)return;
+ const H={rr:draw4,save:save4,nav:go4,back:back4,upd:()=>updForm(box,W4,R)};bindForm(box,W4,H);H.upd()}
+function renderSemana4(){const pv=load()||{};
+ if(pv.s4hecha)W4={paso:"fin"};else{if(!W4||W4.paso==="fin"||!W4.pasos)W4={...W4D(),...(pv.w4||{})};if(!W4.started){W4.started=1;ev("week_started",{semana:4})}}
+ draw4()}
+async function finish4(){const pv=load()||{};const D=W4.dec;
+ const refl={dec_princ:D.modo==="decido"?(D.princ||""):"",dec_alt:D.modo==="decido"?(D.alt||""):"",dec_porque:D.modo==="decido"?(D.porque||""):"",pasos:W4.pasos.map(s=>[s.txt,s.con].filter(Boolean).join(" · ")),util_amigo:W4.amigo||""};
+ const alerta=ALERTA.test(norm(JSON.stringify(refl)));
+ const datos={parte:"cierre",modo:D.modo||null,seguro:D.modo==="decido"?(D.seguro||null):null,entre:D.modo==="aun_no"?(D.entre||[]):null,falta:D.modo==="aun_no"?(D.falta||[]):null,pasos:W4.pasos.map(s=>({id:s.id||null,fecha:s.fecha||null})),util:W4.util,ne:[...NE]};
+ const s4={clar:W4.clar,dec:{modo:D.modo,princ:D.princ,alt:D.alt,porque:D.porque,seguro:D.seguro,entre:D.entre,falta:D.falta},pasos:W4.pasos.map(s=>({id:s.id,txt:s.txt||"",fecha:s.fecha,con:s.con||"",hecho:false})),util:W4.util,fecha:new Date().toISOString()};
+ store({...pv,s4,s4hecha:true,s4alerta:alerta,carta:W4.carta||"",s4save:pv.eval?"pend":null,w4:null});
+ ev("week_completed",{semana:4,modo:D.modo||null});
+ W4={paso:"fin"};draw4();window.scrollTo(0,0);
+ /* la carta a marzo NO se envía: queda solo en localStorage */
+ const ok=await guardar({rol:"estudiante",semana:4,momento:"S4",nivel:pv.nivel||null,claridad:s4.clar,reflexiones:refl,datos});
+ if(ok!=="local")store({...(load()||{}),s4save:ok?"ok":"fail"});
+ const st=$("s4save");if(st&&ok!=="local")st.textContent=ok?"✓ Guardado con tu código, sin tu nombre. Tu carta no se envió: está solo en este celular.":"Quedó guardado en este dispositivo (sin conexión al servidor)."}
+
+/* =====================================================================
+   FAMILIA · pestañas por semana y Semanas 3-4 (FAM34)
+   ===================================================================== */
+let FAM_T=null;
+function setFamTab(t,scroll=true){FAM_T=t;document.querySelectorAll("#famTabs [data-ft]").forEach(b=>{const on=+b.dataset.ft===t;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1});
+ document.querySelectorAll("#v-familia [data-fs]").forEach(s=>s.classList.toggle("hidden",+s.dataset.fs!==t));if(scroll)window.scrollTo(0,0)}
+function fam34HTML(n){const F=FAM34["semana"+n];let cards="",cur="";
+ F.lectura.forEach(b=>{if(b.tipo==="h"){if(cur)cards+=`<div class="read">${cur}</div>`;cur=`<h3>${b.t}</h3>`}else if(b.tipo==="p")cur+=`<p>${b.t}</p>`;else cur+=`<ul>${b.t.map(x=>`<li>${x}</li>`).join("")}</ul>`});cards+=`<div class="read">${cur}</div>`;
+ return `<div class="eyebrow">${F.eyebrow}</div><h2>${F.titulo}</h2><p class="muted">Lectura de 5 minutos.</p>${cards}
+ <div class="read" style="background:var(--goldsoft);border-color:#e8d9a8"><h3>${F.puente.titulo}</h3>${F.puente.preguntas.map(q=>`<p class="quote" style="font-size:1.06rem">${q}</p>`).join("")}<p class="small muted" style="margin:0">${F.puente.nota}</p></div>
+ <h3 style="margin-top:20px">Para usted (opcional y anónimo)</h3>
+ <label class="field" for="pt${n}">${F.para_usted.texto}</label><textarea id="pt${n}" maxlength="${F.para_usted.max}"></textarea>
+ ${F.cierre_medida?`<label class="field" for="pc${n}">${F.cierre_medida.texto}</label><div class="slider" style="margin-top:4px"><div class="sv" id="pc${n}V" aria-hidden="true">5</div><input type="range" id="pc${n}" min="0" max="10" value="5" aria-label="Preparación de 0 a 10"><div class="sl"><span>Nada</span><span>Totalmente</span></div></div>`:""}
+ <label class="check"><input type="checkbox" id="pa${n}"> <span>Acepto que estas respuestas se guarden sin mi nombre, asociadas a un código, para mejorar Radar Vocacional. Solo se informan resultados de grupos de 10 o más personas.</span></label>
+ <button class="btn primary block" id="pg${n}" disabled>Guardar y terminar la Semana ${n}</button><p class="small muted" id="ps${n}" style="margin-top:6px" aria-live="polite"></p>
+ ${n===3?`<div class="nav"><button class="btn ghost block" data-ftgo="4">Ir a la Semana 4 →</button></div>`:""}`}
+function bindFam34(n){const r=$("pc"+n);if(r)r.oninput=e=>$("pc"+n+"V").textContent=e.target.value;
+ $("pa"+n).onchange=e=>$("pg"+n).disabled=!e.target.checked;
+ $("pg"+n).onclick=async()=>{const b=$("pg"+n);b.disabled=true;$("ps"+n).textContent="Guardando…";const F=FAM34["semana"+n];
+  const s=await rpc("atlas_iniciar",{p_codigo:codigo(),p_curso:CURSO_URL,p_app_version:APP_V,p_instrument_version:INST_V});
+  const d={rol:"apoderado",semana:n,momento:"S"+n,consentimiento:true,reflexiones:{[F.para_usted.id]:$("pt"+n).value.trim()},version:APP_V};
+  if(r){d.claridad=+r.value;d.datos={claridad_id:F.cierre_medida.id,claridad_formato:"slider"}}
+  const res=s&&s.session_id?await rpc("atlas_respuesta",{p_session:s.session_id,p_datos:d}):null;const ok=res&&res.ok;
+  $("ps"+n).textContent=ok?"✓ Gracias. Recuerde la conversación puente de esta semana.":"No pudimos conectarnos al servidor, pero la lectura y la conversación puente siguen siendo lo más importante.";if(!ok)b.disabled=false}}
+function renderFamilia(){const m=(location.hash.split("?")[1]||"").match(/s=([1-4])/);
+ [3,4].forEach(n=>{const el=$("fs"+n);if(!el.dataset.ok){el.innerHTML=fam34HTML(n);el.dataset.ok=1;bindFam34(n)}});
+ setFamTab(m?+m[1]:FAM_T||1,false)}
+$("famTabs").onclick=e=>{const b=e.target.closest("[data-ft]");if(b){setFamTab(+b.dataset.ft,false);ev("step_viewed",{familia:+b.dataset.ft},"familia_s"+b.dataset.ft)}};
+$("famTabs").onkeydown=e=>{if(!["ArrowLeft","ArrowRight"].includes(e.key))return;const t=Math.min(4,Math.max(1,(FAM_T||1)+(e.key==="ArrowRight"?1:-1)));setFamTab(t,false);$("famTabs").querySelector(`[data-ft="${t}"]`).focus()};
+$("v-familia").addEventListener("click",e=>{const b=e.target.closest("[data-ftgo]");if(b)setFamTab(+b.dataset.ftgo)});
+
 /* ---- familia ---- */
 $("pclar").oninput=e=>$("pclarV").textContent=e.target.value;
 $("pacepto").onchange=e=>$("pGuardar").disabled=!e.target.checked;
@@ -779,9 +1820,11 @@ $("pGuardar").onclick=async()=>{$("pGuardar").disabled=true;$("pState").textCont
 
 /* ---- inicio y memoria ---- */
 (function init(){const prev=load();if(prev){if(prev.ne)NE=new Set(prev.ne);if(prev.acts)S.acts=prev.acts;if(prev.sim)S.sim=prev.sim;if(prev.t0!=null){S.clar=prev.t0;$("clar").value=prev.t0;$("clarV").textContent=prev.t0}
- if(prev.completo){const f=prev.refl&&(prev.refl.r3||prev.refl.r1);$("welcome").innerHTML=`<h3>Hola de nuevo · código ${esc(prev.codigo)}</h3><p style="margin:0 0 6px">La última vez marcaste tu claridad en <b>${prev.clar}/10</b>${f?" y escribiste:":"."}</p>${f?`<q>${esc(f.slice(0,160))}${f.length>160?"…":""}</q>`:""}<p class="small" style="margin:10px 0 0">${prev.s2hecha?`Ya completaste la Semana 2. <a href="#semana2" style="color:#e2c879">Ver tu resumen</a>.`:`<a href="#semana2" class="btn gold" style="margin-top:6px">Comenzar la Semana 2 · Explorar</a>`}</p>`;$("welcome").classList.remove("hidden")}
+ if(prev.completo){const f=prev.refl&&(prev.refl.r3||prev.refl.r1);const cl=prev.s4&&prev.s4.clar!=null?prev.s4.clar:prev.s2&&prev.s2.clar!=null?prev.s2.clar:prev.clar;
+  $("welcome").innerHTML=`<h3>Hola de nuevo · código ${esc(prev.codigo)}</h3><p style="margin:0 0 6px">La última vez marcaste tu claridad en <b>${cl??"–"}/10</b>${f?" y escribiste:":"."}</p>${f?`<q>${esc(f.slice(0,160))}${f.length>160?"…":""}</q>`:""}<p class="small" style="margin:10px 0 0"><a href="#perfil" style="color:#e2c879">Ver mi radar y mis rutas →</a></p>`;$("welcome").classList.remove("hidden")}
  else if(Object.keys(S.acts).length){$("welcome").innerHTML=`<h3>Tu radar está a medio camino</h3><p style="margin:0">Respondiste ${Object.keys(S.acts).length} de ${ACTS.length}. <a href="#radar" style="color:#e2c879">Continúa donde quedaste</a>.</p>`;$("welcome").classList.remove("hidden")}}
- route();cargarCatalogo()})();
+ route();cargarCatalogo();
+ INFO_P.then(i=>{if(i&&(enEspera()||(load()||{}).espera))route()})})();
 </script>
 </body>
 </html>
